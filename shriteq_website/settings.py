@@ -34,7 +34,7 @@ DEBUG = os.environ['DEBUG'] == 'True'
 print(f'Setting: {DEBUG}')
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'https://shriteq22.herokuapp.com/'
+    'shriteq22.herokuapp.com'
 ]
 
 import sentry_sdk
