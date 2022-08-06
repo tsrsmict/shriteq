@@ -11,6 +11,7 @@ psycopg2-binary = "*"
 whitenoise = "*"
 django-environ = "*"
 python-dotenv = '*'
+sentry-sdk = "*"
 
 [dev-packages]
 
