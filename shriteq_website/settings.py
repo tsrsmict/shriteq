@@ -23,12 +23,16 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-SECRET_KEY = os.getenv('SECRET_KEY')
-DEBUG = os.getenv('DEBUG', False)
-ALLOWED_HOSTS = [
-    '*'
-]
+import dotenv
 
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
+SECRET_KEY = os.environ['SECRET_KEY']
+DEBUG = os.environ['DEBUG'] == 'True'
+ALLOWED_HOSTS = [
+    'https://shriteq22.herokuapp.com/'
+]
 
 # Application definition
 
