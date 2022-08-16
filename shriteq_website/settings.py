@@ -29,12 +29,19 @@ dotenv_file = os.path.join(BASE_DIR, ".env")
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
 SECRET_KEY = os.environ['SECRET_KEY']
-print(os.environ)
 DEBUG = os.environ['DEBUG'] == 'True'
-print(f'Setting: {DEBUG}')
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'shriteq22.herokuapp.com'
+print(os.environ['DEBUG'])
+
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = [
+        '127.0.0.1',
+        'shriteq22.herokuapp.com'
+    ]
+    
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 import sentry_sdk
@@ -65,7 +72,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tailwind',
+    'theme',
+    'django_browser_reload'
 ]
+
+TAILWIND_APP_NAME = 'theme'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,6 +88,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'shriteq_website.urls'
