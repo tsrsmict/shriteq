@@ -30,3 +30,9 @@ You can force a heroku deploy by running `git push heroku main`.
 ## Debugging
 * If you're missing static files on the deployed server, make sure you run `python3 manage.py collectstatic`, checking that this copied files into the `staticfiles/` directory, and committing before deploying. You can manually delete `staticfiles/`, commit, then make that folder again and run `python3 manage.py collectstatic` to force it to collect all static files.
 `deploy.sh` should automatically run these commands.
+
+# Reference articles
+These articles and documentation pages were used for reference while configuring this project:
+* [Medium tutorial on using Django + Tailwind + Heroku](https://medium.com/@phuitsing/heroku-buildpack-for-django-tailwind-de96be543f9)
+* [Whitenoise config settings](http://whitenoise.evans.io/en/stable/django.html)
+* [django-tailwind docs](https://django-tailwind.readthedocs.io/en/latest/installation.html)
