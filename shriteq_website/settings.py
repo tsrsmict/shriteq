@@ -74,7 +74,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tailwind',
     'theme',
-    'django_browser_reload'
+    'django_browser_reload',
+    'events',
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -177,5 +178,3 @@ WHITENOISE_MANIFEST_STRICT = False
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
