@@ -13,15 +13,43 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
 		rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
 
 	{% block css_imports %}
 	{% endblock css_imports %}
 </head>
 
 <body class="">
-
+	<main>
+		<nav>
+			
+		</nav>
 		{% block content %}
 		{% endblock content %}
+	</main>
+
+	<footer class="px-4 py-10 mx-auto md:px-12 bg-offblack">
+		<div class="my-10 font-extrabold text-center text-7xl">
+			<span class="mr-1 text-white">ShriTeq</span>
+			<span class="text-violet">2022</span>
+			<span class="-ml-3 text-white">.</span>
+		</div>
+
+		<div class="text-md md:text-lg">
+			<div class="text-grey-tertiary md:columns-2">
+				<div class="flex flex-col space-y-1.5">
+					<a href="">Events list</a>
+					<a href="">Schedule</a>
+					<a href="">Registration</a>
+				</div>
+				<div class="flex flex-col space-y-1.5 md:text-right">
+					<a>email@email.com</a>
+					<p>Address, Address Street, Gurgaon Pincode</p>
+					<p>+91 12345 67890</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 </body>
 
 {% block js_imports %}
