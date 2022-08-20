@@ -13,7 +13,7 @@
     }
 
     h2 {
-        @apply text-4xl md:text-5xl;
+        @apply text-3xl md:text-4xl lg:text-5xl;
         @apply font-bold;
         @apply font-display;
     }
