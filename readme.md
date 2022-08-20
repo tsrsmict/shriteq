@@ -1,9 +1,9 @@
 # Prerequisites
 Make sure you have the following installed on your system:
 * Python
-* Pipenv
-* NPM
-* (optional, for deploy config) Heroku CLI
+* [Pipenv](https://pypi.org/project/pipenv/)
+* [NPM](https://nodejs.org/en/download/)
+* (optional, for deploy config) [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
 # Development
 ## Development server
@@ -12,7 +12,7 @@ Run the following commands in your shell in the root directory of this repositor
 2. `pipenv install` (install )
 3. `python3 manage.py makemigrations` and `python3 manage.py migrate` (you won't need to run this every time, just the first time you're setting up the project and when you edit the SQL models)
 5. `python3 manage.py runserver`
-This will open the server on localhost:8000
+This will open the server on http://localhost:8000
 
 ## Tailwind
 If you're editing the frontend with Tailwind CSS classes, you'll need to have the tailwind listener running
