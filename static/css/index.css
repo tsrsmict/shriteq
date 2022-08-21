@@ -1,0 +1,21 @@
+.hero {
+    height: calc(100vh - 82px);
+}
+
+.hero {
+    z-index: -1;
+}
+
+.hero .wave {
+    z-index: 0;
+}
+
+.hero .chev-down {
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        height: calc(100vh - 120px);
+    }
+}

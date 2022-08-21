@@ -1,3 +1,4 @@
 .event-body {
+    /* to ensure that the SVG is at the bottom oft he screen. 154px = height of navbar with bottom margin. */
     min-height: calc(100vh - 154px);
 }

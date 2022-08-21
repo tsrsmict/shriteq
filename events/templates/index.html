@@ -1,10 +1,27 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %} {% endblock %}
 
+{% block css_imports %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
 {% load static %}
 {% block content %}
-<section class="px-5 py-10 font-bold leading-normal md:font-extrabold lg:font-black md:px-20 lg:px-44 bg-offblack font-display">
+<section class="bg-white hero">
+    <div class="flex flex-col h-full">
+        <div class="flex flex-col items-center flex-grow h-full">
+            <div class="flex flex-col items-center justify-center h-full">
+                <p class="mb-8 text-5xl font-semibold font-display md:text-7xl lg:text-8xl">ShriTeq 2022</p>
+                <p class="text-3xl font-medium font-body">October 10th to 12th</p>
+            </div>
+            <svg class="absolute -bottom-2 h-9 md:h-12 stroke-white chev-down md:bottom-3 lg:bottom-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            
+        <img src="{% static 'assets/vectors/hero-wave-up.svg' %}" alt="" class="w-screen wave">
+    </div>
+</section>
+<section id="declaration" class="relative px-5 py-10 font-bold leading-normal -top-1 md:font-extrabold lg:font-black md:px-20 lg:px-44 bg-offblack font-display">
     <p class="mb-8 text-5xl leading-normal md:leading-normal lg:leading-snug md:text-7xl lg:text-8xl text-grey-tertiary">
         North India's <span class="text-violet">premier</span> tech event is back.
     </p>
