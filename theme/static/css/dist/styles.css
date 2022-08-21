@@ -964,6 +964,10 @@ h3 {
   height: 2.25rem;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .w-screen {
   width: 100vw;
 }
@@ -1018,6 +1022,10 @@ h3 {
 
 .gap-9 {
   gap: 2.25rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .space-x-7 > :not([hidden]) ~ :not([hidden]) {
@@ -1314,6 +1322,10 @@ h3 {
     margin-left: -1.75rem;
   }
 
+  .md\:mb-12 {
+    margin-bottom: 3rem;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -1333,6 +1345,10 @@ h3 {
   .md\:columns-2 {
     -moz-columns: 2;
          columns: 2;
+  }
+
+  .md\:gap-12 {
+    gap: 3rem;
   }
 
   .md\:fill-white {
@@ -1369,6 +1385,10 @@ h3 {
 
   .md\:font-extrabold {
     font-weight: 800;
+  }
+
+  .md\:font-bold {
+    font-weight: 700;
   }
 
   .md\:leading-normal {
@@ -1412,6 +1432,14 @@ h3 {
 
   .lg\:font-black {
     font-weight: 900;
+  }
+
+  .lg\:font-bold {
+    font-weight: 700;
+  }
+
+  .lg\:font-extrabold {
+    font-weight: 800;
   }
 
   .lg\:leading-normal {
