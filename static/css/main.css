@@ -1,5 +1,5 @@
 main {
-    /* to make sure the footer is pinned to the bottom */
+    /* to make sure the footer is pinned to the bottom. 328px = height of footer on desktop */
     min-height: 328px; 
 }
 
