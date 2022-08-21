@@ -9,7 +9,7 @@ main {
     background-size: 0 2px;
     background-position: 6px 80%;
     background-repeat: no-repeat;
-    transition: background-size .5s ease-in-out;
+    transition: background-size 0.6s ease-in-out;
 }
 
 .link-underline-black {
