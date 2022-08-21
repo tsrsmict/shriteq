@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block title %} {% endblock title %}
 
+
+{% block css_imports %}
+<link rel="stylesheet" href="{% static 'css/event.css' %}">
+{% endblock css_imports %}
+
 {% block content %}
-<div class="flex flex-col min-h-screen">
-    <section class="px-6 md:px-20 lg:px-64 flex-grow-1">
+<div class="flex flex-col event-body">
+    <section class="flex-grow px-6 md:px-20 lg:px-64">
         <div class="flex flex-row items-center">
             <a href="{% url 'index' %}">
                 <img src="{% static 'assets/icons/chevron-left-solid.svg' %}" alt="" class="h-6 mr-3">
@@ -22,7 +26,7 @@
                 </svg>
                 <p class="text-lg font-bold uppercase font-body text-grey-secondary">1 team of 5</p>
             </div>
-            <div class="flex flex-row">
+            <div class="flex flex-row items-center">
                 <!-- graduation-cap.svg -->
                 <svg class="h-5 mr-2 fill-grey-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                     <!--! Font Awesome Free 6.0.0-beta3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2021 Fonticons, Inc. -->
@@ -32,11 +36,14 @@
                 <p class="text-lg font-bold uppercase font-body text-grey-secondary">Grades 9-12</p>
             </div>
         </div>
-        {% block description %} {% endblock description %}
+        <p class="leading-loose">
+            {% block description %}
+            {% endblock description %}                
+        </p>
 
 
     </section>
-    <img src="{% static 'assets/vectors/wave-up.svg' %}" alt="" class="absolute bottom-0 w-screen">
+    <img src="{% static 'assets/vectors/wave-up.svg' %}" alt="" class="w-screen">
 
 </div>
 

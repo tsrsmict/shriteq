@@ -1,0 +1,3 @@
+.event-body {
+    min-height: calc(100vh - 154px);
+}
