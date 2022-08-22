@@ -1347,6 +1347,10 @@ h3 {
          columns: 2;
   }
 
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .md\:gap-12 {
     gap: 3rem;
   }
@@ -1405,6 +1409,10 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .lg\:px-44 {
     padding-left: 11rem;
     padding-right: 11rem;
@@ -1456,6 +1464,10 @@ h3 {
 }
 
 @media (min-width: 1280px) {
+  .xl\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .xl\:text-8xl {
     font-size: 6rem;
     line-height: 1;
