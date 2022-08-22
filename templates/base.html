@@ -19,7 +19,7 @@
 	{% endblock css_imports %}
 </head>
 
-<body class="">
+<body class="no-scrollbar">
 	<main>
 		{% if request.get_full_path == '/' %}
 		<nav class="py-4 border-b-2">
@@ -52,12 +52,12 @@
 				<div class="hidden mobile-menu">
 					<ul class="md:hidden font-display">
 						<li href="" class="px-2 py-4 font-semibold text-gray-600">
-							<a href="">
-								Test
+							<a href="{% url 'index'%}#events">
+								Events
 							</a></li>
 						<li href="" class="px-2 py-4 font-semibold text-gray-600">
-							<a href="">
-								Test
+							<a href="{% url 'index'%}#register">
+								Register
 							</a></li>
 					</ul>
 				</div>
