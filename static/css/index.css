@@ -21,5 +21,21 @@
 }
 
 #declaration {
+    /* the svg is off by 2px so we need to blend it with the next section below */
     top: -2px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+html {
+    scroll-behavior: smooth;
+
 }
