@@ -37,16 +37,15 @@
         </p>
 </section>
 
-<section id="events" class="px-5 py-10 mx-auto bg-white md:px-20 lg:px-44">
+<section id="events" class="px-5 py-10 mx-auto bg- md:px-20 lg:px-44">
     <h1 class="text-center">Our Events</h1>
 </section>
 
-<section class="px-5 py-10 mx-auto md:px-20 lg:px-44 bg-offblack">
+<section class="px-5 py-16 mx-auto md:px-20 lg:px-44 bg-offblack">
     <h2 class="mb-10 text-white uppercase">Flagship Events</h2>
     <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-9">
-        {% for i in '012345'|make_list %}
-
-        <div class="flex flex-col rounded-lg p-7 bg-offwhite">
+        {% for i in '012'|make_list %}
+        <div class="flex flex-col rounded-lg p-7 bg-offwhite justify-self-center">
             <div class="flex flex-row items-center w-full mb-5">
                 <h3 class="uppercase grow font-body">Hackathon</h3>
                 <a href="{% url 'event' 'hackathon'%}">

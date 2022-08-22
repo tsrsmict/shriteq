@@ -842,6 +842,14 @@ h3 {
   bottom: 4rem;
 }
 
+.bottom-2 {
+  bottom: 0.5rem;
+}
+
+.-bottom-5 {
+  bottom: -1.25rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1056,6 +1064,10 @@ h3 {
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
+.justify-self-center {
+  justify-self: center;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -1082,6 +1094,16 @@ h3 {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-grey-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(128 128 128 / var(--tw-bg-opacity));
+}
+
+.bg-grey-tertiary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 204 204 / var(--tw-bg-opacity));
 }
 
 .fill-grey-secondary {
@@ -1136,6 +1158,16 @@ h3 {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .pt-8 {
@@ -1487,6 +1519,10 @@ h3 {
 }
 
 @media (min-width: 1536px) {
+  .\32xl\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .\32xl\:text-8xl {
     font-size: 6rem;
     line-height: 1;
