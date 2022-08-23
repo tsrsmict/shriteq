@@ -14,10 +14,9 @@
 {% block content %}
 
 <section class="z-10 hero">
-
     <div class="flex flex-col h-full">
         <div class="flex flex-col items-center flex-grow h-full">
-            <div class="flex flex-col items-center justify-center h-full text-white">
+            <div class="flex flex-col items-center justify-center h-full lg:text-white">
                 <p class="mb-8 text-5xl font-semibold font-display md:text-7xl lg:text-8xl">
                     <span>
                         Shri
@@ -33,18 +32,18 @@
                 <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
 
-            <img src="{% static 'assets/vectors/hero-wave-up.svg' %}" alt="" class="w-screen wave">
+            <img src="{% static 'assets/vectors/hero-wave-up.svg' %}" alt="" class="w-screen wave lg:hidden">
         </div>
 </section>
 
-<div class="relative z-20 h-screen text-white hero-bg-container -top-full -wscreen">
+<div class="relative z-20 hidden h-screen text-white hero-bg-container -top-full -wscreen lg:block">
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6000 8000'>
         <rect fill='#000000' width='6000' height='8000' />
         <defs>
             <rect fill='none' stroke-width='82.9' stroke-opacity='1' id='a' x='-600' y='-400' width='1200'
                 height='800' />
         </defs>
-        <g transform='scale(1)' style='transform-origin:center'>
+        <g transform='scale(2)' style='transform-origin:center'>
             <g transform='rotate(50.4 0 0)' style='transform-origin:center'>
                 <g transform='rotate(-160 0 0)' style='transform-origin:center'>
                     <g transform='translate(3000 4000)'>
