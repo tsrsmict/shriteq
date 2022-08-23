@@ -45,7 +45,11 @@
 					<div class="flex flex-row w-screen space-x-7">
 						<div class="grow">
 							<a href="{% url 'index' %}">
+								{% if request.get_full_path == '/' %}
+								<img class="h-12 md:h-20" src="{% static 'assets/logo-dark.png' %}" alt="">
+								{% else %}
 								<img class="h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
+								{% endif %}
 							</a>
 						</div>
 						<div class="items-center hidden space-x-5 font-display md:flex">
