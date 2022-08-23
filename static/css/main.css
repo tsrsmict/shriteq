@@ -20,3 +20,7 @@ main {
     background-size: 80% 2px;
     background-position: 6px 80%;
 }
+
+html {
+    scroll-behavior: smooth;
+}
