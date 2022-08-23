@@ -47,9 +47,7 @@ module.exports = {
       display: ["Montserrat", "sans-serif"],
       body: ["'Poppins'", "sans-serif"],
     },
-    fontSize: {
-      '15xl': ['213px', '320'],
-    },
+
     extend: {
       colors: {
         'maroon': '#B60C1E',
@@ -61,6 +59,9 @@ module.exports = {
         'offblack': '#262626'
       },
       fontFamily: {},
+      fontSize: {
+        '15xl': ['213px', '320'],
+      },
     },
   },
   plugins: [
