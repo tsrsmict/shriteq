@@ -8,10 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
-	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
-	<link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+	<link rel="shortcut icon" type="image/x-icon" sizes="32x32" id="faviconTag" href="{% static 'favicon/light/favicon-32x32.png' %}">
 	{% tailwind_css %}
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,6 +120,7 @@
 			</div>
 		</div>
 	</footer>
+	<input type="hidden" name="" id="fav-dark-tag" data-url="{% static 'favicon/dark/favicon-32x32.png' %}">
 </body>
 
 <script>
@@ -141,6 +139,21 @@
 
 	const links = document.querySelectorAll('.mobile-nav-link');
 	links.forEach(el => el.addEventListener('click', toggleMenu));
+
+	// Toggle favicon based on colour scheme
+	const faviconTag = document.getElementById("faviconTag");
+	const isDark = window.matchMedia("(prefers-color-scheme: dark)");
+	const lightModeFavi = "{% static 'favicon/light/favicon-32x32.png' %}";
+	const darkModeFavi = "{% static 'favicon/dark/favicon-32x32.png' %}";
+	console.log(lightModeFavi);
+	console.log(darkModeFavi);
+	const changeFavicon = () => {
+		if (isDark.matches) faviconTag.href = darkModeFavi;
+		else faviconTag.href = lightModeFavi;
+	};
+	changeFavicon();
+	setInterval(changeFavicon, 1000);	  
+
 </script>
 
 {% block js_imports %}
