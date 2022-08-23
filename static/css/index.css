@@ -1,36 +1,76 @@
 .hero {
-    height: calc(100vh - 82px);
+  height: calc(100vh - 82px);
+  z-index: -1;
 }
 
-.hero {
-    z-index: -1;
+.hero-bg-container {
+    z-index: -10; 
+}
+
+.hero-bg-container svg {
+
+    height: 250vh;
+    top: -165vh;
+    position: absolute;
+    /* left: 27.5%; */
+    transform: rotate(90deg);
+    z-index: -10;
+
+-webkit-animation: rotation 10s infinite linear;
+  animation: rotation 10s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform-origin: center;
+    transform: rotate(0deg);
+  }
+  to {
+    transform-origin: center;
+    transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform-origin: center;
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform-origin: center;
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+
+@media (min-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 120px);
+  }
 }
 
 .hero .wave {
-    z-index: 0;
+  z-index: 0;
 }
 
 .hero .chev-down {
-    z-index: 1;
-}
-
-@media (min-width: 768px) {
-    .hero {
-        min-height: calc(100vh - 120px);
-    }
+  z-index: 1;
 }
 
 #declaration {
-    /* the svg is off by 2px so we need to blend it with the next section below */
-    top: -2px;
+  /* the svg is off by 2px so we need to blend it with the next section below */
+  top: -2px;
 }
 
 .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.card-wrapper {
+  @apply flex flex-col rounded-lg p-7 bg-offwhite justify-self-center cssanimation sequence fadeInBottom;
 }

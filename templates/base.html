@@ -33,53 +33,60 @@
 <body class="no-scrollbar">
 	<main>
 		{% if request.get_full_path == '/' %}
-		<nav class="py-4 border-b-2">
-			{% else %}
-			<nav class="py-4 mb-10 border-b-2 shadow-lg">
-				{% endif %}
-				<div class="px-5 md:px-20 lg:px-44">
-					<div class="flex justify-between">
-						<div class="flex flex-row w-screen space-x-7">
-							<div class="grow">
-								<a href="{% url 'index' %}">
-									<img class="h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
-								</a>
-							</div>
-							<div class="items-center hidden space-x-5 font-display md:flex">
-								<a href="{% url 'index'%}#events"
-									class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Events</a>
-								<a href="{% url 'index'%}#register"
-									class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Register</a>
-							</div>
-							<div class="flex items-center md:hidden">
-								<button class="outline-none mobile-menu-button">
-									<svg class="w-6 h-6 text-gray-500 hover:text-black" x-show="!showMenu" fill="none"
-										stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-										viewBox="0 0 24 24" stroke="currentColor">
-										<path d="M4 6h16M4 12h16M4 18h16"></path>
-									</svg>
-								</button>
-							</div>
+		<nav class="py-4 text-white bg-black">
+		{% else %}
+		<nav class="py-4 mb-10 border-b-2 shadow-lg">
+			{% endif %}
+			<div class="px-5 md:px-20 lg:px-44">
+				<div class="flex justify-between">
+					<div class="flex flex-row w-screen space-x-7">
+						<div class="grow">
+							<a href="{% url 'index' %}">
+								<img class="h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
+							</a>
 						</div>
-					</div>
-					<div class="hidden h-screen mobile-menu">
-						<div class="flex flex-col items-center justify-center h-full">
-							<ul class="md:hidden font-display">
-								<li href="" class="px-2 py-4 text-2xl font-semibold text-gray-600 mobile-nav-link">
-									<a href="{% url 'index'%}#events">
-										Events
-									</a>
-								</li>
-								<li href="" class="px-2 py-4 text-2xl font-semibold text-gray-600 mobile-nav-link">
-									<a href="{% url 'index'%}#register">
-										Register
-									</a>
-								</li>
-							</ul>
+						<div class="items-center hidden space-x-5 font-display md:flex">
+							{% if request.get_full_path == '/' %}
+							<a href="{% url 'index'%}#events"
+								class="px-2 py-4 text-xl font-semibold text-gray-300 transition duration-300 hover:text-white link link-underline link-underline-white">Events</a>
+							<a href="{% url 'index'%}#register"
+								class="px-2 py-4 text-xl font-semibold text-gray-300 transition duration-300 hover:text-white link link-underline link-underline-white">Register</a>
+							{% else %}
+							<a href="{% url 'index'%}#events"
+								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Events</a>
+							<a href="{% url 'index'%}#register"
+								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Register</a>
+							{% endif %}
+							</div>
+						<div class="flex items-center md:hidden">
+							<button class="outline-none mobile-menu-button">
+								<svg class="w-6 h-6 text-gray-500 hover:text-black" x-show="!showMenu" fill="none"
+									stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+									viewBox="0 0 24 24" stroke="currentColor">
+									<path d="M4 6h16M4 12h16M4 18h16"></path>
+								</svg>
+							</button>
 						</div>
 					</div>
 				</div>
-			</nav>
+				<div class="hidden h-screen mobile-menu">
+					<div class="flex flex-col items-center justify-center h-full">
+						<ul class="md:hidden font-display">
+							<li href="" class="px-2 py-4 text-2xl font-semibold text-gray-600 mobile-nav-link">
+								<a href="{% url 'index'%}#events">
+									Events
+								</a>
+							</li>
+							<li href="" class="px-2 py-4 text-2xl font-semibold text-gray-600 mobile-nav-link">
+								<a href="{% url 'index'%}#register">
+									Register
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
 			{% block content %}
 			{% endblock content %}
 	</main>
