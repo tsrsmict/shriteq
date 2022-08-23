@@ -46,7 +46,10 @@
 						<div class="grow">
 							<a href="{% url 'index' %}">
 								{% if request.get_full_path == '/' %}
-								<img class="h-12 md:h-20" src="{% static 'assets/logo-dark.png' %}" alt="">
+								<picture>
+									<source media="(min-width: 1024px)" srcset="{% static 'assets/logo-dark.png' %}">
+									<img class="h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
+								</picture>
 								{% else %}
 								<img class="h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
 								{% endif %}
