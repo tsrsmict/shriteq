@@ -1,12 +1,9 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
-# Create your views here.
 
-from .list import EVENTS_LIST
+from .slugs import EVENT_SLUGS
 
-# Create your views here.
 def event(request, slug):
-    matching_event = EVENTS_LIST.get(slug, None)
-    if not matching_event: return HttpResponse('Event not found', status=404)
+    if slug not in EVENT_SLUGS: return HttpResponseNotFound()
     template = f'events/{slug}.html'
-    return render(request, template, {'event': matching_event})
+    return render(request, template)
