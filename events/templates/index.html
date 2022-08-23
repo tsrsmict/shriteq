@@ -14,109 +14,244 @@
         <div class="flex flex-col items-center flex-grow h-full">
             <div class="flex flex-col items-center justify-center h-full">
                 <p class="mb-8 text-5xl font-semibold font-display md:text-7xl lg:text-8xl">
-                <span>
-                    Shri
-                </span>
-                <span  class="-ml-3 md:-ml-6">Teq </span> <!-- Montserrat i and T get really close together and it looks bad -->
-                <span class="text-violet">2022</span>
+                    <span>
+                        Shri
+                    </span>
+                    <span class="-ml-3 md:-ml-6">Teq </span>
+                    <!-- Montserrat i and T get really close together and it looks bad -->
+                    <span class="text-violet">2022</span>
                 </p>
                 <p class="text-3xl font-medium font-body">October 10th to 12th</p>
             </div>
-            <svg class="absolute bottom-16 h-9 md:h-12 stroke-black md:stroke-white chev-down md:bottom-3 lg:bottom-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            
-        <img src="{% static 'assets/vectors/hero-wave-up.svg' %}" alt="" class="w-screen wave">
-    </div>
-</section>
-<section id="declaration" class="relative flex flex-col justify-center h-full min-h-screen px-5 leading-normal gap-9 md:px-20 lg:px-44 bg-offblack font-display md:gap-12">
+            <svg class="absolute bottom-16 h-9 md:h-12 stroke-black md:stroke-white chev-down md:bottom-3 lg:bottom-5"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
 
-        <p class="text-5xl font-semibold leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-bold md:text-7xl lg:text-7xl 2xl:text-8xl text-grey-tertiary">
-            North India's <span class="text-violet">premier</span> tech event is back.
-        </p>
-        <p class="text-5xl font-bold leading-relaxed text-white md:leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-extrabold lg:font-black md:text-7xl lg:text-7xl 2xl:text-8xl">
-            Better than ever before.
-        </p>
+            <img src="{% static 'assets/vectors/hero-wave-up.svg' %}" alt="" class="w-screen wave">
+        </div>
+</section>
+<section id="declaration"
+    class="relative flex flex-col justify-center h-full min-h-screen px-5 leading-normal gap-9 md:px-20 lg:px-44 bg-offblack font-display md:gap-12">
+
+    <p
+        class="text-5xl font-semibold leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-bold md:text-7xl lg:text-7xl 2xl:text-8xl text-grey-tertiary">
+        North India's <span class="text-violet">premier</span> tech event is back.
+    </p>
+    <p
+        class="text-5xl font-bold leading-relaxed text-white md:leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-extrabold lg:font-black md:text-7xl lg:text-7xl 2xl:text-8xl">
+        Better than ever before.
+    </p>
 </section>
 
 <section id="events" class="relative px-5 py-16 mx-auto bg-white md:px-20 lg:px-44">
     <h1 class="mb-4 text-center text-black">Our Events</h1>
     <h3 class="mb-6 font-medium text-center md:mb-9 xl:mb-12">More details coming soon!</h3>
 
-    <h2 class="mb-4 text-black uppercase md:mb-6">Flagship Events</h2>
-    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-9">
-        {% for i in '012'|make_list %}
+    <h2 class="mb-3 text-black uppercase">Senior School Events</h2>
+    <h3 class="mb-10 font-medium">Grades 9-12</h3>
+    <div class="grid md:grid-cols-2 gap-9">
+
         <div class="flex flex-col rounded-lg p-7 bg-offwhite justify-self-center">
             <div class="flex flex-row items-center w-full mb-5">
-                <h3 class="uppercase grow font-body">Hackathon</h3>
-                <a href="{% url 'event' 'hackathon'%}">
-                <!-- <img class="h-8 grow-0" src="{% static 'assets/icons/circle-arrow-right-solid.png' %}" alt=""> -->
-                </a>
-            </div>
-            <p class="mb-5 leading-10 font-body"> Quis auctor porta potenti orci at ac fames tristique nascetur
-                mattis                 tincidunt ornare aptent neque antenostra </p>
-            <div class="flex flex-col">
-                <div class="flex flex-row mb-2">
-                    <!-- people-group-solid.svg -->
-                    <svg class="h-5 mr-2 fill-grey-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                        <path
-                            d="M184 88C184 118.9 158.9 144 128 144C97.07 144 72 118.9 72 88C72 57.07 97.07 32 128 32C158.9 32 184 57.07 184 88zM208.4 196.3C178.7 222.7 160 261.2 160 304C160 338.3 171.1 369.8 192 394.5V416C192 433.7 177.7 448 160 448H96C78.33 448 64 433.7 64 416V389.2C26.16 371.2 0 332.7 0 288C0 226.1 50.14 176 112 176H144C167.1 176 190.2 183.5 208.4 196.3V196.3zM64 245.7C54.04 256.9 48 271.8 48 288C48 304.2 54.04 319.1 64 330.3V245.7zM448 416V394.5C468 369.8 480 338.3 480 304C480 261.2 461.3 222.7 431.6 196.3C449.8 183.5 472 176 496 176H528C589.9 176 640 226.1 640 288C640 332.7 613.8 371.2 576 389.2V416C576 433.7 561.7 448 544 448H480C462.3 448 448 433.7 448 416zM576 330.3C585.1 319.1 592 304.2 592 288C592 271.8 585.1 256.9 576 245.7V330.3zM568 88C568 118.9 542.9 144 512 144C481.1 144 456 118.9 456 88C456 57.07 481.1 32 512 32C542.9 32 568 57.07 568 88zM256 96C256 60.65 284.7 32 320 32C355.3 32 384 60.65 384 96C384 131.3 355.3 160 320 160C284.7 160 256 131.3 256 96zM448 304C448 348.7 421.8 387.2 384 405.2V448C384 465.7 369.7 480 352 480H288C270.3 480 256 465.7 256 448V405.2C218.2 387.2 192 348.7 192 304C192 242.1 242.1 192 304 192H336C397.9 192 448 242.1 448 304zM256 346.3V261.7C246 272.9 240 287.8 240 304C240 320.2 246 335.1 256 346.3zM384 261.7V346.3C393.1 335 400 320.2 400 304C400 287.8 393.1 272.9 384 261.7z" />
-                    </svg>
-                    <p class="text-lg font-bold uppercase font-body text-grey-secondary">1 team of 5</p>
-                </div>
-                <div class="flex flex-row">
-                    <!-- graduation-cap.svg -->
-                    <svg class="h-5 mr-2 fill-grey-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                        <!--! Font Awesome Free 6.0.0-beta3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2021 Fonticons, Inc. -->
-                        <path
-                            d="M623.1 136.9l-282.7-101.2c-13.73-4.91-28.7-4.91-42.43 0L16.05 136.9C6.438 140.4 0 149.6 0 160s6.438 19.65 16.05 23.09L76.07 204.6c-11.89 15.8-20.26 34.16-24.55 53.95C40.05 263.4 32 274.8 32 288c0 9.953 4.814 18.49 11.94 24.36l-24.83 149C17.48 471.1 25 480 34.89 480H93.11c9.887 0 17.41-8.879 15.78-18.63l-24.83-149C91.19 306.5 96 297.1 96 288c0-10.29-5.174-19.03-12.72-24.89c4.252-17.76 12.88-33.82 24.94-47.03l190.6 68.23c13.73 4.91 28.7 4.91 42.43 0l282.7-101.2C633.6 179.6 640 170.4 640 160S633.6 140.4 623.1 136.9zM351.1 314.4C341.7 318.1 330.9 320 320 320c-10.92 0-21.69-1.867-32-5.555L142.8 262.5L128 405.3C128 446.6 213.1 480 320 480c105.1 0 192-33.4 192-74.67l-14.78-142.9L351.1 314.4z" />
-                    </svg>
-                    <p class="text-lg font-bold uppercase font-body text-grey-secondary">Grades 9-12</p>
-                </div>
-            </div>
-        </div>
-
-        {% endfor %}
-    </div>
-</section>
-
-<section class="px-5 py-16 mx-auto bg-grey md:px-20 lg:px-44">
-    <h2 class="mb-10 text-black uppercase">Other Events</h2>
-    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-9">
-        {% for i in '0123456789'|make_list %}
-        <div class="flex flex-col rounded-lg p-7 bg-offwhite justify-self-center">
-            <div class="flex flex-row items-center w-full mb-5">
-                <h3 class="uppercase grow font-body">Gaming</h3>
+                <h3 class="uppercase grow font-body">Senior quiz</h3>
                 <a href="{% url 'event' 'hackathon'%}">
                     <!-- <img class="h-8 grow-0" src="{% static 'assets/icons/circle-arrow-right-solid.png' %}" alt=""> -->
                 </a>
             </div>
-            <p class="mb-5 leading-10 font-body"> Quis auctor porta potenti orci at ac fames tristique nascetur
-                mattis                 tincidunt ornare aptent neque antenostra </p>
+            <p class="mb-5 leading-10 font-body">Aenean sollicitudin vestibulum rutrum senectus interdum dictum sit
+                suscipit a arcu eu pellentesque dui eget class mus elit tristique feugiat pretium malesuada gravida
+                proin metus fusce bibendum</p>
             <div class="flex flex-col">
-                <div class="flex flex-row mb-2">  
+                <div class="flex flex-row items-center mb-2">
                     <!-- people-group-solid.svg -->
                     <svg class="h-5 mr-2 fill-grey-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                         <path
                             d="M184 88C184 118.9 158.9 144 128 144C97.07 144 72 118.9 72 88C72 57.07 97.07 32 128 32C158.9 32 184 57.07 184 88zM208.4 196.3C178.7 222.7 160 261.2 160 304C160 338.3 171.1 369.8 192 394.5V416C192 433.7 177.7 448 160 448H96C78.33 448 64 433.7 64 416V389.2C26.16 371.2 0 332.7 0 288C0 226.1 50.14 176 112 176H144C167.1 176 190.2 183.5 208.4 196.3V196.3zM64 245.7C54.04 256.9 48 271.8 48 288C48 304.2 54.04 319.1 64 330.3V245.7zM448 416V394.5C468 369.8 480 338.3 480 304C480 261.2 461.3 222.7 431.6 196.3C449.8 183.5 472 176 496 176H528C589.9 176 640 226.1 640 288C640 332.7 613.8 371.2 576 389.2V416C576 433.7 561.7 448 544 448H480C462.3 448 448 433.7 448 416zM576 330.3C585.1 319.1 592 304.2 592 288C592 271.8 585.1 256.9 576 245.7V330.3zM568 88C568 118.9 542.9 144 512 144C481.1 144 456 118.9 456 88C456 57.07 481.1 32 512 32C542.9 32 568 57.07 568 88zM256 96C256 60.65 284.7 32 320 32C355.3 32 384 60.65 384 96C384 131.3 355.3 160 320 160C284.7 160 256 131.3 256 96zM448 304C448 348.7 421.8 387.2 384 405.2V448C384 465.7 369.7 480 352 480H288C270.3 480 256 465.7 256 448V405.2C218.2 387.2 192 348.7 192 304C192 242.1 242.1 192 304 192H336C397.9 192 448 242.1 448 304zM256 346.3V261.7C246 272.9 240 287.8 240 304C240 320.2 246 335.1 256 346.3zM384 261.7V346.3C393.1 335 400 320.2 400 304C400 287.8 393.1 272.9 384 261.7z" />
                     </svg>
-                    <p class="text-lg font-bold uppercase font-body text-grey-secondary">1 team of 5</p>
+                    <p class="text-lg font-bold uppercase font-body text-grey-secondary">1 team of 3</p>
                 </div>
-                <div class="flex flex-row">
-                    <!-- graduation-cap.svg -->
+                <!-- <div class="flex flex-row items-center">
                     <svg class="h-5 mr-2 fill-grey-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                        <!--! Font Awesome Free 6.0.0-beta3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2021 Fonticons, Inc. -->
                         <path
                             d="M623.1 136.9l-282.7-101.2c-13.73-4.91-28.7-4.91-42.43 0L16.05 136.9C6.438 140.4 0 149.6 0 160s6.438 19.65 16.05 23.09L76.07 204.6c-11.89 15.8-20.26 34.16-24.55 53.95C40.05 263.4 32 274.8 32 288c0 9.953 4.814 18.49 11.94 24.36l-24.83 149C17.48 471.1 25 480 34.89 480H93.11c9.887 0 17.41-8.879 15.78-18.63l-24.83-149C91.19 306.5 96 297.1 96 288c0-10.29-5.174-19.03-12.72-24.89c4.252-17.76 12.88-33.82 24.94-47.03l190.6 68.23c13.73 4.91 28.7 4.91 42.43 0l282.7-101.2C633.6 179.6 640 170.4 640 160S633.6 140.4 623.1 136.9zM351.1 314.4C341.7 318.1 330.9 320 320 320c-10.92 0-21.69-1.867-32-5.555L142.8 262.5L128 405.3C128 446.6 213.1 480 320 480c105.1 0 192-33.4 192-74.67l-14.78-142.9L351.1 314.4z" />
                     </svg>
                     <p class="text-lg font-bold uppercase font-body text-grey-secondary">Grades 9-12</p>
-                </div>
+                </div> -->
+            </div>
+            <div class="flex flex-row items-center">
+                <svg class="h-5 mr-2 fill-violet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path
+                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                </svg>
+                <p class="text-lg font-bold uppercase font-body text-violet">Flagship Event</p>
             </div>
         </div>
 
-        {% endfor %}
+        <div class="flex flex-col rounded-lg p-7 bg-offwhite justify-self-center">
+            <div class="flex-grow">
+                <div class="flex flex-row items-center w-full mb-5">
+                    <h3 class="uppercase grow font-body">Competitive Gaming</h3>
+                    <a href="{% url 'event' 'hackathon'%}">
+                        <!-- <img class="h-8 grow-0" src="{% static 'assets/icons/circle-arrow-right-solid.png' %}" alt=""> -->
+                    </a>
+                </div>
+                <p class="mb-5 leading-10 font-body">Aenean sollicitudin vestibulum rutrum senectus interdum dictum sit
+                    suscipit a arcu eu pellentesque dui eget class mus elit tristique feugiat pretium malesuada gravida
+                    proin metus fusce bibendum</p>
+            </div>
+            
+            <div class="flex flex-col">
+                <div class="flex flex-row items-center">
+                    <!-- people-group-solid.svg -->
+                    <svg class="h-5 mr-2 fill-grey-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        <path
+                            d="M184 88C184 118.9 158.9 144 128 144C97.07 144 72 118.9 72 88C72 57.07 97.07 32 128 32C158.9 32 184 57.07 184 88zM208.4 196.3C178.7 222.7 160 261.2 160 304C160 338.3 171.1 369.8 192 394.5V416C192 433.7 177.7 448 160 448H96C78.33 448 64 433.7 64 416V389.2C26.16 371.2 0 332.7 0 288C0 226.1 50.14 176 112 176H144C167.1 176 190.2 183.5 208.4 196.3V196.3zM64 245.7C54.04 256.9 48 271.8 48 288C48 304.2 54.04 319.1 64 330.3V245.7zM448 416V394.5C468 369.8 480 338.3 480 304C480 261.2 461.3 222.7 431.6 196.3C449.8 183.5 472 176 496 176H528C589.9 176 640 226.1 640 288C640 332.7 613.8 371.2 576 389.2V416C576 433.7 561.7 448 544 448H480C462.3 448 448 433.7 448 416zM576 330.3C585.1 319.1 592 304.2 592 288C592 271.8 585.1 256.9 576 245.7V330.3zM568 88C568 118.9 542.9 144 512 144C481.1 144 456 118.9 456 88C456 57.07 481.1 32 512 32C542.9 32 568 57.07 568 88zM256 96C256 60.65 284.7 32 320 32C355.3 32 384 60.65 384 96C384 131.3 355.3 160 320 160C284.7 160 256 131.3 256 96zM448 304C448 348.7 421.8 387.2 384 405.2V448C384 465.7 369.7 480 352 480H288C270.3 480 256 465.7 256 448V405.2C218.2 387.2 192 348.7 192 304C192 242.1 242.1 192 304 192H336C397.9 192 448 242.1 448 304zM256 346.3V261.7C246 272.9 240 287.8 240 304C240 320.2 246 335.1 256 346.3zM384 261.7V346.3C393.1 335 400 320.2 400 304C400 287.8 393.1 272.9 384 261.7z" />
+                    </svg>
+                    <p class="text-lg font-bold uppercase font-body text-grey-secondary">1 team of 3</p>
+                </div>
+                <!-- <div class="flex flex-row items-center">
+                    <svg class="h-5 mr-2 fill-grey-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        <path
+                            d="M623.1 136.9l-282.7-101.2c-13.73-4.91-28.7-4.91-42.43 0L16.05 136.9C6.438 140.4 0 149.6 0 160s6.438 19.65 16.05 23.09L76.07 204.6c-11.89 15.8-20.26 34.16-24.55 53.95C40.05 263.4 32 274.8 32 288c0 9.953 4.814 18.49 11.94 24.36l-24.83 149C17.48 471.1 25 480 34.89 480H93.11c9.887 0 17.41-8.879 15.78-18.63l-24.83-149C91.19 306.5 96 297.1 96 288c0-10.29-5.174-19.03-12.72-24.89c4.252-17.76 12.88-33.82 24.94-47.03l190.6 68.23c13.73 4.91 28.7 4.91 42.43 0l282.7-101.2C633.6 179.6 640 170.4 640 160S633.6 140.4 623.1 136.9zM351.1 314.4C341.7 318.1 330.9 320 320 320c-10.92 0-21.69-1.867-32-5.555L142.8 262.5L128 405.3C128 446.6 213.1 480 320 480c105.1 0 192-33.4 192-74.67l-14.78-142.9L351.1 314.4z" />
+                    </svg>
+                    <p class="text-lg font-bold uppercase font-body text-grey-secondary">Grades 9-12</p>
+                </div> -->
+            </div>
+            
+        </div>
+
     </div>
 </section>
 
-<section id="register" class="px-5 py-10 bg-white md:px-20 lg:px-44">
+<section class="px-5 py-16 mx-auto bg-grey md:px-20 lg:px-44">
+    <h2 class="mb-3 text-black uppercase">Middle School Events</h2>
+    <h3 class="mb-10 font-medium">Grades 6-8</h3>
+    <div class="grid md:grid-cols-2 gap-9">
+        <div class="flex flex-col rounded-lg p-7 bg-offwhite justify-self-center">
+            <div class="flex flex-row items-center w-full mb-5">
+                <h3 class="uppercase grow font-body">Middle quiz</h3>
+                <a href="{% url 'event' 'hackathon'%}">
+                    <!-- <img class="h-8 grow-0" src="{% static 'assets/icons/circle-arrow-right-solid.png' %}" alt=""> -->
+                </a>
+            </div>
+            <p class="mb-5 leading-10 font-body">Aenean sollicitudin vestibulum rutrum senectus interdum dictum sit
+                suscipit a arcu eu pellentesque dui eget class mus elit tristique feugiat pretium malesuada gravida
+                proin metus fusce bibendum</p>
+            <div class="flex flex-col">
+                <div class="flex flex-row items-center mb-2">
+                    <!-- people-group-solid.svg -->
+                    <svg class="h-5 mr-2 fill-grey-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        <path
+                            d="M184 88C184 118.9 158.9 144 128 144C97.07 144 72 118.9 72 88C72 57.07 97.07 32 128 32C158.9 32 184 57.07 184 88zM208.4 196.3C178.7 222.7 160 261.2 160 304C160 338.3 171.1 369.8 192 394.5V416C192 433.7 177.7 448 160 448H96C78.33 448 64 433.7 64 416V389.2C26.16 371.2 0 332.7 0 288C0 226.1 50.14 176 112 176H144C167.1 176 190.2 183.5 208.4 196.3V196.3zM64 245.7C54.04 256.9 48 271.8 48 288C48 304.2 54.04 319.1 64 330.3V245.7zM448 416V394.5C468 369.8 480 338.3 480 304C480 261.2 461.3 222.7 431.6 196.3C449.8 183.5 472 176 496 176H528C589.9 176 640 226.1 640 288C640 332.7 613.8 371.2 576 389.2V416C576 433.7 561.7 448 544 448H480C462.3 448 448 433.7 448 416zM576 330.3C585.1 319.1 592 304.2 592 288C592 271.8 585.1 256.9 576 245.7V330.3zM568 88C568 118.9 542.9 144 512 144C481.1 144 456 118.9 456 88C456 57.07 481.1 32 512 32C542.9 32 568 57.07 568 88zM256 96C256 60.65 284.7 32 320 32C355.3 32 384 60.65 384 96C384 131.3 355.3 160 320 160C284.7 160 256 131.3 256 96zM448 304C448 348.7 421.8 387.2 384 405.2V448C384 465.7 369.7 480 352 480H288C270.3 480 256 465.7 256 448V405.2C218.2 387.2 192 348.7 192 304C192 242.1 242.1 192 304 192H336C397.9 192 448 242.1 448 304zM256 346.3V261.7C246 272.9 240 287.8 240 304C240 320.2 246 335.1 256 346.3zM384 261.7V346.3C393.1 335 400 320.2 400 304C400 287.8 393.1 272.9 384 261.7z" />
+                    </svg>
+                    <p class="text-lg font-bold uppercase font-body text-grey-secondary">1 team of 3</p>
+                </div>
+                <!-- <div class="flex flex-row items-center">
+                    <svg class="h-5 mr-2 fill-grey-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        <path
+                            d="M623.1 136.9l-282.7-101.2c-13.73-4.91-28.7-4.91-42.43 0L16.05 136.9C6.438 140.4 0 149.6 0 160s6.438 19.65 16.05 23.09L76.07 204.6c-11.89 15.8-20.26 34.16-24.55 53.95C40.05 263.4 32 274.8 32 288c0 9.953 4.814 18.49 11.94 24.36l-24.83 149C17.48 471.1 25 480 34.89 480H93.11c9.887 0 17.41-8.879 15.78-18.63l-24.83-149C91.19 306.5 96 297.1 96 288c0-10.29-5.174-19.03-12.72-24.89c4.252-17.76 12.88-33.82 24.94-47.03l190.6 68.23c13.73 4.91 28.7 4.91 42.43 0l282.7-101.2C633.6 179.6 640 170.4 640 160S633.6 140.4 623.1 136.9zM351.1 314.4C341.7 318.1 330.9 320 320 320c-10.92 0-21.69-1.867-32-5.555L142.8 262.5L128 405.3C128 446.6 213.1 480 320 480c105.1 0 192-33.4 192-74.67l-14.78-142.9L351.1 314.4z" />
+                    </svg>
+                    <p class="text-lg font-bold uppercase font-body text-grey-secondary">Grades 9-12</p>
+                </div> -->
+            </div>
+            <div class="flex flex-row items-center">
+                <svg class="h-5 mr-2 fill-violet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path
+                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                </svg>
+                <p class="text-lg font-bold uppercase font-body text-violet">Flagship Event</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="px-5 py-16 mx-auto bg-offblack md:px-20 lg:px-44">
+    <h2 class="mb-3 text-white uppercase">Open Events</h2>
+    <h3 class="mb-10 font-medium text-white">Grades 6-12</h3>
+    <div class="grid md:grid-cols-2 gap-9">
+        <div class="flex flex-col rounded-lg p-7 bg-offwhite justify-self-center">
+            <div class="flex flex-row items-center w-full mb-5">
+                <h3 class="uppercase grow font-body">Crypt Hunt</h3>
+                <a href="{% url 'event' 'hackathon'%}">
+                    <!-- <img class="h-8 grow-0" src="{% static 'assets/icons/circle-arrow-right-solid.png' %}" alt=""> -->
+                </a>
+            </div>
+            <p class="mb-5 leading-10 font-body">Aenean sollicitudin vestibulum rutrum senectus interdum dictum sit
+                suscipit a arcu eu pellentesque dui eget class mus elit tristique feugiat pretium malesuada gravida
+                proin metus fusce bibendum</p>
+            <div class="flex flex-col">
+                <div class="flex flex-row items-center mb-2">
+                    <!-- people-group-solid.svg -->
+                    <svg class="h-5 mr-2 fill-grey-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        <path
+                            d="M184 88C184 118.9 158.9 144 128 144C97.07 144 72 118.9 72 88C72 57.07 97.07 32 128 32C158.9 32 184 57.07 184 88zM208.4 196.3C178.7 222.7 160 261.2 160 304C160 338.3 171.1 369.8 192 394.5V416C192 433.7 177.7 448 160 448H96C78.33 448 64 433.7 64 416V389.2C26.16 371.2 0 332.7 0 288C0 226.1 50.14 176 112 176H144C167.1 176 190.2 183.5 208.4 196.3V196.3zM64 245.7C54.04 256.9 48 271.8 48 288C48 304.2 54.04 319.1 64 330.3V245.7zM448 416V394.5C468 369.8 480 338.3 480 304C480 261.2 461.3 222.7 431.6 196.3C449.8 183.5 472 176 496 176H528C589.9 176 640 226.1 640 288C640 332.7 613.8 371.2 576 389.2V416C576 433.7 561.7 448 544 448H480C462.3 448 448 433.7 448 416zM576 330.3C585.1 319.1 592 304.2 592 288C592 271.8 585.1 256.9 576 245.7V330.3zM568 88C568 118.9 542.9 144 512 144C481.1 144 456 118.9 456 88C456 57.07 481.1 32 512 32C542.9 32 568 57.07 568 88zM256 96C256 60.65 284.7 32 320 32C355.3 32 384 60.65 384 96C384 131.3 355.3 160 320 160C284.7 160 256 131.3 256 96zM448 304C448 348.7 421.8 387.2 384 405.2V448C384 465.7 369.7 480 352 480H288C270.3 480 256 465.7 256 448V405.2C218.2 387.2 192 348.7 192 304C192 242.1 242.1 192 304 192H336C397.9 192 448 242.1 448 304zM256 346.3V261.7C246 272.9 240 287.8 240 304C240 320.2 246 335.1 256 346.3zM384 261.7V346.3C393.1 335 400 320.2 400 304C400 287.8 393.1 272.9 384 261.7z" />
+                    </svg>
+                    <p class="text-lg font-bold uppercase font-body text-grey-secondary">1 team of 3</p>
+                </div>
+                <!-- <div class="flex flex-row items-center">
+                    <svg class="h-5 mr-2 fill-grey-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        <path
+                            d="M623.1 136.9l-282.7-101.2c-13.73-4.91-28.7-4.91-42.43 0L16.05 136.9C6.438 140.4 0 149.6 0 160s6.438 19.65 16.05 23.09L76.07 204.6c-11.89 15.8-20.26 34.16-24.55 53.95C40.05 263.4 32 274.8 32 288c0 9.953 4.814 18.49 11.94 24.36l-24.83 149C17.48 471.1 25 480 34.89 480H93.11c9.887 0 17.41-8.879 15.78-18.63l-24.83-149C91.19 306.5 96 297.1 96 288c0-10.29-5.174-19.03-12.72-24.89c4.252-17.76 12.88-33.82 24.94-47.03l190.6 68.23c13.73 4.91 28.7 4.91 42.43 0l282.7-101.2C633.6 179.6 640 170.4 640 160S633.6 140.4 623.1 136.9zM351.1 314.4C341.7 318.1 330.9 320 320 320c-10.92 0-21.69-1.867-32-5.555L142.8 262.5L128 405.3C128 446.6 213.1 480 320 480c105.1 0 192-33.4 192-74.67l-14.78-142.9L351.1 314.4z" />
+                    </svg>
+                    <p class="text-lg font-bold uppercase font-body text-grey-secondary">Grades 9-12</p>
+                </div> -->
+            </div>
+            <div class="flex flex-row items-center">
+                <svg class="h-5 mr-2 fill-violet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path
+                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                </svg>
+                <p class="text-lg font-bold uppercase font-body text-violet">Flagship Event</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="px-5 py-16 mx-auto bg-white md:px-20 lg:px-44">
+    <h2 class="mb-3 text-black uppercase">Junior Events</h2>
+    <h3 class="mb-10 font-medium text-black">Grade 5</h3>
+    <div class="grid md:grid-cols-2 gap-9">
+        <div class="flex flex-col rounded-lg p-7 bg-offwhite justify-self-center">
+            <div class="flex flex-row items-center w-full mb-5">
+                <h3 class="uppercase grow font-body">Junior Quiz</h3>
+                <a href="{% url 'event' 'hackathon'%}">
+                    <!-- <img class="h-8 grow-0" src="{% static 'assets/icons/circle-arrow-right-solid.png' %}" alt=""> -->
+                </a>
+            </div>
+            <p class="mb-5 leading-10 font-body">Aenean sollicitudin vestibulum rutrum senectus interdum dictum sit
+                suscipit a arcu eu pellentesque dui eget class mus elit tristique feugiat pretium malesuada gravida
+                proin metus fusce bibendum</p>
+            <div class="flex flex-col">
+                <div class="flex flex-row items-center mb-2">
+                    <!-- people-group-solid.svg -->
+                    <svg class="h-5 mr-2 fill-grey-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        <path
+                            d="M184 88C184 118.9 158.9 144 128 144C97.07 144 72 118.9 72 88C72 57.07 97.07 32 128 32C158.9 32 184 57.07 184 88zM208.4 196.3C178.7 222.7 160 261.2 160 304C160 338.3 171.1 369.8 192 394.5V416C192 433.7 177.7 448 160 448H96C78.33 448 64 433.7 64 416V389.2C26.16 371.2 0 332.7 0 288C0 226.1 50.14 176 112 176H144C167.1 176 190.2 183.5 208.4 196.3V196.3zM64 245.7C54.04 256.9 48 271.8 48 288C48 304.2 54.04 319.1 64 330.3V245.7zM448 416V394.5C468 369.8 480 338.3 480 304C480 261.2 461.3 222.7 431.6 196.3C449.8 183.5 472 176 496 176H528C589.9 176 640 226.1 640 288C640 332.7 613.8 371.2 576 389.2V416C576 433.7 561.7 448 544 448H480C462.3 448 448 433.7 448 416zM576 330.3C585.1 319.1 592 304.2 592 288C592 271.8 585.1 256.9 576 245.7V330.3zM568 88C568 118.9 542.9 144 512 144C481.1 144 456 118.9 456 88C456 57.07 481.1 32 512 32C542.9 32 568 57.07 568 88zM256 96C256 60.65 284.7 32 320 32C355.3 32 384 60.65 384 96C384 131.3 355.3 160 320 160C284.7 160 256 131.3 256 96zM448 304C448 348.7 421.8 387.2 384 405.2V448C384 465.7 369.7 480 352 480H288C270.3 480 256 465.7 256 448V405.2C218.2 387.2 192 348.7 192 304C192 242.1 242.1 192 304 192H336C397.9 192 448 242.1 448 304zM256 346.3V261.7C246 272.9 240 287.8 240 304C240 320.2 246 335.1 256 346.3zM384 261.7V346.3C393.1 335 400 320.2 400 304C400 287.8 393.1 272.9 384 261.7z" />
+                    </svg>
+                    <p class="text-lg font-bold uppercase font-body text-grey-secondary">1 team of 3</p>
+                </div>
+                <!-- <div class="flex flex-row items-center">
+                    <svg class="h-5 mr-2 fill-grey-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        <path
+                            d="M623.1 136.9l-282.7-101.2c-13.73-4.91-28.7-4.91-42.43 0L16.05 136.9C6.438 140.4 0 149.6 0 160s6.438 19.65 16.05 23.09L76.07 204.6c-11.89 15.8-20.26 34.16-24.55 53.95C40.05 263.4 32 274.8 32 288c0 9.953 4.814 18.49 11.94 24.36l-24.83 149C17.48 471.1 25 480 34.89 480H93.11c9.887 0 17.41-8.879 15.78-18.63l-24.83-149C91.19 306.5 96 297.1 96 288c0-10.29-5.174-19.03-12.72-24.89c4.252-17.76 12.88-33.82 24.94-47.03l190.6 68.23c13.73 4.91 28.7 4.91 42.43 0l282.7-101.2C633.6 179.6 640 170.4 640 160S633.6 140.4 623.1 136.9zM351.1 314.4C341.7 318.1 330.9 320 320 320c-10.92 0-21.69-1.867-32-5.555L142.8 262.5L128 405.3C128 446.6 213.1 480 320 480c105.1 0 192-33.4 192-74.67l-14.78-142.9L351.1 314.4z" />
+                    </svg>
+                    <p class="text-lg font-bold uppercase font-body text-grey-secondary">Grades 9-12</p>
+                </div> -->
+            </div>
+            <div class="flex flex-row items-center">
+                <svg class="h-5 mr-2 fill-violet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path
+                        d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
+                </svg>
+                <p class="text-lg font-bold uppercase font-body text-violet">Flagship Event</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="register" class="px-5 py-10 bg-grey md:px-20 lg:px-44">
     <h1 class="mb-4">Register</h1>
     <p class="text-2xl mb-7">The last date for registration for all events is the XX of September</p>
     <button href="" class="p-4 bg-black rounded-lg">
