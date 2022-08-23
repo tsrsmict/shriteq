@@ -1,3 +1,7 @@
+:root {
+  --svg-offset: calc(-200vh + 20vw);
+}
+
 .hero {
   height: calc(100vh - 82px);
   z-index: -1;
@@ -5,12 +9,13 @@
 
 .hero-bg-container {
     z-index: -10; 
+    margin-bottom: -100vh;
 }
 
 .hero-bg-container svg {
 
-    height: 250vh;
-    top: -165vh;
+    height: 130vw;
+    top: var(--svg-offset);
     position: absolute;
     /* left: 27.5%; */
     transform: rotate(90deg);
@@ -69,8 +74,4 @@
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-}
-
-.card-wrapper {
-  @apply flex flex-col rounded-lg p-7 bg-offwhite justify-self-center cssanimation sequence fadeInBottom;
 }
