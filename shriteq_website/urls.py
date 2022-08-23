@@ -27,3 +27,6 @@ urlpatterns = [
     # path('crypthunt/', 'crypthunt.site.urls'),
     path("__reload__/", include("django_browser_reload.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += [path('404', TemplateView.as_view(template_name='404.html'))]
