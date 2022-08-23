@@ -786,6 +786,10 @@ h3 {
   position: static;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -904,6 +908,10 @@ h3 {
   height: 1.75rem;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -990,6 +998,14 @@ h3 {
 
 .justify-self-center {
   justify-self: center;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-visible {
+  overflow: visible;
 }
 
 .rounded-lg {
@@ -1222,6 +1238,10 @@ h3 {
 }
 
 @media (min-width: 768px) {
+  .md\:static {
+    position: static;
+  }
+
   .md\:bottom-3 {
     bottom: 0.75rem;
   }
@@ -1353,11 +1373,31 @@ h3 {
   .xl\:leading-normal {
     line-height: 1.5;
   }
+
+  .xl\:leading-relaxed {
+    line-height: 1.625;
+  }
+
+  .xl\:leading-snug {
+    line-height: 1.375;
+  }
+
+  .xl\:leading-loose {
+    line-height: 2;
+  }
 }
 
 @media (min-width: 1536px) {
   .\32xl\:text-8xl {
     font-size: 6rem;
     line-height: 1;
+  }
+
+  .\32xl\:leading-relaxed {
+    line-height: 1.625;
+  }
+
+  .\32xl\:leading-normal {
+    line-height: 1.5;
   }
 }
