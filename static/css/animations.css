@@ -1,0 +1,39 @@
+.animation-duration-half {
+  animation-duration: 0.5s !important;
+}
+
+.animation-duration-three-fourths {
+  animation-duration: 0.75s !important;
+}
+
+.animation-duration-1-half {
+  animation-duration: 0.1.5 !important;
+}
+
+.animation-duration-double {
+  animation-duration: 1 !important;
+}
+
+.animation-delay-half {
+  animation-delay: 0.5s !important;
+}
+
+.animation-delay-1 {
+  animation-delay: 1s;
+}
+
+.animation-delay-1-half {
+  animation-delay: 1.5s;
+}
+
+.animation-delay-2 {
+  animation-delay: 2s;
+}
+
+.animation-delay-2-half {
+  animation-delay: 2.5s;
+}
+
+.animation-delay-3 {
+  animation-delay: 3s;
+}
