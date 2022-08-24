@@ -868,6 +868,22 @@ h3 {
   margin-left: 0.5rem;
 }
 
+.-mr-5 {
+  margin-right: -1.25rem;
+}
+
+.-mb-5 {
+  margin-bottom: -1.25rem;
+}
+
+.-mb-8 {
+  margin-bottom: -2rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -884,16 +900,16 @@ h3 {
   display: none;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-12 {
   height: 3rem;
 }
 
 .h-6 {
   height: 1.5rem;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .h-full {
@@ -906,10 +922,6 @@ h3 {
 
 .h-9 {
   height: 2.25rem;
-}
-
-.h-8 {
-  height: 2rem;
 }
 
 .h-7 {
@@ -940,10 +952,6 @@ h3 {
   flex-grow: 1;
 }
 
-.grow-0 {
-  flex-grow: 0;
-}
-
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -954,6 +962,10 @@ h3 {
 
 .flex-col {
   flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-center {
@@ -990,6 +1002,10 @@ h3 {
 
 .gap-1 {
   gap: 0.25rem;
+}
+
+.gap-16 {
+  gap: 4rem;
 }
 
 .space-x-7 > :not([hidden]) ~ :not([hidden]) {
@@ -1126,6 +1142,11 @@ h3 {
   padding-bottom: 0.25rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1140,7 +1161,7 @@ h3 {
 
 .text-15xl {
   font-size: 213px;
-  line-height: 320;
+  line-height: 320px;
 }
 
 .text-xl {
@@ -1178,10 +1199,6 @@ h3 {
   line-height: 1.25rem;
 }
 
-.font-medium {
-  font-weight: 500;
-}
-
 .font-semibold {
   font-weight: 600;
 }
@@ -1192,6 +1209,14 @@ h3 {
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-light {
+  font-weight: 300;
 }
 
 .uppercase {

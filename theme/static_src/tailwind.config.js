@@ -60,7 +60,7 @@ module.exports = {
       },
       fontFamily: {},
       fontSize: {
-        '15xl': ['213px', '320'],
+        '15xl': ['213px', '320px'],
       },
     },
   },
