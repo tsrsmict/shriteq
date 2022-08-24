@@ -44,6 +44,9 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 if not DEBUG:
