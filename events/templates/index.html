@@ -86,21 +86,22 @@
     <h1 class="mb-4 text-center text-black">Our Events</h1>
     <h3 class="mb-6 font-medium text-center md:mb-9 xl:mb-12">More details coming soon!</h3>
     <div class="grid md:grid-cols-4 gap-11 cssanimation">
+
         <div class="flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-offwhite">
-            <h3 class="uppercase">Senior</h3>
-            <p class="text-xl">Grades 9-12</p>
+            <h3 class="uppercase">Junior</h3>
+            <p class="text-xl">Grade 5</p>
         </div>
         <div class="flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-offwhite">
             <h3 class="uppercase">Middle</h3>
             <p class="text-xl">Grades 6-8</p>
         </div>
         <div class="flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-offwhite">
-            <h3 class="uppercase">Open</h3>
-            <p class="text-xl">Grades 6-12</p>
+            <h3 class="uppercase">Senior</h3>
+            <p class="text-xl">Grades 9-12</p>
         </div>
         <div class="flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-offwhite">
-            <h3 class="uppercase">Junior</h3>
-            <p class="text-xl">Grade 5</p>
+            <h3 class="uppercase">Open</h3>
+            <p class="text-xl">Grades 6-12</p>
         </div>
     </div>
 </section>
@@ -113,7 +114,6 @@
         {% component "event" event_name="Quiz" event_elig="junior middle senior" event_participation_reqs="1 team of 3" event_short_desc="ShriTeq's classic flagship event, the quiz, returns! Junior, middle and senior teams will each contest to answer tech-based questions in a variety of formats. Teams will be shortlisted for semi-finals after a preliminary round." %}
         {% component "event" event_name="Hackathon" event_elig="senior" event_participation_reqs="1 team of 5" event_short_desc="Ideation, creation, and execution are the essence of the ShriTeq Hackathon. Create an original product based on a theme and present it in front of a panel of judges after qualifying for the finals through online preliminaries." %}
         {% component "event" event_name="Bot Stock Trading" event_elig="senior" event_participation_reqs="1 team of 3" event_short_desc="Make it rain! Build an ML-powered algorithm to make stock market from real data. Risking it all or playing it safe, it's up to your model to decide. The team whose model generates the highest profit at the end of its run will be declared the winner." %}
-        {% component "event" event_name="Crypt Hunt" event_elig="open" event_participation_reqs="Unlimited" event_short_desc="Solve cryptic riddles and chase rabbit holes as you work to solve a series of questions. Schools will work collaboratively to solve questions together on the online platform for the event." %}
 
     </div>
 </section>
@@ -121,6 +121,7 @@
 <section class="px-5 py-16 mx-auto bg-offblack md:px-20 lg:px-44">
     <h2 class="mb-10 text-white uppercase">Other Events</h2>
     <div class="grid md:grid-cols-2 2xl:grid-cols-3 gap-9">
+        {% component "event" event_name="Crypt Hunt" event_elig="open" event_participation_reqs="Unlimited" event_short_desc="Solve cryptic riddles and chase rabbit holes as you work to solve a series of questions. Schools will work collaboratively to solve questions together on the online platform for the event." %}
         {% component "event" event_name="Competitive Gaming" event_elig="middle senior" event_participation_reqs="1 team of 3" event_short_desc="FPS pro or a casual gamer? This event has something for everyone to enjoy! Qualify for the finals by going through online preliminaries, and get the chance to stream your game in front of a live audience! The game(s) for the finals and preliminaries will be revealed two days before the date of the event."%}
         {% component "event" event_name="Photoshop Battles" event_elig="senior" event_participation_reqs="1 team of 2" event_short_desc="Unleash your creativity on eccentric images! Transform a starter image based on an open-ended textual prompt using your photo editing skills. Participants will be judged based on creativity, technical accomplishment, and adherence to the prompt."%}
         {% component "event" event_name="Ad-Making" event_elig="senior" event_participation_reqs="1 team of 4" event_short_desc="Gravida neque eget turpis amet lacus enim ornare sagittis justo montes platea donec in eleifend vestibulum dolor ut blandit interdum porttitor elit duis ullamcorper scelerisque libero accumsan taciti urna eu integer tristique ligula lobortis quisque "%}
