@@ -1,16 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
+{% load component_tags %}
 
 {% block title %} {% endblock %}
 
-/* It's adding a background image to the hero section. */
 {% block css_imports %}
 <!-- <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet"> -->
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
 <link rel="stylesheet" href="{% static 'css/animations.css' %}">
 {% endblock %}
 
-{% load static %}
 {% block content %}
 
 <section class="z-10 hero">
@@ -111,17 +110,16 @@
 
     <h2 class="mb-10 text-black uppercase">Flagship Events</h2>
     <div class="grid md:grid-cols-2 2xl:grid-cols-3 gap-9">
+        {% component "event" event_name="Quiz" event_elig="junior middle senior" event_short_desc="ShriTeq's classic flagship event, the quiz, returns! Junior, middle and senior teams will each contest to answer a variety of tech-based questions. Teams will be shortlisted for semi-finals after a preliminary round." event_participation_reqs="1 team of 3" %}
 
         <div
             class="flex flex-col rounded-lg p-7 bg-offwhite justify-self-center cssanimation sequence animation-delay-2 fadeInLeft ">
             <div class="flex-grow">
                 <div class="flex flex-row items-center w-full mb-5">
-                    <h3 class="uppercase grow font-body">Quiz</h3>
+                    <h3 class="uppercase grow font-body"></h3>
 
                 </div>
-                <p class="mb-5 leading-10 font-body">ShriTeq’s classic flagship event, the quiz, returns! Open to
-                    junior, middle, and senior teams, compete to answer a variety of tech-based questions. Teams will be
-                    shortlisted for semi-finals after a preliminary round.</p>
+                <p class="mb-5 leading-10 font-body"></p>
             </div>
 
             <div class="flex flex-row">
