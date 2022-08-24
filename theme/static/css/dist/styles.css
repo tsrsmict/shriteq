@@ -1085,6 +1085,10 @@ h3 {
   fill: #fff;
 }
 
+.fill-offwhite {
+  fill: #F2F2F2;
+}
+
 .stroke-black {
   stroke: #000;
 }
@@ -1282,6 +1286,11 @@ h3 {
 .text-offblack {
   --tw-text-opacity: 1;
   color: rgb(38 38 38 / var(--tw-text-opacity));
+}
+
+.text-offwhite {
+  --tw-text-opacity: 1;
+  color: rgb(242 242 242 / var(--tw-text-opacity));
 }
 
 .underline {
