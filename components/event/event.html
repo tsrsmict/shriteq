@@ -39,6 +39,11 @@
                 <p class="text-sm text-white">Senior</p>
             </div>
             {% endif %}
+            {% if 'open' in event_elig|lower %}
+            <div class="px-3 py-1 rounded-lg bg-offblack">
+                <p class="text-sm text-white">Open</p>
+            </div>
+            {% endif %}
         </div>
 
     </div>
