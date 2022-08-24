@@ -21,8 +21,8 @@
     transform: rotate(90deg);
     z-index: -10;
 
--webkit-animation: rotation 10s infinite linear;
-  animation: rotation 10s infinite linear;
+-webkit-animation: rotation 17.5s infinite linear;
+  animation: rotation 17.5s infinite linear;
 }
 
 @keyframes rotation {
