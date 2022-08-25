@@ -6,7 +6,6 @@
 
 {% block css_imports %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
-
 {% endblock %}
 
 {% block content %}
@@ -70,21 +69,20 @@
 
 <section id="declaration"
     class="relative flex flex-col justify-center h-full min-h-screen px-5 leading-normal gap-9 md:px-20 lg:px-44 bg-offblack font-display md:gap-12">
-
     <p
-        class="text-5xl font-semibold leading-relaxed animation-delay-1 cssanimation sequence fadeInBottom md:leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-bold md:text-7xl lg:text-7xl 2xl:text-8xl text-grey-tertiary">
+        class="text-5xl font-semibold leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-bold md:text-7xl lg:text-7xl 2xl:text-8xl text-grey-tertiary">
         North India's <span class="text-violet">premier</span> tech event is back.
     </p>
     <p
-        class="text-5xl font-bold leading-relaxed text-white cssanimation sequence animation-delay-2 fadeInBottom md:leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-extrabold md:text-7xl lg:text-7xl 2xl:text-8xl">
+        class="text-5xl font-bold leading-relaxed text-white md:leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-extrabold md:text-7xl lg:text-7xl 2xl:text-8xl">
         Better than ever before.
     </p>
 </section>
 
-<section id="events" class="relative px-5 py-16 mx-auto bg-grey md:px-20 lg:px-44 ">
+<section id="events" class="relative px-5 py-16 mx-auto bg-grey md:px-20 lg:px-44">
     <h1 class="mb-4 text-center text-black">Our Events</h1>
     <h3 class="mb-6 font-medium text-center md:mb-9 xl:mb-12">More details coming soon!</h3>
-    <div class="grid md:grid-cols-4 gap-11 cssanimation">
+    <div class="grid md:grid-cols-4 gap-11">
 
         <div class="flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-offwhite">
             <h3 class="uppercase">Junior</h3>
@@ -153,9 +151,4 @@
         </div>
     </button>
 </section>
-
-
-
-
-
 {% endblock content%}
