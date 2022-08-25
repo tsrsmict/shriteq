@@ -65,15 +65,15 @@
 }
 
 .animation-duration-1-half {
-  animation-duration: 1.5 !important;
+  animation-duration: 1.5s !important;
 }
 
 .animation-duration-double {
-  animation-duration: 2 !important;
+  animation-duration: 2s !important;
 }
 
 .animation-duration-3 {
-  animation-duration: 2 !important;
+  animation-duration: 3s !important;
 }
 
 .animation-delay-half {
