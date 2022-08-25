@@ -6,6 +6,7 @@
 
 {% block css_imports %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/animations.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -69,12 +70,12 @@
 
 <section id="declaration"
     class="relative flex flex-col justify-center h-full min-h-screen px-5 leading-normal gap-9 md:px-20 lg:px-44 bg-gray-900 font-display md:gap-12">
-    <p
-        class="text-5xl font-semibold leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-bold md:text-7xl lg:text-7xl 2xl:text-8xl text-grey-tertiary">
+    <p data-inviewport="fade-in-bottom"
+        class="cssanimation animation-duration-1-half  text-5xl font-semibold leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-bold md:text-7xl lg:text-7xl 2xl:text-8xl text-grey-tertiary">
         North India's <span class="text-violet">premier</span> tech event is back.
     </p>
-    <p
-        class="text-5xl font-bold leading-relaxed text-white md:leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-extrabold md:text-7xl lg:text-7xl 2xl:text-8xl">
+    <p data-inviewport="fade-in-bottom"
+        class="cssanimation animation-delay-half animation-duration-1-half text-5xl font-bold leading-relaxed text-white md:leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-extrabold md:text-7xl lg:text-7xl 2xl:text-8xl">
         Better than ever before.
     </p>
 </section>
@@ -103,9 +104,7 @@
     </div>
 </section>
 
-<section id="events" class="relative px-5 py-16 mx-auto bg-white md:px-20 lg:px-44 ">
-
-
+<section class="relative px-5 py-16 mx-auto bg-white md:px-20 lg:px-44 ">
     <h2 class="mb-10 text-black uppercase">Flagship Events</h2>
     <div class="grid lg:grid-cols-2 2xl:grid-cols-3 gap-9">
         {% component "event" style="light" event_name="Quiz" event_elig="junior middle senior" event_participation_reqs="1 team of 3" event_short_desc="ShriTeq's classic flagship event, the quiz, returns! Junior, middle and senior teams will each contest to answer tech-based questions in a variety of formats. Teams will be shortlisted for semi-finals after an offline preliminary round." %}
@@ -153,5 +152,26 @@
 {% endblock content%}
 
 {% block script %}
+
+<script>
+    function callbackFunc(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.toggle("is-inViewport", entry.isIntersecting);
+            }
+        });
+    }
+
+    let options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3
+    };
+
+    let observer = new IntersectionObserver(callbackFunc, options);
+    document.querySelectorAll('.cssanimation').forEach(el => observer.observe(el));
+
+
+</script>
 
 {% endblock %}
