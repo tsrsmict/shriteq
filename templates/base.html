@@ -55,9 +55,9 @@
 						<div class="items-center hidden space-x-5 font-display md:flex">
 							{% if request.get_full_path == '/' %}
 							<a href="{% url 'index'%}#events"
-								class="px-2 py-4 text-xl font-semibold text-gray-300 transition duration-300 hover:text-white link link-underline link-underline-white">Events</a>
+								class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black lg:text-gray-300 lg:hover:text-white link link-underline link-underline-black lg:link-underline-white">Events</a>
 							<a href="{% url 'index'%}#register"
-								class="px-2 py-4 text-xl font-semibold text-gray-300 transition duration-300 hover:text-white link link-underline link-underline-white">Register</a>
+							class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black lg:text-gray-300 lg:hover:text-white link link-underline link-underline-black lg:link-underline-white">Register</a>
 							{% else %}
 							<a href="{% url 'index'%}#events"
 								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Events</a>
