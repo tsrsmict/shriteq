@@ -1,9 +1,40 @@
+/* base class */
+
 .cssanimation{
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   opacity: 0;
+}
+
+
+
+/* animations */
+
+
+[data-inviewport="fade-in"].is-inViewport { animation-name: fadeIn }
+@keyframes fadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+[data-inviewport="fade-in-left"].is-inViewport { animation-name: fadeInLeft }
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to { opacity: 1 }
+}
+
+[data-inviewport="fade-in-right"].is-inViewport { animation-name: fadeInRight }
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to { opacity: 1 }
 }
 
 [data-inviewport="fade-in-bottom"].is-inViewport { animation-name: fadeInBottom }
@@ -15,6 +46,16 @@
     to { opacity: 1 }
 }
 
+[data-inviewport="fade-in-top"].is-inViewport { animation-name: fadeInTop }
+@keyframes fadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to { opacity: 1 }
+}
+
+/* utilities */
 .animation-duration-half {
   animation-duration: 0.5s !important;
 }
@@ -28,7 +69,11 @@
 }
 
 .animation-duration-double {
-  animation-duration: 1 !important;
+  animation-duration: 2 !important;
+}
+
+.animation-duration-3 {
+  animation-duration: 2 !important;
 }
 
 .animation-delay-half {
