@@ -3,24 +3,36 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply font-body;
-    }
-    h1 {
-        @apply text-5xl md:text-6xl;
-        @apply font-extrabold;
-        @apply font-display;
-    }
+  body {
+    @apply font-body;
+  }
+  h1 {
+    @apply text-5xl md:text-6xl;
+    @apply font-extrabold;
+    @apply font-display;
+  }
 
-    h2 {
-        @apply text-3xl md:text-4xl lg:text-5xl;
-        @apply font-bold;
-        @apply font-display;
-    }
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+    @apply font-bold;
+    @apply font-display;
+  }
 
-    h3 {
-        @apply text-2xl md:text-3xl;
-        @apply font-semibold;
-        @apply font-body;
-    }
+  h3 {
+    @apply text-2xl md:text-3xl;
+    @apply font-semibold;
+    @apply font-body;
+  }
+}
+
+@layer utilities {
+  .link-underline-white {
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(#fff, #fff);
+  }
+
+  .link-underline-black {
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(#1f2937, #1f2937);
+  }
 }
