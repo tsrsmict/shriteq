@@ -68,7 +68,7 @@
 </div>
 
 <section id="declaration"
-    class="relative flex flex-col justify-center h-full min-h-screen px-5 leading-normal gap-9 md:px-20 lg:px-44 bg-offblack font-display md:gap-12">
+    class="relative flex flex-col justify-center h-full min-h-screen px-5 leading-normal gap-9 md:px-20 lg:px-44 bg-gray-900 font-display md:gap-12">
     <p
         class="text-5xl font-semibold leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-bold md:text-7xl lg:text-7xl 2xl:text-8xl text-grey-tertiary">
         North India's <span class="text-violet">premier</span> tech event is back.
@@ -82,21 +82,21 @@
 <section id="events" class="relative px-5 py-16 mx-auto bg-grey md:px-20 lg:px-44">
     <h1 class="mb-4 text-center text-black">Our Events</h1>
     <h3 class="mb-6 font-medium text-center md:mb-9 xl:mb-12">More details coming soon!</h3>
-    <div class="grid md:grid-cols-4 gap-11">
+    <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-9">
 
-        <div class="flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-offwhite">
+        <div class="shadow-lg flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-offwhite">
             <h3 class="uppercase">Junior</h3>
             <p class="text-xl">Grade 5</p>
         </div>
-        <div class="flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-offwhite">
+        <div class="shadow-lg flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-offwhite">
             <h3 class="uppercase">Middle</h3>
             <p class="text-xl">Grades 6-8</p>
         </div>
-        <div class="flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-offwhite">
+        <div class="shadow-lg flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-offwhite">
             <h3 class="uppercase">Senior</h3>
             <p class="text-xl">Grades 9-12</p>
         </div>
-        <div class="flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-offwhite">
+        <div class="shadow-lg flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-offwhite">
             <h3 class="uppercase">Open</h3>
             <p class="text-xl">Grades 6-12</p>
         </div>
@@ -107,25 +107,24 @@
 
 
     <h2 class="mb-10 text-black uppercase">Flagship Events</h2>
-    <div class="grid md:grid-cols-2 2xl:grid-cols-3 gap-9">
-        {% component "event" event_name="Quiz" event_elig="junior middle senior" event_participation_reqs="1 team of 3" event_short_desc="ShriTeq's classic flagship event, the quiz, returns! Junior, middle and senior teams will each contest to answer tech-based questions in a variety of formats. Teams will be shortlisted for semi-finals after an offline preliminary round." %}
-        {% component "event" event_name="Hackathon" event_elig="senior" event_participation_reqs="1 team of 5" event_short_desc="Ideation, creation, and execution are the essence of the ShriTeq Hackathon. Create an original product based on a theme and present it in front of a panel of judges after qualifying for the finals through online preliminaries." %}
-        {% component "event" event_name="Bot Stock Trading" event_elig="senior" event_participation_reqs="1 team of 3" event_short_desc="Make it rain! Submit an ML-powered algorithm to make stock market from real data. Risking it all or playing it safe , it's up to your model to decide. The team whose algorithm generates the highest profit when tested against real-world data will be declared the winner." %}
+    <div class="grid lg:grid-cols-2 2xl:grid-cols-3 gap-9">
+        {% component "event" style="light" event_name="Quiz" event_elig="junior middle senior" event_participation_reqs="1 team of 3" event_short_desc="ShriTeq's classic flagship event, the quiz, returns! Junior, middle and senior teams will each contest to answer tech-based questions in a variety of formats. Teams will be shortlisted for semi-finals after an offline preliminary round." %}
+        {% component "event" style="light" event_name="Hackathon" event_elig="senior" event_participation_reqs="1 team of 5" event_short_desc="Ideation, creation, and execution are the essence of the ShriTeq Hackathon. Create an original product based on a theme and present it in front of a panel of judges after qualifying for the finals through online preliminaries." %}
+        {% component "event" style="light" event_name="Bot Stock Trading" event_elig="senior" event_participation_reqs="1 team of 3" event_short_desc="Make it rain! Submit an ML-powered algorithm to make stock market from real data. Risking it all or playing it safe , it's up to your model to decide. The team whose algorithm generates the highest profit when tested against real-world data will be declared the winner." %}
 
     </div>
 </section>
 
-<section class="px-5 py-16 mx-auto bg-offblack md:px-20 lg:px-44">
+<section class="px-5 py-16 mx-auto bg-gray-900 md:px-20 lg:px-44">
     <h2 class="mb-10 text-white uppercase">Other Events</h2>
-    <div class="grid md:grid-cols-2 2xl:grid-cols-3 gap-9">
-        {% component "event" event_name="Crypt Hunt" event_elig="open" event_participation_reqs="Unlimited" event_short_desc="Solve cryptic riddles and chase rabbit holes as you work to solve a series of questions. Schools will work collaboratively to solve questions together on the online platform for the event." %}
-        {% component "event" event_name="Competitive Gaming" event_elig="middle senior" event_participation_reqs="1 team of 3" event_short_desc="FPS pro or a casual gamer? This event has something for everyone to enjoy! Qualify for the finals by going through online preliminaries, and get the chance to stream your game in front of a live audience! The game(s) for the finals and preliminaries will be revealed two days before the date of the event."%}
-        {% component "event" event_name="Photoshop Battles" event_elig="senior" event_participation_reqs="1 team of 2" event_short_desc="Unleash your creativity on eccentric images! Transform a starter image based on an open-ended textual prompt using your photo editing skills. Participants will be judged based on creativity, technical accomplishment, and adherence to the prompt in their online submission."%}
-        {% component "event" event_name="Ad-Making" event_elig="senior" event_participation_reqs="1 team of 4" event_short_desc="Gravida neque eget turpis amet lacus enim ornare sagittis justo montes platea donec in eleifend vestibulum dolor ut blandit interdum porttitor elit duis ullamcorper scelerisque libero accumsan taciti urna eu integer tristique ligula lobortis quisque "%}
-        {% component "event" event_name="Competitive Programming" event_elig="senior" event_participation_reqs="1 team of 2" event_short_desc="Push your coding abilities to the limits as your team attempts to solve as many programming questions as possible in a one-hour marathon. A preliminary round will be conducted online and the top teams will be invited to TSRS Moulsari for finals."%}
-        {% component "event" event_name="Web Design" event_elig="middle" event_participation_reqs="1 team of 2" event_short_desc="Rhoncus torquent nulla vulputate hendrerit mus est commodo nisl ultrices viverra egestas orci hac tortor habitant duis sed consequat integer nostra accumsan massa consectetur nunc congue." %}
-        {% component "event" event_name="Pac-Man" event_elig="open" event_participation_reqs="Unlimited" event_short_desc="Gobble your way up the ranks in this free-for-all online retro gaming event! Points be awarded based on the school of the participants at the top of the leaderboard a the end of the event." %}
-
+    <div class="grid lg:grid-cols-2 2xl:grid-cols-3 gap-9">
+        {% component "event" style="dark" event_name="Crypt Hunt" event_elig="open" event_participation_reqs="Unlimited" event_short_desc="Solve cryptic riddles and chase rabbit holes as you work to solve a series of questions. Schools will work collaboratively to solve questions together on the online platform for the event." %}
+        {% component "event" style="dark" event_name="Competitive Gaming" event_elig="middle senior" event_participation_reqs="1 team of 3" event_short_desc="FPS pro or a casual gamer? This event has something for everyone to enjoy! Qualify for the finals by going through online preliminaries, and get the chance to stream your game in front of a live audience! The game(s) for the finals and preliminaries will be revealed two days before the date of the event."%}
+        {% component "event" style="dark" event_name="Photoshop Battles" event_elig="senior" event_participation_reqs="1 team of 2" event_short_desc="Unleash your creativity on eccentric images! Transform a starter image based on an open-ended textual prompt using your photo editing skills. Participants will be judged based on creativity, technical accomplishment, and adherence to the prompt in their online submission."%}
+        {% component "event" style="dark" event_name="Ad-Making" event_elig="senior" event_participation_reqs="1 team of 4" event_short_desc="Gravida neque eget turpis amet lacus enim ornare sagittis justo montes platea donec in eleifend vestibulum dolor ut blandit interdum porttitor elit duis ullamcorper scelerisque libero accumsan taciti urna eu integer tristique ligula lobortis quisque "%}
+        {% component "event" style="dark" event_name="Competitive Programming" event_elig="senior" event_participation_reqs="1 team of 2" event_short_desc="Push your coding abilities to the limits as your team attempts to solve as many programming questions as possible in a one-hour marathon. A preliminary round will be conducted online and the top teams will be invited to TSRS Moulsari for finals."%}
+        {% component "event" style="dark" event_name="Web Design" event_elig="middle" event_participation_reqs="1 team of 2" event_short_desc="Rhoncus torquent nulla vulputate hendrerit mus est commodo nisl ultrices viverra egestas orci hac tortor habitant duis sed consequat integer nostra accumsan massa consectetur nunc congue." %}
+        {% component "event" style="dark" event_name="Pac-Man" event_elig="open" event_participation_reqs="Unlimited" event_short_desc="Gobble your way up the ranks in this free-for-all online retro gaming event! Points be awarded based on the school of the participants at the top of the leaderboard a the end of the event." %}
     </div>
 </section>
 
