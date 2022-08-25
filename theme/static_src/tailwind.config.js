@@ -48,7 +48,23 @@ module.exports = {
       display: ["Montserrat", "sans-serif"],
       body: ["'Poppins'", "sans-serif"],
     },
-
+    theme: {
+      fontSize: {
+        'xs': '0.75rem',
+        'sm': '0.875rem',
+        'base': '1rem',
+        'lg': '1.125rem',
+        'xl': '1.25rem',
+        '2xl': '1.5rem',
+        '3xl': '1.875rem',
+        '4xl': '2.25rem',
+        '5xl': '3rem',
+        '6xl': '3.75rem',
+        '7xl': '4.5rem',
+        '8xl': '6rem',
+        '9xl': '8rem',
+      }
+    },
     extend: {
       colors: {
         'maroon': '#B60C1E',
@@ -58,10 +74,6 @@ module.exports = {
         'grey-tertiary': '#CCCCCC',
         'offwhite': '#F2F2F2',
         'offblack': '#262626'
-      },
-      fontFamily: {},
-      fontSize: {
-        '15xl': ['213px', '320px'],
       },
     },
   },
