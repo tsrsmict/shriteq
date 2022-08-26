@@ -1130,6 +1130,10 @@ h3 {
   text-align: center;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .font-display {
   font-family: Montserrat, sans-serif;
 }
