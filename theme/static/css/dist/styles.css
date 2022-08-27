@@ -876,6 +876,10 @@ h3 {
   margin-left: 0.5rem;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -1073,6 +1077,10 @@ h3 {
   stroke: #000;
 }
 
+.stroke-white {
+  stroke: #fff;
+}
+
 .p-7 {
   padding: 1.75rem;
 }
@@ -1124,6 +1132,11 @@ h3 {
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .text-center {
