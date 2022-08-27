@@ -4,14 +4,14 @@
   top: -150vh;
   position: relative;
   background: url('/static/assets/vectors/hero-background-square.svg') no-repeat center;
-  background-size: 260%;
+  background-size: 300%;
   animation: rotation 12.5s infinite linear;
   margin-bottom: -200vh;
 }
 
 @media only screen and (max-width: 768px) {
   .hero-animation {
-   background-size: 100%;
+   background-size: 500%;
   }
 }
 
