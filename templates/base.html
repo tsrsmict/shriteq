@@ -30,78 +30,73 @@
 {% if request.get_full_path == '/' %}
 
 <body class="lg:bg-black no-scrollbar">
-	{% else %}
-
-	<body class="bg-white no-scrollbar">
-		{% endif %}
+{% else %}
+<body class="bg-white no-scrollbar">
+{% endif %}
 		<main>
 			{% if request.get_full_path == '/' %}
-			<nav class="py-4 text-white lg:bg-offblack">
-				{% else %}
-				<nav class="py-4 mb-10 border-b-2 shadow-lg">
-					{% endif %}
-					<div class="px-5 md:px-20 lg:px-44">
-						<div class="flex justify-between">
-							<div class="flex flex-row w-screen space-x-7">
-								<div class="grow">
-									<a href="{% url 'index' %}">
-										{% if request.get_full_path == '/' %}
-										<picture>
-											<source media="(min-width: 1024px)"
-												srcset="{% static 'assets/logo-dark.png' %}">
-											<img class="h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
-										</picture>
-										{% else %}
-										<img class="h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
-										{% endif %}
-									</a>
-								</div>
-								<div class="items-center hidden space-x-5 font-display md:flex">
-									{% if request.get_full_path == '/' %}
-									<a href="{% url 'index'%}#events"
-										class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black lg:text-gray-300 lg:hover:text-white link link-underline link-underline-black lg:link-underline-white">Events</a>
-									<a href="{% url 'index'%}#register"
-										class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black lg:text-gray-300 lg:hover:text-white link link-underline link-underline-black lg:link-underline-white">Register</a>
-									{% else %}
-									<a href="{% url 'index'%}#events"
-										class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Events</a>
-									<a href="{% url 'index'%}#register"
-										class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Register</a>
-									{% endif %}
-								</div>
-								<div class="flex items-center md:hidden">
-									<button class="outline-none mobile-menu-button">
-										<svg class="w-6 h-6 text-gray-500 hover:text-black" x-show="!showMenu"
-											fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											viewBox="0 0 24 24" stroke="currentColor">
-											<path d="M4 6h16M4 12h16M4 18h16"></path>
-										</svg>
-									</button>
-								</div>
-							</div>
+			<nav class="w-screen py-4 text-white bg-opacity-25 bg-black fixed top-0">
+			{% else %}
+			<nav class="w-screen py-4 mb-10 border-b-2 shadow-lg">
+			{% endif %}
+			<div class="px-5 md:px-20 lg:px-44">
+				<div class="flex justify-between">
+					<div class="flex flex-row w-screen space-x-7">
+						<div class="grow">
+							<a href="{% url 'index' %}">
+								{% if request.get_full_path == '/' %}
+									<img class="h-12 md:h-20" src="{% static 'assets/logo-dark.png' %}" alt="">
+								</picture>
+								{% else %}
+								<img class="h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
+								{% endif %}
+							</a>
 						</div>
-						<div class="hidden h-screen mobile-menu">
-							<div class="flex flex-col items-center justify-center h-full">
-								<ul class="md:hidden font-display">
-									<li href="" class="px-2 py-4 text-2xl font-semibold text-gray-600 mobile-nav-link">
-										<a href="{% url 'index'%}#events">
-											Events
-										</a>
-									</li>
-									<li href="" class="px-2 py-4 text-2xl font-semibold text-gray-600 mobile-nav-link">
-										<a href="{% url 'index'%}#register">
-											Register
-										</a>
-									</li>
-								</ul>
+						<div class="items-center hidden space-x-5 font-display md:flex bg-transparent">
+							{% if request.get_full_path == '/' %}
+							<a href="{% url 'index'%}#events"
+								class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Events</a>
+							<a href="{% url 'index'%}#register"
+								class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Register</a>
+							{% else %}
+							<a href="{% url 'index'%}#events"
+								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Events</a>
+							<a href="{% url 'index'%}#register"
+								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Register</a>
+							{% endif %}
+						</div>
+						<div class="flex items-center md:hidden">
+							<div id="nav-icon">
+								<span class=""></span>
+								<span class=""></span>
+								<span class=""></span>
+								<span class=""></span>
 							</div>
 						</div>
 					</div>
-				</nav>
-				<div>
-					{% block content %}
-					{% endblock content %}
 				</div>
+				<div class="hidden h-screen mobile-menu">
+					<div class="flex flex-col items-center justify-center h-full">
+						<ul class="md:hidden font-display select-none	">
+							<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
+								<a href="{% url 'index' %}#events">
+									Events
+								</a>
+							</li>
+							<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
+								<a href="{% url 'index' %}#register">
+									Register
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div>
+			{% block content %}
+			{% endblock content %}
+		</div>
 		</main>
 
 		<footer class="px-4 py-10 mx-auto md:px-20 lg:px-44 bg-offblack">
@@ -130,29 +125,39 @@
 	</body>
 
 	<script>
+		// Mobile menu
 		const menu = document.querySelector(".mobile-menu");
-		const body = document.querySelector('body');
+		const html = document.querySelector('html');
 		const heroCaret = document.querySelector(".chev-down");
+		const nav = document.querySelector('nav');
+		const icon = document.getElementById('nav-icon');
+		const links = document.querySelectorAll('.mobile-nav-link');
 
 		function toggleMenu() {
 			menu.classList.toggle("hidden");
 			heroCaret.classList.toggle("hidden");
-			body.classList.toggle("overflow-hidden");
+			html.classList.toggle("overflow-hidden");
+			nav.classList.toggle("bg-opacity-25");
+			nav.classList.toggle("bg-opacity-95");
+			console.log(nav.classList);
+			icon.classList.toggle('open');
 		}
 
-		const btn = document.querySelector("button.mobile-menu-button");
-		btn.addEventListener("click", toggleMenu);
-
-		const links = document.querySelectorAll('.mobile-nav-link');
+		icon.addEventListener('click', toggleMenu);
 		links.forEach(el => el.addEventListener('click', toggleMenu));
+
+		// Close menu when the screen is resized above a medium breakpoint while the menu is open
+		window.addEventListener('resize', () => {
+			if (window.innerWidth > 768 && !menu.classList.contains('hidden')) {
+				toggleMenu();
+			}
+		});
 
 		// Toggle favicon based on colour scheme
 		const faviconTag = document.getElementById("faviconTag");
 		const isDark = window.matchMedia("(prefers-color-scheme: dark)");
 		const lightModeFavi = "{% static 'favicon/light/favicon-32x32.png' %}";
 		const darkModeFavi = "{% static 'favicon/dark/favicon-32x32.png' %}";
-		console.log(lightModeFavi);
-		console.log(darkModeFavi);
 		const changeFavicon = () => {
 			if (isDark.matches) faviconTag.href = darkModeFavi;
 			else faviconTag.href = lightModeFavi;
