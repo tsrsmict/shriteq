@@ -85,8 +85,3 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
