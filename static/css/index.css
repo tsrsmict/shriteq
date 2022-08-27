@@ -1,58 +1,20 @@
-:root {
-  --svg-offset: calc(-210vh + 15vw);
-}
-
-.hero {
-  height: 100vh;
-  z-index: -1;
-}
-
-@media only screen and (max-width: 1024px) {
-  .hero {
-    background-color: black;
-  }
-  .hero-body {
-    background: url('/static/assets/vectors/hero-background.svg') no-repeat center center;
-    background-size: 400%;
-  }
-}
-
-.hero-bg-container {
-    z-index: -10; 
-    margin-bottom: -100vh;
-}
-
-.hero-bg-container svg {
-
-    height: 130vw;
-    top: var(--svg-offset);
-    position: absolute;
-    /* left: 27.5%; */
-    transform: rotate(90deg);
-    z-index: -10;
-
--webkit-animation: rotation 17.5s infinite linear;
-  animation: rotation 17.5s infinite linear;
+.hero-animation {
+  z-index: -10;
+  height: 200vh;
+  top: -150vh;
+  position: relative;
+  background: url('/static/assets/vectors/hero-background-square.svg') no-repeat center;
+  background-size: 260%;
+  animation: rotation 12.5s infinite linear;
+  margin-bottom: -200vh;
 }
 
 @keyframes rotation {
   from {
-    transform-origin: center;
     transform: rotate(0deg);
   }
   to {
-    transform-origin: center;
     transform: rotate(359deg);
-  }
-}
-@-webkit-keyframes rotation {
-  from {
-    -webkit-transform-origin: center;
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform-origin: center;
-    -webkit-transform: rotate(359deg);
   }
 }
 
@@ -69,19 +31,4 @@
 
 .hero .chev-down {
   z-index: 1;
-}
-
-#declaration {
-  /* the svg is off by 2px so we need to blend it with the next section below */
-  top: -2px;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
