@@ -1,22 +1,27 @@
 main {
-    /* to make sure the footer is pinned to the bottom. 328px = height of footer on desktop */
-    min-height: 328px; 
+  /* to make sure the footer is pinned to the bottom. 328px = height of footer on desktop */
+  min-height: 328px;
 }
 
 .link-underline {
-    border-bottom-width: 0;
-    background-size: 0 2px;
-    background-position: 6px 80%;
-    background-repeat: no-repeat;
-    transition: background-size 0.6s ease-in-out;
+  border-bottom-width: 0;
+  background-size: 0 2px;
+  background-position: 6px 80%;
+  background-repeat: no-repeat;
+  transition: background-size 0.6s ease-in-out;
 }
 
-
 .link-underline:hover {
-    background-size: 80% 2px;
-    background-position: 6px 80%;
+  background-size: 80% 2px;
+  background-position: 6px 80%;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }

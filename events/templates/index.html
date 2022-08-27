@@ -155,26 +155,19 @@
 
 {% block script %}
 
+<script src="{% static 'js/animations.js' %}"></script>
 <script>
-    // https://stackoverflow.com/questions/27462306/css3-animate-elements-if-visible-in-viewport-page-scroll
-    function callbackFunc(entries, observer) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("is-inViewport", entry.isIntersecting);
-            }
-        });
-    }
-
-    let options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.3
-    };
-
-    let observer = new IntersectionObserver(callbackFunc, options);
-    document.querySelectorAll('.cssanimation').forEach(el => observer.observe(el));
-
+    // Increase nav opacity to 80% when scrolled past first 100vh
+    window.addEventListener('scroll', function () {
+        let nav = document.querySelector('nav');
+        let navHeight = nav.offsetHeight;
+        let scrollHeight = window.scrollY;
+        if (scrollHeight > navHeight) {
+            nav.classList.add('bg-opacity-95');
+        } else {
+            nav.classList.remove('bg-opacity-95');
+        }
+    });
 
 </script>
-
 {% endblock %}
