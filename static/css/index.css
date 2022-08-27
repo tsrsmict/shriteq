@@ -3,7 +3,7 @@
 }
 
 .hero {
-  height: calc(100vh - 82px);
+  height: 100vh;
   z-index: -1;
 }
 
