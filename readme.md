@@ -16,6 +16,7 @@ This will open the server on http://localhost:8000
 
 ## Tailwind
 If you're editing the frontend with Tailwind CSS classes, you'll need to have the tailwind listener running
+
 Steps:
 1. Activate your pipenv: `pipenv shell`
 2. Run `python3 manage.py tailwind start`. This will start a listener which automatically configures the tailwind files
@@ -26,9 +27,7 @@ Refer to the [django-tailwind docs](https://django-tailwind.readthedocs.io/en/la
 Install python dependencies with `pipenv install packagename` instead of `pip install packagename`. This will automatically add the package to the `Pipfile`, which is what we're using for dependency management.
 
 # Deploys
-Pushes to the `origin/main` branch will automatically deploy the latest version of the main branch to the Heroku app. Use `deploy.sh` as a deploy script, which should collect static files and push to the origin branch.
-
-You can force a heroku deploy by running `git push heroku main`. 
+Pushes to the `origin/main` branch will automatically deploy the latest version of the main branch to the Heroku app. You can force a heroku deploy by running `git push heroku main`. 
 
 # Reference articles
 These articles and documentation pages were used for reference while configuring this project:
@@ -76,8 +75,6 @@ URLs in apps typically map onto views in views.py. If you're coming from Flask o
 If you're just loading a static HTML file at a URL, you can directly use a TemplateView and load the HTML file (Django templates are a refinement on top of HTML). Otherwise, a view typically plugs in a `context` dictionary into a template.
 
 ### Templates
-Templates are a very powerful feature of Django, as they enable complex inheritance and sophisticated integration with views and models.
-
 For this project, our templates are fairly simple. 
 
 * We define a top-level `base.html` file in the root `templates` directory of the project. This is what other templates inherit from. `block`s in a template indicate placeholders which are 'filled in' by children of that template
