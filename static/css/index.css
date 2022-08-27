@@ -9,6 +9,12 @@
   margin-bottom: -200vh;
 }
 
+@media only screen and (max-width: 768px) {
+  .hero-animation {
+   background-size: 100%;
+  }
+}
+
 @keyframes rotation {
   from {
     transform: rotate(0deg);
