@@ -10,7 +10,7 @@
 let options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.3
+    threshold: 0.5
 };
 
 let observer = new IntersectionObserver(callbackFunc, options);
