@@ -7,7 +7,7 @@ EVENT_SLUGS = [
     'quiz',
     'gaming',
     'crypt-hunt',
-    'photoshop-battles',
+    'ps-battles',
     'ad-making',
     'programming',
     'web-design',

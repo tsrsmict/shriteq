@@ -1,0 +1,38 @@
+{% extends 'event_detail_base.html' %}
+
+{% block title %} | Photoshop Battles {% endblock title %}
+{% block name %} Photoshop Battles {% endblock name %}
+{% block team %} 1 team of 2 {% endblock team %}
+{% block grades %} Grades 9-12 {% endblock grades %}
+
+{% block description %}
+<div class="flex flex-col space-y-2 text-justify">
+
+    <p class="text-justify">In this all-new event, teams will use photo editing and graphic design skills to transform a
+        given starter image into something else entirely based on a given starter prompt.
+    </p>
+    <div>
+        <p class="text-justify">Submissions must consist of the following:</p>
+        <ul class="list-disc ml-8">
+            <li>Raw edited image as a .psd file</li>
+            <li>Exported PNG or JPG of the same file</li>
+            <li>Any other necessary supporting files (optional)</li>
+        </ul>
+    </div>
+    <div>
+        <p class="text-justify">Submissions will be judged anonymously on the following criteria:</p>
+        <ul class="list-disc ml-8">
+            <li>Creativity</li>
+            <li>Technical accomplishment</li>
+            <li>Visual appeal</li>
+            <li>Adherence to the prompt</li>
+        </ul>
+    </div>
+    <p>
+        The image and textual prompt for the event will be released on this page at <strong> 12:00 PM, noon on Monday, the 3rd of
+        October </strong>. Submissions will be due over email at <strong> 11:59 PM on Friday, the 7th of October</strong>.
+    </p>
+
+</div>
+
+    {% endblock description %}
