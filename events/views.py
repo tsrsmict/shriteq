@@ -3,16 +3,13 @@ from django.shortcuts import render
 
 EVENT_SLUGS = [
     'hackathon',
-    'bot-trading',
-    'senior-quiz',
-    'middle-quiz',
-    'junior-quiz',
+    'bot-xchange',
+    'quiz',
+    'gaming',
     'crypt-hunt',
-    'competitive-gaming',
     'photoshop-battles',
     'ad-making',
     'programming',
-    'drone-racing',
     'web-design',
     'pac-man',
 ]

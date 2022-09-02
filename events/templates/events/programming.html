@@ -1,0 +1,41 @@
+{% extends 'event_detail_base.html' %}
+
+{% block title %} | Competitive Programming {% endblock title %}
+{% block name %} Competitive Programming {% endblock name %}
+{% block team %} 1 team of 2 {% endblock team %}
+{% block grades %} Grades 9-12 {% endblock grades %}
+
+
+{% block description %}
+<div class="flex flex-col space-y-3">
+    <p class="text-justify">
+        Race to solve as many programming questions as you can with your teammate in one hour!
+    </p>
+    <p class="text-justify">
+        This event will test the logical and programming abilities of participating teams as they solve a series of
+        programming challenges on Hackerrank. Teams will have one hour to solve as many of these questions as they can.
+        They will write code based on a problem description which lists program requirements, which will be
+        automatically assessed against a set of tests by an autograder. The code will be manually verified after the
+        event as well to ensure that an algorithmic approach was taken.
+    </p>
+    <p class="text-justify">
+        Teams will be ranked by the number of questions solved, and ties will be broken by the time taken to solve
+        questions.
+    </p>
+    <p class="text-justify">
+        The event will take place online over Discord. Participants will be required to share their screens over Discord
+        for the entire duration of the event, and will be monitored by the organising committee.
+    </p>
+    <br>
+    <h4>Rules</h4>
+    <ul class="list-disc ml-8">
+        <li>Participants will be allowed to code in either Python and C++.</li>
+        <li>It is recommended that participants are physically present together during the event</li>
+        <li>Students may also participate individually if they do not have a teammate, however, only one individual studentwill be allowed to participate. Two individual participants will not be allowed.</li>
+        <li>Participants must screen share and have their cameras as well as microphones turned on and working for the entire duration of the event. They will not be allowed to participate unless they do so</li>
+        <li>Using any online resources during the event that are not explicitly allowed may result in disqualification</li>
+    </ul>
+
+</div>
+
+{% endblock description %}
