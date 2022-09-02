@@ -1,0 +1,43 @@
+{% extends 'event_detail_base.html' %}
+
+{% block title %} | Web Design {% endblock title %}
+{% block name %} Web Design {% endblock name %}
+{% block team %} 1 team of 2 {% endblock team %}
+{% block grades %} Grades 6-8{% endblock grades %}
+
+
+{% block description %}
+<div class="flex flex-col space-y-3">
+    <p class="text-justify">
+        In this event, participants will build a static site based on the requirements laid out by a real-world
+        organisation.
+    </p>
+    <p class="text-justify">
+        Teams will be invited to The Shri Ram School, Moulsari on the morning of the 10th of October. They will be given
+        the project requirements and will work till 3 PM that day creating a website that fits the needs of the
+        organisation.
+    <h4>Rules</h4>
+    <ul class="list-disc ml-8">
+        <li>Participants are allowed to create websites using any of the following:
+            <ul class="list-disc list-inside ml-8">
+                <li>Static HTML, CSS and JavaScript</li>
+                <li>Site builder tools such as Wix and Squarespace</li>
+                <li>Wordpress</li>
+            </ul>
+        </li>
+        <li>Participants will be allowed to use templates and 3rd-party frameworks to assist them in the creation of the site.</li>
+        <li>Final submissions must be in the form of a live site.</li>
+        <li>If using an online tool, teams must add the email of the organisers as a collaborator on the project. If they are writing code, they must provide access to a public github repository or give access to a shared folder containing the project code.</li>
+    </ul>
+    <div>
+        <p class="text-justify">Submissions will be judged anonymously on the following criteria:</p>
+        <ul class="list-disc ml-8">
+            <li>Success in achieving requirements of organisation</li>
+            <li>Design and visual appeal</li>
+            <li>Logical flow and structure </li>
+        </ul>
+    </div>
+
+</div>
+
+{% endblock description %}

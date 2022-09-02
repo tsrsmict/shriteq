@@ -23,6 +23,12 @@
     @apply font-semibold;
     @apply font-body;
   }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+    @apply font-medium;
+    @apply font-body
+  }
 }
 
 @layer utilities {
