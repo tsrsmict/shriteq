@@ -14,5 +14,11 @@
     width: 155vw;
     max-height: none;
     max-width: none;
+    bottom: 0;
   }
+}
+
+.hero {
+  background-color: black;
+  background-attachment: fixed;
 }
