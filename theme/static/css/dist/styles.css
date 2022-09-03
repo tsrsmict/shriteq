@@ -1578,6 +1578,11 @@ h4 {
     line-height: 1;
   }
 
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
   .md\:font-extrabold {
     font-weight: 800;
   }
