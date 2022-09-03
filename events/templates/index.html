@@ -16,25 +16,17 @@
 </div>
 <section class="hero h-screen">
         <div class="flex flex-col items-center flex-grow h-full">
-            <div class="flex flex-col items-center justify-center h-full text-white">
-                <p class="mb-8 text-5xl font-semibold font-display md:text-7xl lg:text-8xl">
-                    <span>
-                        Shri
-                    </span>
-                    <span class="-ml-3 md:-ml-6">Teq </span>
-                    <span class="">2022</span>
+            <div class="flex flex-col items-center justify-center text-white flex-grow">
+                <p class="pt-16 mb-8 font-extrabold font-display text-7xl md:text-8xl lg:text-9xl text-violet uppercase text-center leading-snug sm:leading-snug md:leading-snug lg:leading-normal xl:leading-snug 2xl:leading-tight">
+                    Prepare. for. <br> Takeoff
                 </p>
-                <p class="mt-6 text-center text-3xl font-medium font-body px-12 leading-relaxed">October 10-12 @ The Shri Ram School, Moulsari</p>
             </div>
-            <svg class="absolute bottom-16 h-9 md:h-12 stroke-white chev-down md:bottom-3 lg:bottom-5"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-                <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
+            <div class="flex flex-row justify-center items-center flex-grow-0 pb-3">
+                <img src="{% static 'assets/logo.png' %}" alt="" class="h-20 lg:h-28 relative -top-2">
+                <span class="pl-2 uppercase text-5xl lg:text-7xl font-display font-semibold">Is back.</span>
+            </div>
         </div>
 </section>
-<!-- <div class="hero-animation hidden lg:block"></div> -->
-<div class="hero-animation block"></div>
 
 <section id="declaration"
     class="relative flex flex-col justify-center h-full min-h-screen px-5 leading-normal gap-9 md:px-20 lg:px-44 bg-offblack font-display md:gap-12">
@@ -72,7 +64,7 @@
 </section>
 
 <section class="relative px-5 py-16 mx-auto bg-white md:px-20 lg:px-44 ">
-    <h2 data-inviewport="fade-in-bottom" class="cssanimation mb-3 text-black uppercase">Flagship Events</h2>
+    <h2 class="mb-3 text-black uppercase">Flagship Events</h2>
     <h3 class="mb-6 font-medium md:mb-9 xl:mb-12">More details coming soon for all events!</h3>
     <div class="grid lg:grid-cols-2 2xl:grid-cols-3 gap-9">
         {% component "event" style="light" event_name="Quiz" event_elig="junior middle senior" event_link="quiz" event_participation_reqs="1 team of 3" event_short_desc="ShriTeq's classic flagship event, the quiz, returns! Junior, middle and senior teams will each contest to answer tech-based questions in a variety of formats. Teams will be shortlisted for onstage semi-finals after an offline preliminary round." %}
@@ -87,7 +79,7 @@
     <div class="grid lg:grid-cols-2 2xl:grid-cols-3 gap-9">
     {% component "event" style="dark" event_name="Crypt Hunt" event_elig="open" event_link="crypt-hunt" event_participation_reqs="Unlimited" event_short_desc="Solve cryptic riddles and chase rabbit holes as you work to solve a series of questions. Schools will work as one over the official event Discord server to solve questions together. Questions will be hosted on the online platform for the crypt hunt." %}
         {% component "event" style="dark" event_name="Competitive Gaming" event_elig="middle senior" event_link="gaming" event_participation_reqs="1 team of 3" event_short_desc="FPS pro or a casual gamer? This event has something for everyone to enjoy! Qualify for the finals by going through online preliminaries, and get the chance to stream your game in front of a live audience! The game(s) for the finals and preliminaries will be revealed two days before the date of the event."%}
-        {% component "event" style="dark" event_name="Photoshop Battles" event_elig="senior" event_link="ps-battles" event_participation_reqs="1 team of 2" event_short_desc="Unleash your creativity on eccentric images! Transform a starter image based on an open-ended textual prompt using your photo editing skills. Participants will be judged based on creativity, technical accomplishment, and adherence to the prompt in their online submission."%}
+        {% component "event" style="dark" event_name="PhotoMorph" event_elig="senior" event_link="photomorph" event_participation_reqs="1 team of 2" event_short_desc="Unleash your creativity on eccentric images! Transform a starter image based on an open-ended textual prompt using your photo editing skills. Participants will be judged based on creativity, technical accomplishment, and adherence to the prompt in their online submission."%}
         {% component "event" style="dark" event_name="Competitive Programming" event_elig="senior" event_link="programming" event_participation_reqs="1 team of 2" event_short_desc="Push your coding abilities to the limits as your team attempts to solve as many programming questions as possible in a one-hour marathon. A preliminary round will be conducted online and the top teams will be invited for offline finals."%}
         {% component "event" style="dark" event_name="Ad-Making" event_elig="senior" event_link="ad-making" event_participation_reqs="1 team of 4" event_short_desc="Turn the dull into the sublime! Create a short showcase digital advertisement for a mundane object using your video editing and animation skills. Videos will be submitted and evaluated online."%}
         {% component "event" style="dark" event_name="Web Design" event_elig="middle" event_link="web-design" event_participation_reqs="1 team of 2" event_short_desc="Put your web dev skills to good! Make a static website for a specified organisation in a using online website building tools. Participants will be invited offline, where the requirements will be revealed and where they will create the website."%}

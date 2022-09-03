@@ -1,33 +1,40 @@
-.hero-animation {
-  z-index: -10;
-  height: 200vh;
-  top: -150vh;
-  position: relative;
-  background: url('/static/assets/vectors/hero-background-square.svg') no-repeat center;
-  background-size: 300%;
-  animation: rotation 12.5s infinite linear;
-  margin-bottom: -200vh;
-}
-
-@media only screen and (max-width: 768px) {
-  .hero-animation {
-   background-size: 500%;
-  }
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
-
-
 @media (min-width: 768px) {
   .hero {
     min-height: calc(100vh - 120px);
+  }
+}
+
+.hero {
+  background-image: url('/static/assets/images/hero-rocket.png');
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: 150%;
+  background-position-x: -18vw;
+}
+
+@media (min-width: 640px) {
+  .hero {
+    background-size: 120%;
+    background-position: bottom;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-size: 85%;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .hero {
+    background-size: 80%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero {
+    background-size: 52%;
   }
 }
 
