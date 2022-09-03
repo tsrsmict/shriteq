@@ -1176,6 +1176,10 @@ h4 {
   --tw-bg-opacity: 0.95;
 }
 
+.bg-opacity-80 {
+  --tw-bg-opacity: 0.8;
+}
+
 .fill-offblack {
   fill: #262626;
 }

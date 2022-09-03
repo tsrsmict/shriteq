@@ -126,17 +126,14 @@
 		// Mobile menu
 		const menu = document.querySelector(".mobile-menu");
 		const html = document.querySelector('html');
-		const heroCaret = document.querySelector(".chev-down");
 		const nav = document.querySelector('nav');
 		const icon = document.getElementById('nav-icon');
 		const links = document.querySelectorAll('.mobile-nav-link');
 
 		function toggleMenu() {
 			menu.classList.toggle("hidden");
-			heroCaret.classList.toggle("hidden");
 			html.classList.toggle("overflow-hidden");
-			nav.classList.toggle("bg-opacity-25");
-			nav.classList.toggle("bg-opacity-95");
+			nav.classList.toggle("bg-opacity-80");
 			console.log(nav.classList);
 			icon.classList.toggle('open');
 		}
