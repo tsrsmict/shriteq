@@ -1,47 +1,9 @@
-@media (min-width: 768px) {
-  .hero {
-    min-height: calc(100vh - 120px);
-  }
-}
-
-.hero {
-  background-image: url('/static/assets/images/hero-rocket.png');
-  background-repeat: no-repeat;
-  background-position-y: bottom;
-  background-size: 150%;
-  background-position-x: -18vw;
-}
-
-@media (min-width: 640px) {
-  .hero {
-    background-size: 120%;
-    background-position: bottom;
-  }
-}
-
-@media (min-width: 768px) {
-  .hero {
-    background-size: 85%;
-  }
-}
-
-
-@media (min-width: 1024px) {
-  .hero {
-    background-size: 80%;
-  }
-}
-
-@media (min-width: 1280px) {
-  .hero {
-    background-size: 52%;
-  }
-}
-
-.hero .wave {
-  z-index: 0;
-}
-
-.hero .chev-down {
-  z-index: 1;
+.hero-img {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  max-height:100vh;
+  height:auto;
+  width:auto;
+  bottom : 0px;
 }

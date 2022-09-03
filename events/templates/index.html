@@ -14,17 +14,21 @@
 <div class="hero-bg bg-black h-screen absolute top-0 -z-20 w-screen">
 
 </div>
-<section class="hero h-screen">
-        <div class="flex flex-col items-center flex-grow h-full">
+<section class="h-screen w-screen">
+        <div class="flex flex-col items-center flex-grow h-full absolute w-screen">
             <div class="flex flex-col items-center justify-center text-white flex-grow">
-                <p class="pt-16 mb-8 font-extrabold font-display text-6xl md:text-7xl lg:text-8xl text-violet uppercase text-center leading-snug sm:leading-snug md:leading-snug lg:leading-normal xl:leading-snug 2xl:leading-tight">
-                    <span>Prepare. for.</span> <br> <span class="text-7xl md:text-8xl lg:text-9xl"> Takeoff </span>
+                <p class="lg:pt-12 font-extrabold font-display text-6xl md:text-7xl lg:text-8xl uppercase text-center z-20">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-b from-[#8F3FFF] to-[#7D3FFF] ">Prepare for</span> 
+                </p>
+                <p class="lg:mb-8 font-extrabold font-display text-6xl md:text-7xl lg:text-8xl uppercase text-center">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-b from-[#7D3FFF] to-[#1A0D35]"> Takeoff </span>
                 </p>
             </div>
-            <div class="flex flex-row justify-center items-center flex-grow-0 pb-3">
-                <img src="{% static 'assets/logo.png' %}" alt="" class="h-20 lg:h-28 relative -top-2">
-                <span class="pl-2 uppercase text-5xl lg:text-7xl font-display font-semibold">Is back.</span>
+            <div class="flex flex-row justify-center items-center flex-grow-0 pb-3 z-20">
+                <img src="{% static 'assets/logo.png' %}" alt="" class="h-16 lg:h-24 relative -top-2">
+                <span class="pl-2 uppercase text-3xl lg:text-6xl font-display font-semibold">Is back.</span>
             </div>
+            <img src="/static/assets/images/hero-rocket.webp" class="z-10 absolute mx-auto lg:pt-16 hero-img">  
         </div>
 </section>
 
