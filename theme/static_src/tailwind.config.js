@@ -75,6 +75,9 @@ module.exports = {
         'offwhite': '#F2F2F2',
         'offblack': '#262626'
       },
+      zIndex: {
+        '15': '15',
+      }
     },
   },
   plugins: [
