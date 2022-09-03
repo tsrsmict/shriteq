@@ -7,3 +7,12 @@
   width:auto;
   bottom : 0px;
 }
+
+@media (max-width: 640px) {
+  .hero-img {
+    left: 60%;
+    width: 155vw;
+    max-height: none;
+    max-width: none;
+  }
+}
