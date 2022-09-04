@@ -23,7 +23,7 @@
 }
 
 .stars {
-  position: fixed;
+  position: absolute;
 }
 
 #stars {
