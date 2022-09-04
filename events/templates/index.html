@@ -123,15 +123,23 @@
 
 <script src="{% static 'js/animations.js' %}"></script>
 <script>
-    // Increase nav opacity to 80% when scrolled past first 100vh
+    // Remove and add stars when scrolled past window height
+
+    let stars = document.querySelectorAll('.stars');
+    console.log(stars);
+
     window.addEventListener('scroll', function () {
-        let nav = document.querySelector('nav');
-        let navHeight = nav.offsetHeight;
+        let screenHeight = window.screen.availHeight;
         let scrollHeight = window.scrollY;
-        if (scrollHeight > navHeight) {
-            nav.classList.add('bg-opacity-95');
+        
+        if (scrollHeight > screenHeight) {
+            stars.forEach(star => {
+                star.classList.add('hidden');
+            })
         } else {
-            nav.classList.remove('bg-opacity-95');
+            stars.forEach(star => {
+                star.classList.remove('hidden');
+            })
         }
     });
 
