@@ -1111,11 +1111,6 @@ h4 {
   border-bottom-width: 2px;
 }
 
-.bg-offblack {
-  --tw-bg-opacity: 1;
-  background-color: rgb(38 38 38 / var(--tw-bg-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1128,6 +1123,11 @@ h4 {
 
 .bg-transparent {
   background-color: transparent;
+}
+
+.bg-offblack {
+  --tw-bg-opacity: 1;
+  background-color: rgb(38 38 38 / var(--tw-bg-opacity));
 }
 
 .bg-offwhite {
