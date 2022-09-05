@@ -2,9 +2,9 @@
 {% load component_tags %}
 
 {% if "light" in style|lower %}
-    <div class="event-card cursor-pointer flex flex-col rounded-lg p-7 bg-offwhite justify-self-center hover:shadow-md" onclick="eventDetails(this)" data-eventslug="{{ event_link }}">
+    <div class="event-card cursor-pointer flex flex-col rounded-lg p-7 bg-offwhite justify-self-center hover:shadow-lg" onclick="eventDetails(this)" data-eventslug="{{ event_link }}">
     {% else %}
-    <div class="event-card cursor-pointer flex flex-col rounded-lg p-7 bg-offwhite justify-self-center hover:shadow-lg shadow-black" onclick="eventDetails(this)" data-eventslug="{{ event_link }}">
+    <div class="event-card cursor-pointer flex flex-col rounded-lg p-7 bg-offwhite justify-self-center hover:shadow-xl shadow-black" onclick="eventDetails(this)" data-eventslug="{{ event_link }}">
 {% endif %}
     <div class="flex-grow">
     <div class="flex flex-row items-center w-full mb-5">
