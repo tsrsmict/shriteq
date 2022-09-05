@@ -68,10 +68,6 @@ module.exports = {
     extend: {
       colors: {
         'maroon': '#B60C1E',
-        'violet-custom': '#7C3FFF',
-        'pink-custom': '#F72585',
-        'purple-custom': '#BC00DD',
-        'blue-custom': '#4895EF',
         'grey': '#DFDFDF',
         'grey-secondary': '#808080',
         'grey-tertiary': '#CCCCCC',
