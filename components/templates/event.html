@@ -2,9 +2,9 @@
 {% load component_tags %}
 
 {% if "light" in style|lower %}
-    <div class="event-card cursor-pointer flex flex-col rounded-lg p-7 bg-offwhite justify-self-center hover:shadow-md" onclick="eventDetails(this)" data-eventslug="{{ event_link }}">
+    <div class="event-card cursor-pointer flex flex-col rounded-lg p-7 bg-offwhite justify-self-center hover:shadow-lg" onclick="eventDetails(this)" data-eventslug="{{ event_link }}">
     {% else %}
-    <div class="event-card cursor-pointer flex flex-col rounded-lg p-7 bg-offwhite justify-self-center hover:shadow-lg shadow-black" onclick="eventDetails(this)" data-eventslug="{{ event_link }}">
+    <div class="event-card cursor-pointer flex flex-col rounded-lg p-7 bg-offwhite justify-self-center hover:shadow-xl shadow-black" onclick="eventDetails(this)" data-eventslug="{{ event_link }}">
 {% endif %}
     <div class="flex-grow">
     <div class="flex flex-row items-center w-full mb-5">
@@ -30,22 +30,22 @@
 
         <div class="flex flex-row flex-wrap items-center justify-end gap-1 flex-grow">
             {% if 'junior' in event_elig|lower %}
-            <div class="px-3 py-1 rounded-lg bg-pink-custom">
+            <div class="px-3 py-1 rounded-lg bg-blue-500"">
                 <p class="text-sm text-white">Junior</p>
             </div>
             {% endif %}
             {% if 'middle' in event_elig|lower %}
-            <div class="px-3 py-1 rounded-lg bg-purple-custom">
+            <div class="px-3 py-1 rounded-lg bg-indigo-500">
                 <p class="text-sm text-white">Middle</p>
             </div>
             {% endif %}
             {% if 'senior' in event_elig|lower %}
-            <div class="px-3 py-1 rounded-lg bg-violet-custom">
+            <div class="px-3 py-1 rounded-lg bg-violet-500">
                 <p class="text-sm text-white">Senior</p>
             </div>
             {% endif %}
             {% if 'open' in event_elig|lower %}
-            <div class="px-3 py-1 rounded-lg bg-blue-custom">
+            <div class="px-3 py-1 rounded-lg bg-purple-500">
                 <p class="text-sm text-white">Open</p>
             </div>
             {% endif %}
