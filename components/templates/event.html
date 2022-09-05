@@ -1,20 +1,21 @@
 {% load static %}
 {% load component_tags %}
+
 {% if "light" in style|lower %}
-<div data-inviewport="fade-in" class="flex flex-col rounded-lg p-7 bg-offwhite justify-self-center shadow-lg">
-{% else %}
-<div data-inviewport="fade-in" class="flex flex-col rounded-lg p-7 bg-offwhite justify-self-center shadow-xl shadow-black">
+    <div class="event-card cursor-pointer flex flex-col rounded-lg p-7 bg-offwhite justify-self-center hover:shadow-md" onclick="eventDetails(this)" data-eventslug="{{ event_link }}">
+    {% else %}
+    <div class="event-card cursor-pointer flex flex-col rounded-lg p-7 bg-offwhite justify-self-center hover:shadow-lg shadow-black" onclick="eventDetails(this)" data-eventslug="{{ event_link }}">
 {% endif %}
-        <div class="flex-grow">
-        <div class="flex flex-row items-center w-full mb-5">
-            <h4 class="uppercase grow font-body"> {{ event_name }} </h4>
-            <a href="/events/{{ event_link }}">
-                <img src="{% static 'assets/icons/circle-arrow-right-solid.png' %}" class="h-7" alt="arrow forward">
-            </a>
-        </div>
-        <p class="mb-5 leading-10 font-body">
-            {{ event_short_desc }}
-        </p>
+    <div class="flex-grow">
+    <div class="flex flex-row items-center w-full mb-5">
+        <h4 class="uppercase grow font-body"> {{ event_name }} </h4>
+        <a href="/events/{{ event_link }}">
+            <img src="{% static 'assets/icons/circle-arrow-right-solid.png' %}" class="h-7" alt="arrow forward">
+        </a>
+    </div>
+    <p class="mb-5 leading-10 font-body">
+        {{ event_short_desc }}
+    </p>
     </div>
 
     <div class="flex flex-row md:items-center ">
