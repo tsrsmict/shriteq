@@ -69,6 +69,7 @@ module.exports = {
       colors: {
         'maroon': '#B60C1E',
         'grey': '#DFDFDF',
+        'violet-custom': '#7C3FFF',
         'grey-secondary': '#808080',
         'grey-tertiary': '#CCCCCC',
         'offwhite': '#F2F2F2',
