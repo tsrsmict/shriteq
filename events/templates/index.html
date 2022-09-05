@@ -25,10 +25,10 @@
                     <span class="text-transparent bg-clip-text bg-gradient-to-b from-[#7D3FFF] to-[#1A0D35]"> Takeoff </span>
                 </p>
             </div>
-            <div class="flex flex-row justify-center items-center flex-grow-0 pb-3 z-15">
+            <!-- <div class="flex flex-row justify-center items-center flex-grow-0 pb-3 z-15">
                 <img src="{% static 'assets/logo.png' %}" alt="" class="h-16 lg:h-24 relative -top-2">
                 <span class="pl-2 uppercase text-3xl lg:text-6xl font-display font-semibold">Is back.</span>
-            </div>
+            </div> -->
             <img alt="an image of a rocket" src="{% static 'assets/images/hero-rocket.webp' %}" class="z-10 absolute mx-auto lg:pt-16 hero-img">  
         </div>
 </section>
@@ -69,8 +69,10 @@
 </section>
 
 <section class="relative px-5 py-16 mx-auto bg-white md:px-20 lg:px-44 ">
-    <h2 class="mb-3 text-black uppercase">Flagship Events</h2>
-    <h3 class="mb-6 font-medium md:mb-9 xl:mb-12">More details coming soon for all events!</h3>
+    <div class="md:flex flex-row mb-3">
+        <h2 class=" text-black uppercase flex-grow">Tier 1 Events</h2>
+        <h4>Up to 100 points per event</h4>
+    </div>
     <div class="grid lg:grid-cols-2 2xl:grid-cols-3 gap-9">
         {% component "event" style="light" event_name="Quiz" event_elig="junior middle senior" event_link="quiz" event_participation_reqs="1 team of 3" event_short_desc="ShriTeq's classic flagship event, the quiz, returns! Junior, middle and senior teams will each contest to answer tech-based questions in a variety of formats. Teams will be shortlisted for onstage semi-finals after an offline preliminary round." %}
         {% component "event" style="light" event_name="Hackathon" event_elig="senior" event_link="hackathon" event_participation_reqs="1 team of 5" event_short_desc="Ideation, creation, and execution are the essence of the ShriTeq Hackathon. Create an original product based on a theme and present it in front of a panel of judges after qualifying for the finals through online preliminaries." %}
@@ -80,7 +82,10 @@
 </section>
 
 <section class="px-5 py-16 mx-auto bg-offblack md:px-20 lg:px-44">
-    <h2 class="mb-10 text-white uppercase">Other Events</h2>
+    <div class="md:flex flex-row mb-3">
+        <h2 class=" text-white uppercase flex-grow">Tier 2 Events</h2>
+        <h4 class="text-white">Up to 70 points per event</h4>
+    </div>
     <div class="grid lg:grid-cols-2 2xl:grid-cols-3 gap-9">
     {% component "event" style="dark" event_name="Crypt Hunt" event_elig="open" event_link="crypt-hunt" event_participation_reqs="Unlimited" event_short_desc="Solve cryptic riddles and chase rabbit holes as you work to solve a series of questions. Schools will work as one over the official event Discord server to solve questions together. Questions will be hosted on the online platform for the crypt hunt." %}
         {% component "event" style="dark" event_name="Competitive Gaming" event_elig="middle senior" event_link="gaming" event_participation_reqs="1 team of 3" event_short_desc="FPS pro or a casual gamer? This event has something for everyone to enjoy! Qualify for the finals by going through online preliminaries, and get the chance to stream your game in front of a live audience! The game(s) for the finals and preliminaries will be revealed two days before the date of the event."%}
