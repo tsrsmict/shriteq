@@ -1646,6 +1646,22 @@ h4 {
     margin-bottom: 6rem;
   }
 
+  .lg\:mb-\[40vh\] {
+    margin-bottom: 40vh;
+  }
+
+  .lg\:mb-\[30vh\] {
+    margin-bottom: 30vh;
+  }
+
+  .lg\:mb-\[20vh\] {
+    margin-bottom: 20vh;
+  }
+
+  .lg\:mb-\[18vh\] {
+    margin-bottom: 18vh;
+  }
+
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
