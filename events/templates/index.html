@@ -45,19 +45,19 @@
     <h1 data-inviewport="fade-in-bottom" class="cssanimation mb-6 md:mb-9 text-center text-black">Our Events</h1>
     <div data-inviewport="fade-in-bottom" class="cssanimation animation-delay-half grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-9">
 
-        <div class="shadow-lg flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-pink-custom text-white">
+        <div class="shadow-lg flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-blue-500 text-white">
             <h3 class="uppercase">Junior</h3>
             <p class="text-xl">Grade 5</p>
         </div>
-        <div class="shadow-lg flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-purple-custom text-white">
+        <div class="shadow-lg flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-indigo-500 text-white">
             <h3 class="uppercase">Middle</h3>
             <p class="text-xl">Grades 6-8</p>
         </div>
-        <div class="shadow-lg flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-violet-custom text-white">
+        <div class="shadow-lg flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-violet-500 text-white">
             <h3 class="uppercase">Senior</h3>
             <p class="text-xl">Grades 9-12</p>
         </div>
-        <div class="shadow-lg flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-blue-custom text-white">
+        <div class="shadow-lg flex flex-col items-center justify-center gap-6 rounded-lg p-7 bg-purple-500 text-white">
             <h3 class="uppercase">Open</h3>
             <p class="text-xl">Grades 6-12</p>
         </div>
@@ -80,7 +80,7 @@
 <section class="px-5 py-16 mx-auto bg-offblack md:px-20 lg:px-44">
     <div class="md:flex flex-row items-center mb-6">
         <h2 class=" text-white uppercase flex-grow mb-2">Tier 2 Events</h2>
-        <h4 class="text-white">Up to 50 points per event</h4>
+        <h4 class="text-white">Up to 70 points per event</h4>
     </div>
     <div class="grid lg:grid-cols-2 2xl:grid-cols-3 gap-9">
     {% component "event" style="dark" event_name="Crypt Hunt" event_elig="open" event_link="crypt-hunt" event_participation_reqs="Unlimited" event_short_desc="Solve cryptic riddles and chase rabbit holes as you work to solve a series of questions. Schools will work as one over the official event Discord server to solve questions together. Questions will be hosted on the online platform for the crypt hunt." %}
@@ -92,6 +92,74 @@
     </div>
 </section>
 
+<section id="points" class="px-5 py-10 bg-offwhite md:px-20 lg:px-44 w-screen">
+    <h1 class="mb-4">Points</h1>
+    <!-- <p class="text-2xl mb-7">The last date for registration for all events is the XX of September</p> -->
+
+    <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="py-3 px-6">
+                        Tier
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        1st place
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        2nd place
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        3rd place
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Participation
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white border-b">
+                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                        Tier 1
+                    </th>
+                    <td class="py-4 px-6">
+                        100
+                    </td>
+                    <td class="py-4 px-6">
+                        50
+                    </td>
+                    <td class="py-4 px-6">
+                        30
+                    </td>
+                    <td class="py-4 px-6">
+                        10
+                    </td>
+                </tr>
+                <tr class="bg-gray-50 border-b ">
+                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
+                        Tier 2
+                    </th>
+                    <td class="py-4 px-6">
+                        70
+                    </td>
+                    <td class="py-4 px-6">
+                        35
+                    </td>
+                    <td class="py-4 px-6">
+                        15
+                    </td>
+                    <td class="py-4 px-6">
+                        5
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p class="mt-6 text-sm">Note: The Crypt Hunt and Pac-Man do not have participation points</p>
+    
+
+</section>
 
 <section id="schedule" class="w-screen">
     <div class="md:grid grid-cols-2 gap-0 w-100">
