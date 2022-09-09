@@ -58,26 +58,42 @@
 								class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Events</a>
 							<a href="{% url 'index'%}#register"
 							class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Register</a>
+							<a href="{% url 'rules' %}"
+							class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Rules</a>
 							{% else %}
 							<a href="{% url 'index'%}#events"
 								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Events</a>
 							<a href="{% url 'index'%}#register"
 								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Register</a>
+							<a href="{% url 'rules' %}"
+								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Rules</a>
 							{% endif %}
 						</div>
 						<div class="flex items-center md:hidden">
-							<div id="nav-icon">
+							{% if request.get_full_path == '/' %}
+							<div id="nav-icon" class="nav-icon-light">
 								<span class=""></span>
 								<span class=""></span>
 								<span class=""></span>
 								<span class=""></span>
 							</div>
+							{% else %}
+
+							<div id="nav-icon" class="nav-icon">
+								<span class=""></span>
+								<span class=""></span>
+								<span class=""></span>
+								<span class=""></span>
+							</div>
+
+							{% endif %}
 						</div>
 					</div>
 				</div>
 				<div class="hidden h-screen mobile-menu">
 					<div class="flex flex-col items-center justify-center h-full">
-						<ul class="md:hidden font-display select-none	">
+						{% if request.get_full_path == '/' %}
+						<ul class="md:hidden font-display select-none">
 							<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
 								<a href="{% url 'index' %}#events">
 									Events
@@ -88,8 +104,31 @@
 									Register
 								</a>
 							</li>
-							
+							<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
+								<a href="{% url 'rules' %}">
+									Rules
+								</a>
+							</li>
 						</ul>
+						{% else %}					
+						<ul class="md:hidden font-display select-none">
+							<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
+								<a href="{% url 'index' %}#events">
+									Events
+								</a>
+							</li>
+							<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
+								<a href="{% url 'index' %}#register">
+									Register
+								</a>
+							</li>
+							<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
+								<a href="{% url 'rules' %}">
+									Rules
+								</a>
+							</li>
+						</ul>
+						{% endif %}
 					</div>
 				</div>
 			</div>

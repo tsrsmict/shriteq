@@ -28,16 +28,29 @@ button.mobile-menu-button {
   cursor: pointer;
 }
 
-#nav-icon:hover > span {
+.nav-icon > span {
+  background-color: #1f2937 ;
+}
+
+.nav-icon:hover > span {
+  background-color: #1f2937 ;
+
+}
+
+.nav-icon-light > span {
+  background-color: #9ca3af;
+}
+
+.nav-icon-light:hover > span {
     background: #f3f4f6;
 }
+
 
 #nav-icon span {
   display: block;
   position: absolute;
   height: 3px;
   width: 100%;
-  background-color: #9ca3af;
   border-radius: 3px;
   opacity: 1;
   left: 0;
