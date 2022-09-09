@@ -9,7 +9,7 @@ EVENT_SLUGS = [
     'crypt-hunt',
     'image-ination',
     'ad-making',
-    'programming',
+    'code-combat',
     'web-design',
     'pac-man',
 ]
