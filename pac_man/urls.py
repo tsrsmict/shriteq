@@ -8,7 +8,6 @@ from . import views
 
 urlpatterns = []
 
-
 now = datetime.datetime.now(tz=settings.TIME_ZONE_INFO)
 if settings.DEBUG == True or now >= settings.OPEN_EVENT_START_TIME:
     urlpatterns += [
