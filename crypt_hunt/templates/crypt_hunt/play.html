@@ -2,7 +2,20 @@
 {% block subtitle %} {% endblock subtitle %}
 
 {% block subcontent %}
-<div class="w-full">
-    
+<h3 class="mt-12 mb-6">Question 1</h3>
+<div class="w-full grid lg:grid-cols-2 gap-6">
+    <div>
+        <p class="text-md lg:text-lg leading-loose">Porttitor lobortis est vulputate hendrerit rhoncus ut pellentesque
+            ornare integer consequat
+        </p>
+    </div>
+    <div>
+        <form action="">
+            <div class="flex flex-col gap-3">
+                <input type="text" id="answer" name="answer" placeholder="Your answer">
+                <button type="submit" class="p-4 bg-violet-custom text-white rounded-lg">Submit</button>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock subcontent %}
