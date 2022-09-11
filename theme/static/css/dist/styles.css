@@ -998,6 +998,10 @@ h4 {
   width: 66.666667%;
 }
 
+.w-9\/12 {
+  width: 75%;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -1363,6 +1367,14 @@ h4 {
   padding-bottom: 2rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1672,6 +1684,10 @@ h4 {
   .md\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+
+  .md\:pb-8 {
+    padding-bottom: 2rem;
   }
 
   .md\:text-right {
