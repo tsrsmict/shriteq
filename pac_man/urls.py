@@ -14,7 +14,7 @@ if settings.DEBUG == True or now >= settings.OPEN_EVENT_START_TIME:
         path('', views.index, name='pac_man_index'),
         path('rules', TemplateView.as_view(template_name='pac_man/rules.html'), name='pac_man_rules'),
         path('leaderboard', views.leaderboard, name='pac_man_leaderboard'),
-        path('play', views.play, name='pac_man_play'),
+        path('play', views.Play.as_view(), name='pac_man_play'),
     ]
 else: 
     urlpatterns += [
