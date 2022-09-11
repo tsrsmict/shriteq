@@ -86,6 +86,7 @@ INSTALLED_APPS = [
     'events',
     'crypt_hunt',
     'pac_man',
+    'accounts',
 ]
 
 TAILWIND_APP_NAME = 'theme'
