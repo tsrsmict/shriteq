@@ -30,7 +30,7 @@ if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
 SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = os.environ['DEBUG'] == 'True'
-print(os.environ['DEBUG'])
+
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
@@ -39,7 +39,7 @@ else:
         '127.0.0.1',
         '.herokuapp.com',
         ".shriteq.org",
-        ".canvas4change.com"
+        ".canvas4change.com" # for weird domain stuff with shriteq.org - if the domain provider is ever switched, this can be removed
     ]
     
 INTERNAL_IPS = [

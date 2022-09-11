@@ -15,7 +15,7 @@ EVENT_SLUGS = [
 ]
 
 def event(request, slug):
-    if slug not in EVENT_SLUGS: return HttpResponseNotFound()
+    if slug not in EVENT_SLUGS: return HttpResponseNotFound(render(request, '404.html'))
     template = f'events/{slug}.html'
     return render(request, template)
 
