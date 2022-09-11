@@ -1,37 +1,19 @@
-main {
-  /* to make sure the footer is pinned to the bottom. 328px = height of footer on desktop */
-  min-height: calc(100vh - 436px);
+.overflow-visible {
+  overflow: visible;
 }
 
-@media only screen and (min-width: 768px) {
-  main {
-    /* to make sure the footer is pinned to the bottom. 328px = height of footer on desktop */
-    min-height: calc(100vh - 328px);
-  }
-  
-}
-
-
-.z-15 {
-  z-index: 15;
-}
-
-.link-underline {
-  border-bottom-width: 0;
-  background-size: 0 3px;
-  background-position: 7px 80%;
-  background-repeat: no-repeat;
-  transition: background-size 0.6s ease-in-out;
-}
-
-.link-underline:hover {
-  background-size: 87.5% 3px;
-  background-position: 7px 80%;
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.z-15 {
+  z-index: 15;
+}
+
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {

@@ -1,9 +1,27 @@
-.overflow-visible {
-  overflow: visible;
+main {
+  /* to make sure the footer is pinned to the bottom. 328px = height of footer on desktop */
+  min-height: calc(100vh - 436px);
 }
 
-.overflow-hidden {
-  overflow: hidden;
+@media only screen and (min-width: 768px) {
+  main {
+    /* to make sure the footer is pinned to the bottom. 328px = height of footer on desktop */
+    min-height: calc(100vh - 328px);
+  }
+}
+
+
+.link-underline {
+  border-bottom-width: 0;
+  background-size: 0 3px;
+  background-position: 6px 82.5%;
+  background-repeat: no-repeat;
+  transition: background-size 0.6s ease-in-out;
+}
+
+.link-underline:hover {
+  background-size: 87.5% 3px;
+  background-position: 6px 82.5%;
 }
 
 button.mobile-menu-button {
@@ -29,12 +47,11 @@ button.mobile-menu-button {
 }
 
 .nav-icon > span {
-  background-color: #1f2937 ;
+  background-color: #1f2937;
 }
 
 .nav-icon:hover > span {
-  background-color: #1f2937 ;
-
+  background-color: #1f2937;
 }
 
 .nav-icon-light > span {
@@ -42,9 +59,8 @@ button.mobile-menu-button {
 }
 
 .nav-icon-light:hover > span {
-    background: #f3f4f6;
+  background: #f3f4f6;
 }
-
 
 #nav-icon span {
   display: block;
