@@ -2,19 +2,22 @@
 {% block subtitle %} {% endblock subtitle %}
 
 {% block subcontent %}
-<h3 class="mt-6 mb-4">Question 1</h3>
+<h3> {{ school.name }} <h3>
+<h3 class="mt-9 mb-2">Question {{ question.serial_num }}</h3>
 <div class="w-full grid lg:grid-cols-2 gap-6">
-    <div>
-        <p class="text-md lg:text-lg leading-loose">Porttitor lobortis est vulputate hendrerit rhoncus ut pellentesque
-            ornare integer consequat
+    <div class="flex flex-col align-baseline justify-start">
+        <p class="text-md lg:text-lg leading-loose lg:leading-loose">
+            {{ question.question }}
         </p>
         <img src="" alt="">
     </div>
     <div>
-        <form action="">
+        <form method = "post" action = "/crypt-hunt/play" >
+            {% csrf_token %}
             <div class="flex flex-col gap-3">
-                <input type="text" id="answer" name="answer" placeholder="Your answer" class="rounded-md h-16 p-4">
-                <button type="submit" class="p-4 bg-violet-custom text-white rounded-lg">Submit</button>
+                <input type="text" id="answer" name="answer" placeholder="Your answer" class="rounded-md h-20 py-4 px-5 mb-1" required>
+                <input type="hidden" name="question-num" id="question-num" value="{{ question.serial_num }}">
+                <button type="submit" class="p-3 bg-violet-custom text-white rounded-md">Submit</button>
             </div>
         </form>
     </div>

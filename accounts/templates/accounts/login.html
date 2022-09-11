@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+<div class="pt-6 pb-9 px-8 md:px-20 lg:px-44 w-full flex flex-col justify-center items-center">
+    <h1 class="mb-10">Log in</h1>
+    <form action="/accounts/login/" method="POST" class="md:w-8/12 lg:w-6/12 flex flex-col gap-6">
+        {% csrf_token %}
+        <div class="flex flex-col gap-2">
+            <label for="user-id" class="text-sm">Use your school email ID here. <br> If you do not have an official school-provided email ID,
+                enter your firstname.lastname followed by your admission number, eg. john.doe1234</label>
+            <input class="rounded-sm py-4 px-4" type="text" placeholder="User ID" id="user-id" name="user-id">
+        </div>
+        <div class="flex flex-col gap-2">
+            <label for="school-id" class="text-sm">Your school should have been been given a ShriTeq username and password. Please contact the
+                event organisers if you have not received it.</label>
+            <div class="flex flex-col gap-3">
+                <input class="rounded-sm py-4 px-4" type="text" placeholder="School username" id="school-username" name="school-username">
+                <input type="password" class="rounded-sm py-4 px-4" type="text" placeholder="School password" id="school-password" name="school-password">
+            </div>
+        </div>
+        <button class="p-4 bg-black rounded-md">
+            <div class="flex flex-row items-center justify-center">
+                <p class="ml-2 text-xl font-semibold text-white grow text-center">Login</p>
+            </div>
+        </button>
+
+    </form>
+</div>
+{% endblock %}
