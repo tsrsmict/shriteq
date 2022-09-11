@@ -918,6 +918,18 @@ h4 {
   margin-left: 2rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -1286,6 +1298,11 @@ h4 {
 .bg-neutral-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(212 212 212 / var(--tw-bg-opacity));
+}
+
+.bg-violet-custom {
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 63 255 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-25 {
@@ -1883,6 +1900,11 @@ h4 {
   .lg\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   .lg\:leading-relaxed {
