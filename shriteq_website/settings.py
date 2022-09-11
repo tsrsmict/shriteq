@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -174,13 +173,16 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Kolkata'
-
 USE_I18N = True
-
 USE_L10N = True
+USE_TZ = True
 
-USE_TZ = False
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
+TIME_ZONE_INFO = ZoneInfo(TIME_ZONE)
+# datetime(year, month, day, hour, minute, second, microsecond)
+OPEN_EVENT_START_TIME = datetime(2022, 10, 8, 9, 0, 0, 0, tzinfo=TIME_ZONE_INFO)
 
 
 # Static files (CSS, JavaScript, Images)
