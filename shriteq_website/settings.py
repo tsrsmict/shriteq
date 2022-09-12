@@ -84,9 +84,9 @@ INSTALLED_APPS = [
     'django_components',
 
     'events',
+    'accounts',
     'crypt_hunt',
     'pac_man',
-    'accounts',
 ]
 
 TAILWIND_APP_NAME = 'theme'
