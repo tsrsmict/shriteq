@@ -3,13 +3,15 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 
 from django.contrib import auth
+from .models import School
 
 # Create your views here.
 
 def login(request):
     if request.method == 'GET':
         if request.user.is_authenticated: return redirect('/')
-        return render(request, 'accounts/login.html')
+        context = {'schools': School.objects.all()}
+        return render(request, 'accounts/login.html', context)
     if request.method == 'POST':
         username = request.POST['school-username']
         password = request.POST['school-password']
@@ -18,9 +20,9 @@ def login(request):
             auth.login(request, user)
             user_id = request.POST['user-id']
             request.session['user_id'] = user_id
-            return HttpResponseRedirect(reverse('open'))
+            return redirect(reverse('open'))
         else:
-            return HttpResponseRedirect('/accounts/login')
+            return redirect('/accounts/login')
     
 def logout(request):
     auth.logout(request)
