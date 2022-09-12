@@ -13,8 +13,10 @@ def login(request):
         context = {'schools': School.objects.all()}
         return render(request, 'accounts/login.html', context)
     if request.method == 'POST':
+        print(request.POST)
         username = request.POST['school-username']
         password = request.POST['school-password']
+        print(f'{username=} {password=}')
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
