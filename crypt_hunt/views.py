@@ -20,7 +20,7 @@ class Index(BaseOnlineEventView):
 class Leaderboard(BaseOnlineEventView):
     def get(self, request):
         if not super().check_auth(request): return redirect('open')
-        schools = School.objects.all().order_by('-question__serial_num', 'date_modified')
+        schools = School.objects.all().order_by('-question_num', 'date_modified')
 
         context = {'schools': schools}
         print(context)
