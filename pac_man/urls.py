@@ -8,8 +8,7 @@ from . import views
 
 urlpatterns = []
 
-now = datetime.datetime.now(tz=settings.TIME_ZONE_INFO)
-if settings.DEBUG == True or now >= settings.OPEN_EVENT_START_TIME:
+if settings.OPEN_EVENTS_RUNNING:
     urlpatterns += [
         path('', views.index, name='pac_man_index'),
         path('rules', TemplateView.as_view(template_name='pac_man/rules.html'), name='pac_man_rules'),
