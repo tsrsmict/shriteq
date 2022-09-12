@@ -7,7 +7,7 @@ class School(models.Model):
     account = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     
     # Setting the default question to the first question in the database.
-    question = models.ForeignKey(Question, on_delete=models.CASCADE, default=Question.objects.first(), null=True)
+    # question = models.ForeignKey(Question, on_delete=models.CASCADE, default=Question.objects.first(), null=True)
     date_modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):

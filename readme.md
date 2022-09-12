@@ -5,6 +5,13 @@ Make sure you have the following installed on your system:
 * [NodeJS](https://github.com/nvm-sh/nvm)
 * (optional, for deploy config) [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
+# Weird database stuff
+1. Make sure there is no model that refers to another model that hans't been initialised
+2. Useful commands:
+
+`python manage.py migrate --fake`
+`python manage.py migrate --run-syncdb`
+
 # Development
 ## Development server
 Run the following commands in your shell in the root directory of this repository:
