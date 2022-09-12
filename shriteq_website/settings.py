@@ -29,7 +29,7 @@ if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
 SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = os.environ['DEBUG'] == 'True'
-
+print(f"{DEBUG=}")
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
