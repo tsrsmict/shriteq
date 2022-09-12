@@ -104,7 +104,6 @@ class Play(BaseOnlineEventView):
         save_log(log)
         return redirect(reverse('crypt_hunt_play'))
 
-
 # Utils
 def submission_correct(answer: str, question: Question) -> bool:
     return answer.lower().strip().replace(' ', '') == question.answer.lower().strip().replace(' ', '')
