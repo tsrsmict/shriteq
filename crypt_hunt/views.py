@@ -1,36 +1,32 @@
 from datetime import datetime
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.views.generic import View
 from django.urls import reverse
 
 from accounts.models import School
 from .models import Question
+from events.views import BaseOnlineEventView
 
 from django.conf import settings
-from django.views import generic
 User = settings.AUTH_USER_MODEL
 
 # Create your views here.
-class BaseCryptHuntView(generic.View):
-    def check_auth(self, request) -> bool:
-        print('Check auth called')
-        return request.user.is_authenticated
 
-class Index(BaseCryptHuntView):
+class Index(BaseOnlineEventView):
     def get(self, request):
         if not super().check_auth(request): return redirect('open')
         return render(request, 'crypt_hunt/index.html')
 
-class Leaderboard(BaseCryptHuntView):
+class Leaderboard(BaseOnlineEventView):
     def get(self, request):
         if not super().check_auth(request): return redirect('open')
         schools = School.objects.all().order_by('-question__serial_num', 'date_modified')
 
         context = {'schools': schools}
+        print(context)
         return render(request,'crypt_hunt/leaderboard.html', context=context)
 
-class Congrats(BaseCryptHuntView):
+class Congrats(BaseOnlineEventView):
     def get(self, request):
         if not super().check_auth(request): return redirect('open')
         school = School.objects.get(account=request.user)
@@ -40,7 +36,7 @@ class Congrats(BaseCryptHuntView):
         else:
             return HttpResponseRedirect(reverse('crypt_hunt_play'))
 
-class Play(BaseCryptHuntView):
+class Play(BaseOnlineEventView):
     def get(self, request):
         if not super().check_auth(request): return redirect('open')
         context = {}
@@ -104,7 +100,7 @@ class Play(BaseCryptHuntView):
         log['question_num'] = question.serial_num
 
         save_log(log)
-        return self.get(request)
+        return redirect(reverse('crypt_hunt_play'))
 
 
 # Utils
