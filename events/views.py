@@ -1,6 +1,6 @@
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
-
+import django.views.generic as generic
 from accounts.models import School
 
 EVENT_SLUGS = [
@@ -36,3 +36,9 @@ def open_events(request):
     context['user_id'] = session['user_id']
 
     return render(request, 'open-events.html', context)
+
+
+class BaseOnlineEventView(generic.View):
+    def check_auth(self, request) -> bool:
+        print('Check auth called')
+        return request.user.is_authenticated
