@@ -1,6 +1,6 @@
 from datetime import datetime
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.urls import reverse
 
@@ -8,28 +8,41 @@ from accounts.models import School
 from .models import Question
 
 from django.conf import settings
+from django.views import generic
 User = settings.AUTH_USER_MODEL
 
 # Create your views here.
-def index(request):
-    return render(request, 'crypt_hunt/index.html')
+class BaseCryptHuntView(generic.View):
+    def check_auth(self, request) -> bool:
+        print('Check auth called')
+        return request.user.is_authenticated
 
-def leaderboard(request):
-    schools = School.objects.all().order_by('-question__serial_num', 'date_modified')
-
-    context = {'schools': schools}
-    return render(request,'crypt_hunt/leaderboard.html', context=context)
-
-def congrats(request):
-    school = School.objects.get(account=request.user)
-    print(Question.objects.last())
-    if not school.question:
-        return render(request, 'crypt_hunt/congrats.html')
-    else:
-        return HttpResponseRedirect(reverse('crypt_hunt_play'))
-
-class Play(View):
+class Index(BaseCryptHuntView):
     def get(self, request):
+        if not super().check_auth(request): return redirect('open')
+        return render(request, 'crypt_hunt/index.html')
+
+class Leaderboard(BaseCryptHuntView):
+    def get(self, request):
+        if not super().check_auth(request): return redirect('open')
+        schools = School.objects.all().order_by('-question__serial_num', 'date_modified')
+
+        context = {'schools': schools}
+        return render(request,'crypt_hunt/leaderboard.html', context=context)
+
+class Congrats(BaseCryptHuntView):
+    def get(self, request):
+        if not super().check_auth(request): return redirect('open')
+        school = School.objects.get(account=request.user)
+        print(Question.objects.last())
+        if not school.question:
+            return render(request, 'crypt_hunt/congrats.html')
+        else:
+            return HttpResponseRedirect(reverse('crypt_hunt_play'))
+
+class Play(BaseCryptHuntView):
+    def get(self, request):
+        if not super().check_auth(request): return redirect('open')
         context = {}
         try:
             print(request.user)
@@ -49,6 +62,7 @@ class Play(View):
         return render(request, template_name='crypt_hunt/play.html', context=context)
 
     def post(self, request):
+        if not super().check_auth(request): return redirect('open')
         data = (request.POST)
         session = request.session
         
