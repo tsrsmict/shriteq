@@ -5,15 +5,20 @@
 
 {% block content %}
 <section id="events" class="px-5 py-16 mx-auto md:px-20 lg:px-44">
-    <div class="flex flex-row justify-center mb-2">
-        <h2 class="flex-grow">Available events</h2>
+    <div class="flex flex-row justify-center items-end mb-6">
+        <div class="flex-grow">
+            <h2 class="mb-2">Available events</h2>
+            <div class="">
+                <h4>Logged in as {{ user_id }} from {{ school.display_name }}</h4> 
+            </div>
+        </div>
         <div class="flex flex-row">
-            <h4> <a href="{% url 'logout' %}">LOGOUT</a> </h4>
+            <h4> <a href="{% url 'logout' %}">
+                <button class="border border-black bg-white rounded-md text-black py-2 px-3 text-sm">Sign out</button>
+            </a> </h4>
         </div>
     </div>
-    <div class="mb-6">
-        <h4>Logged in as {{ user_id }} from {{ school.display_name }}</h4> 
-    </div>
+
     <div class="grid lg:grid-cols-2 gap-4 lg:gap-8">
         <div class="border rounded-md py-5 px-8 border-violet-custom">
             <div class="flex flex-col items-center gap-6">
