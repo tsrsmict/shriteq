@@ -22,3 +22,13 @@ def event(request, slug):
 def schedule(request):
     return render(request, 'schedule.html')
     # return HttpResponseRedirect('/static/ShriTeq2022_Schedule.pdf')
+
+def open_events(request):
+    if not request.user.is_authenticated: return HttpResponseRedirect('/accounts/login')
+    school = School.objects.get(account=request.user)
+    context = {}
+
+    session = request.session
+    context['user_id'] = session['user_id']
+
+    return render(request, 'open-events.html', context)

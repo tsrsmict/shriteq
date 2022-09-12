@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 
 from django.contrib import auth
 
@@ -17,7 +18,7 @@ def login(request):
             auth.login(request, user)
             user_id = request.POST['user-id']
             request.session['user_id'] = user_id
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect(reverse('open'))
         else:
             return HttpResponseRedirect('/accounts/login')
     

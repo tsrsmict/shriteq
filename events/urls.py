@@ -9,4 +9,5 @@ urlpatterns = [
     path('events/<str:slug>/', views.event, name='event'),
     path('schedule', views.schedule, name='schedule'),
     path('rules', TemplateView.as_view(template_name='rules.html'), name='rules'),
+    path('open/', views.open_events, name='open'),
 ]

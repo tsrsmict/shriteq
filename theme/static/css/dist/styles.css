@@ -855,6 +855,11 @@ h4 {
   margin-bottom: 1.5rem;
 }
 
+.my-9 {
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+}
+
 .mb-9 {
   margin-bottom: 2.25rem;
 }
@@ -1267,6 +1272,11 @@ h4 {
 
 .border-b {
   border-bottom-width: 1px;
+}
+
+.border-violet-custom {
+  --tw-border-opacity: 1;
+  border-color: rgb(124 63 255 / var(--tw-border-opacity));
 }
 
 .bg-white {
