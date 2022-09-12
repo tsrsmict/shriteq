@@ -7,16 +7,20 @@
     <form action="/accounts/login/" method="POST" class="md:w-8/12 lg:w-6/12 flex flex-col gap-6">
         {% csrf_token %}
         <div class="flex flex-col gap-2">
-            <label for="user-id" class="text-sm">Use your school email ID here. <br> If you do not have an official school-provided email ID,
-                enter your firstname.lastname followed by your admission number, eg. john.doe1234</label>
             <input class="rounded-sm py-4 px-4" type="text" placeholder="User ID" id="user-id" name="user-id">
+            <label for="user-id" class="text-sm">Enter your firstname.lastname, eg. john.doe</label>
         </div>
         <div class="flex flex-col gap-2">
-            <label for="school-id" class="text-sm">Your school should have been been given a ShriTeq username and password. Please contact the
-                event organisers if you have not received it.</label>
-            <div class="flex flex-col gap-3">
-                <input class="rounded-sm py-4 px-4" type="text" placeholder="School username" id="school-username" name="school-username">
+            
+            <div class="flex flex-col gap-2">
+                <select name="school-username" id="school-username" class="py-4 px-4">
+                    {% for school in schools %}
+                        <option value="{{ school.account.username }}">{{ school.display_name }} </option>
+                    {% endfor %}
+                </select>
                 <input type="password" class="rounded-sm py-4 px-4" type="text" placeholder="School password" id="school-password" name="school-password">
+                <label for="school-id" class="text-sm">Your school should have been been given a password for ShriTeq. Please contact the
+                    event organisers if your school has not received it.</label>
             </div>
         </div>
         <button class="p-4 bg-black rounded-md">
