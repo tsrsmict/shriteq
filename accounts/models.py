@@ -4,7 +4,7 @@ from crypt_hunt.models import Question
 
 class School(models.Model):
     display_name = models.CharField(max_length=100)
-    account = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    account = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None, null=True)
     
     # Setting the default question to the first question in the database.
     question_num = models.SmallIntegerField(default=1, null=True)
