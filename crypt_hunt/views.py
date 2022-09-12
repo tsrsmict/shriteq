@@ -73,7 +73,7 @@ class Play(BaseOnlineEventView):
         log = {
             'answer': answer,
             'ip': get_client_ip(request),
-            'time': datetime.now()
+            'time': str(datetime.now)
         }
 
         try:
@@ -91,12 +91,14 @@ class Play(BaseOnlineEventView):
                 # Advance the question
                 school.question = question.next_question
                 school.save()
-                log['correct'] = True
+                log['status'] = 'correct'
             else:
-                log['correct'] = False
+                log['status'] = 'incorrect'
+        else: 
+            log['status'] = 'outdated'            
 
         log['user_id'] = user_id
-        log['school'] = school
+        log['school'] = str(school)
         log['question_num'] = question.serial_num
 
         save_log(log)
