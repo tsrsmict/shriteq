@@ -22,7 +22,8 @@ def leaderboard(request):
 
 def congrats(request):
     school = School.objects.get(account=request.user)
-    if school.question.serial_num == Question.objects.last().serial_num + 1:
+    print(Question.objects.last())
+    if not school.question:
         return render(request, 'crypt_hunt/congrats.html')
     else:
         return HttpResponseRedirect(reverse('crypt_hunt_play'))
