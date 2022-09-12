@@ -86,7 +86,6 @@ INSTALLED_APPS = [
     'events',
     'accounts',
     'crypt_hunt',
-    
     'pac_man',
 ]
 
