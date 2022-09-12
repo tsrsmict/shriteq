@@ -105,7 +105,7 @@ class Play(BaseOnlineEventView):
 
 # Utils
 def submission_correct(answer: str, question: Question) -> bool:
-    return answer.lower().strip() == question.answer.lower().strip()
+    return answer.lower().strip().replace(' ', '') == question.answer.lower().strip().replace(' ', '')
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
