@@ -33,110 +33,110 @@
 {% else %}
 <body class="bg-white no-scrollbar">
 {% endif %}
-		<main>
+		<main class="flex flex-col">
 			{% if request.get_full_path == '/' %}
 			<nav class="z-20 w-screen py-4 text-white bg-opacity-25 bg-black absolute top-0">
 			{% else %}
 			<nav class="w-screen py-4 border-b-2 shadow-lg">
 			{% endif %}
-			<div class="px-5 md:px-20 lg:px-44">
-				<div class="flex justify-between">
-					<div class="flex flex-row w-screen space-x-7">
-						<div class="grow">
-							<a href="{% url 'index' %}">
+				<div class="px-5 md:px-20 lg:px-44">
+					<div class="flex justify-between">
+						<div class="flex flex-row w-screen space-x-7">
+							<div class="grow">
+								<a href="{% url 'index' %}">
+									{% if request.get_full_path == '/' %}
+										<img class="h-12 md:h-20" src="{% static 'assets/logo-dark.png' %}" alt="">
+									</picture>
+									{% else %}
+									<img class="h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
+									{% endif %}
+								</a>
+							</div>
+							<div class="items-center hidden space-x-5 font-display md:flex bg-transparent">
 								{% if request.get_full_path == '/' %}
-									<img class="h-12 md:h-20" src="{% static 'assets/logo-dark.png' %}" alt="">
-								</picture>
+								<a href="{% url 'index'%}#events"
+									class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Events</a>
+								<a href="{% url 'index'%}#register"
+								class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Register</a>
+								<a href="{% url 'rules' %}"
+								class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Rules</a>
 								{% else %}
-								<img class="h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
+								<a href="{% url 'index'%}#events"
+									class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Events</a>
+								<a href="{% url 'index'%}#register"
+									class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Register</a>
+								<a href="{% url 'rules' %}"
+									class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Rules</a>
 								{% endif %}
-							</a>
-						</div>
-						<div class="items-center hidden space-x-5 font-display md:flex bg-transparent">
-							{% if request.get_full_path == '/' %}
-							<a href="{% url 'index'%}#events"
-								class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Events</a>
-							<a href="{% url 'index'%}#register"
-							class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Register</a>
-							<a href="{% url 'rules' %}"
-							class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Rules</a>
-							{% else %}
-							<a href="{% url 'index'%}#events"
-								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Events</a>
-							<a href="{% url 'index'%}#register"
-								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Register</a>
-							<a href="{% url 'rules' %}"
-								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Rules</a>
-							{% endif %}
-						</div>
-						<div class="flex items-center md:hidden">
-							{% if request.get_full_path == '/' %}
-							<div id="nav-icon" class="nav-icon-light">
-								<span class=""></span>
-								<span class=""></span>
-								<span class=""></span>
-								<span class=""></span>
 							</div>
-							{% else %}
+							<div class="flex items-center md:hidden">
+								{% if request.get_full_path == '/' %}
+								<div id="nav-icon" class="nav-icon-light">
+									<span class=""></span>
+									<span class=""></span>
+									<span class=""></span>
+									<span class=""></span>
+								</div>
+								{% else %}
 
-							<div id="nav-icon" class="nav-icon">
-								<span class=""></span>
-								<span class=""></span>
-								<span class=""></span>
-								<span class=""></span>
+								<div id="nav-icon" class="nav-icon">
+									<span class=""></span>
+									<span class=""></span>
+									<span class=""></span>
+									<span class=""></span>
+								</div>
+
+								{% endif %}
 							</div>
-
+						</div>
+					</div>
+					<div class="hidden h-screen mobile-menu">
+						<div class="flex flex-col items-center justify-center h-full">
+							{% if request.get_full_path == '/' %}
+							<ul class="md:hidden font-display select-none">
+								<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
+									<a href="{% url 'index' %}#events">
+										Events
+									</a>
+								</li>
+								<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
+									<a href="{% url 'index' %}#register">
+										Register
+									</a>
+								</li>
+								<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
+									<a href="{% url 'rules' %}">
+										Rules
+									</a>
+								</li>
+							</ul>
+							{% else %}					
+							<ul class="md:hidden font-display select-none">
+								<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
+									<a href="{% url 'index' %}#events">
+										Events
+									</a>
+								</li>
+								<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
+									<a href="{% url 'index' %}#register">
+										Register
+									</a>
+								</li>
+								<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
+									<a href="{% url 'rules' %}">
+										Rules
+									</a>
+								</li>
+							</ul>
 							{% endif %}
 						</div>
 					</div>
 				</div>
-				<div class="hidden h-screen mobile-menu">
-					<div class="flex flex-col items-center justify-center h-full">
-						{% if request.get_full_path == '/' %}
-						<ul class="md:hidden font-display select-none">
-							<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
-								<a href="{% url 'index' %}#events">
-									Events
-								</a>
-							</li>
-							<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
-								<a href="{% url 'index' %}#register">
-									Register
-								</a>
-							</li>
-							<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
-								<a href="{% url 'rules' %}">
-									Rules
-								</a>
-							</li>
-						</ul>
-						{% else %}					
-						<ul class="md:hidden font-display select-none">
-							<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
-								<a href="{% url 'index' %}#events">
-									Events
-								</a>
-							</li>
-							<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
-								<a href="{% url 'index' %}#register">
-									Register
-								</a>
-							</li>
-							<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
-								<a href="{% url 'rules' %}">
-									Rules
-								</a>
-							</li>
-						</ul>
-						{% endif %}
-					</div>
-				</div>
+			</nav>
+			<div class="flex-grow">
+				{% block content %}
+				{% endblock content %}
 			</div>
-		</nav>
-		<div class="h-full">
-			{% block content %}
-			{% endblock content %}
-		</div>
 		</main>
 
 		<footer class="px-4 py-10 mx-auto md:px-20 lg:px-44 bg-offblack">
