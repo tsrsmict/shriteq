@@ -12,6 +12,8 @@ Make sure you have the following installed on your system:
 `python manage.py migrate --fake`
 `python manage.py migrate --run-syncdb`
 
+https://stackoverflow.com/questions/31323618/django-1-8-migrations-contenttype-integrity-error (error I was getting earlier)
+
 # Development
 ## Development server
 Run the following commands in your shell in the root directory of this repository:
