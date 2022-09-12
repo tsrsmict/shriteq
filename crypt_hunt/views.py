@@ -73,7 +73,7 @@ class Play(BaseOnlineEventView):
         log = {
             'answer': answer,
             'ip': get_client_ip(request),
-            'time': str(datetime.now)
+            'time': str(datetime.now())
         }
 
         try:
