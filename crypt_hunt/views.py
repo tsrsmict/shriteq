@@ -36,11 +36,15 @@ class Play(View):
             question = school.question
             context['question'] = question
             context['school'] = school
+
+            session = request.session
+            context['user_id'] = session['user_id']
+            
         except Exception as e:
             print(e)
+            return HttpResponseRedirect(reverse('crypt_hunt_index'))
         if school.question == None:
             return HttpResponseRedirect(reverse('crypt_hunt_congrats'))
-
         return render(request, template_name='crypt_hunt/play.html', context=context)
 
     def post(self, request):
