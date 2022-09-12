@@ -18,6 +18,8 @@
             {% url 'pac_man_leaderboard' as leaderboard %}
             {% url 'pac_man_rules' as rules %}
 
+            <a href="{% url 'open' %}" class="uppercase font-light hover:text-violet-custom">Home</a>
+
             {% if request.path == play %}
                 <p class="uppercase text-violet-custom">Play</p>
             {% else %}

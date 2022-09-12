@@ -31,3 +31,16 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+main {
+  /* to make sure the footer is pinned to the bottom. 412px = height of footer on <md */
+  min-height: calc(100vh - 412px);
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    /* to make sure the footer is pinned to the bottom. 328px = height of footer on desktop */
+    min-height: calc(100vh - 328px);
+  }
+}
+
