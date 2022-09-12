@@ -1,6 +1,8 @@
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
 
+from accounts.models import School
+
 EVENT_SLUGS = [
     'hackathon',
     'bot-xchange',
@@ -25,8 +27,10 @@ def schedule(request):
 
 def open_events(request):
     if not request.user.is_authenticated: return HttpResponseRedirect('/accounts/login')
-    school = School.objects.get(account=request.user)
     context = {}
+
+    school = School.objects.get(account=request.user)
+    context['school'] = school
 
     session = request.session
     context['user_id'] = session['user_id']
