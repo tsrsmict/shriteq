@@ -15,4 +15,4 @@ class School(models.Model):
 
     @property
     def question(self):
-        return Question.objects.all()[self.question_num - 1]
+        return Question.objects.filter(serial_num=self.question_num).first()
