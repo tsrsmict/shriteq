@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from crypt_hunt.models import Question
+
 class School(models.Model):
     display_name = models.CharField(max_length=100)
     account = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
