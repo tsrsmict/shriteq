@@ -89,7 +89,7 @@ class Play(BaseOnlineEventView):
             # Validate the submission with an advanced function
             if submission_correct(answer, question):
                 # Advance the question
-                school.question = question.next_question
+                school.question_num += 1
                 school.save()
                 log['status'] = 'correct'
             else:
