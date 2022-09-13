@@ -29,7 +29,13 @@ if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
 SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = os.environ['DEBUG'] == 'True'
-print(f"{DEBUG=}")
+
+test = os.environ.get('TEST', None)
+IS_TEST_SERVER = False
+if test is not None:
+    IS_TEST_SERVER = True
+
+print(f"{DEBUG=} {IS_TEST_SERVER=}")
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
@@ -187,7 +193,7 @@ OPEN_EVENT_START_TIME = datetime(2022, 10, 8, 9, 0, 0, 0, tzinfo=TIME_ZONE_INFO)
 OPEN_EVENT_CLOSE_TIME = datetime(2022, 10, 11, 11, 59, 0, 0, tzinfo=TIME_ZONE_INFO)
 
 now = datetime.now(tz=TIME_ZONE_INFO)
-OPEN_EVENTS_RUNNING = DEBUG == True or (now >= OPEN_EVENT_START_TIME and now < OPEN_EVENT_CLOSE_TIME)
+OPEN_EVENTS_RUNNING = DEBUG == True or IS_TEST_SERVER == True or (now >= OPEN_EVENT_START_TIME and now < OPEN_EVENT_CLOSE_TIME)
 
 
 # Static files (CSS, JavaScript, Images)
