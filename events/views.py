@@ -41,4 +41,6 @@ def open_events(request):
 class BaseOnlineEventView(generic.View):
     def check_auth(self, request) -> bool:
         print('Check auth called')
-        return request.user.is_authenticated
+        is_auth = request.user.is_authenticated
+        print(f'{is_auth=}')
+        return is_auth
