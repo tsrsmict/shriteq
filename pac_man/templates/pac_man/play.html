@@ -1,1 +1,37 @@
 {% extends 'pac_man/pac_man_base.html' %}
+
+{% block subtitle %} - Play {% endblock subtitle %}
+
+{% block subcontent %}
+<div class="h-full w-full flex flex-col justify-center items-center">
+    <div class="bg-black h-96 w-96" id="player"></div>
+    <button id = "full-screen-btn" class="border border-violet-custom rounded-md text-violet-custom py-2 px-3 text-sm hover:bg-violet-custom hover:text-white">Full screen</button>
+
+</div>
+{% endblock subcontent %}
+
+{% block script %}
+<script>
+
+    const btn = document.querySelector('#full-screen-btn');
+    const player = document.querySelector('#player');
+
+    btn.addEventListener("click", function (e) {
+        toggleFullScreen(player);
+    }, false);
+
+    player.addEventListener("click", function (e) {
+        toggleFullScreen(player);
+    }, false);
+
+    function toggleFullScreen(toFullScreen) {
+        if (!document.fullscreenElement) {
+            toFullScreen.requestFullscreen().catch(err => {
+                alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    }
+</script>
+{% endblock script %}
