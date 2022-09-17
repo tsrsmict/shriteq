@@ -7,7 +7,7 @@ class PacManPlayer(models.Model):
     school = models.ForeignKey(School, on_delete=models.CASCADE)
     
     num_attempts = models.IntegerField(default=0, editable=False)
-    high_score = models.IntegerField()
+    high_score = models.IntegerField(default=0)
     last_played = models.DateTimeField(auto_now=True)
 
     def __str__(self):
