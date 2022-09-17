@@ -10,25 +10,31 @@
                 <th scope="col" class="py-3 px-6 w-1/12 text-center">
                     Rank
                 </th>
-                <th scope="col" class="py-3 px-6 w-6/12">
+                <th scope="col" class="py-3 px-6 w-4/12">
                     Player
                 </th>
-                <th scope="col" class="py-3 px-6 w-5/12">
+                <th scope="col" class="py-3 px-6 w-4/12">
+                    School
+                </th>
+                <th scope="col" class="py-3 px-6 w-3/12">
                     Highscore
                 </th>
             </tr>
         </thead>
         <tbody>
-            {% for i in '123456' %}
+            {% for player in players %}
             <tr class="bg-white border-b">
                 <th scope="row" class="py-6 px-6 font-medium text-gray-900 text-center whitespace-nowrap">
-                    {{ i }}
+                    {{ forloop.counter }}
                 </th>
                 <td class="py-6 px-6 text-gra">
-                    John Doe
+                    {{ player.user_id }}
                 </td>
                 <td class="py-6 px-6">
-                    20
+                    {{ player.school.display_name }}
+                </td>
+                <td class="py-6 px-6">
+                    {{ player.high_score }}
                 </td>
             </tr>
             {% endfor %}
