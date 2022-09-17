@@ -11,7 +11,8 @@ class Index(BaseOnlineEventView):
 
 class Leaderboard(BaseOnlineEventView):
     def get(self, request):
-        context = {'players': PacManPlayer.objects.all()}
+        # Top 10 players by highscore
+        context = {'players': PacManPlayer.objects.order_by('-high_score')[:10]}
         return render(request,'pac_man/leaderboard.html', context=context)
 
 class Play(BaseOnlineEventView):
