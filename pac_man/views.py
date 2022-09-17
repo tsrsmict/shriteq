@@ -1,8 +1,13 @@
-from django.shortcuts import render
-from django.views.generic import View
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.shortcuts import render, redirect
+from django.urls import reverse
+
+from accounts.models import School
+from .models import PacManPlayer
 from events.views import BaseOnlineEventView
 
-from .models import PacManPlayer
+from django.conf import settings
+User = settings.AUTH_USER_MODEL
 
 # Create your views here.
 class Index(BaseOnlineEventView):
@@ -17,7 +22,31 @@ class Leaderboard(BaseOnlineEventView):
 
 class Play(BaseOnlineEventView):
     def get(self, request):
+        if not super().check_auth(request): return redirect('open')
         context = {}
+        try:
+            print(request.user)
+            school = School.objects.get(account=request.user)
+            context['school'] = school
+        except Exception as e:
+            print(f'{e=} {type(e)=}')
+            return HttpResponseRedirect(reverse('open'))
+        
+        try:
+            session = request.session
+            user_id = session['user_id']
+            print(user_id)
+            query = PacManPlayer.objects.filter(user_id=user_id)
+            if len(query) == 0:
+                player = PacManPlayer(user_id=user_id, school=school)
+                player.save()
+            else:
+                player = query[0]
+            context['player'] = player
+        except Exception as e:
+            print(f'{e=} {type(e)=}')
+            return HttpResponseRedirect(reverse('open'))
+
         return render(request, template_name='pac_man/play.html', context=context)
     def post(self, request):
         pass
