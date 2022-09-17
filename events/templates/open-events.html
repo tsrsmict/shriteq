@@ -9,12 +9,12 @@
         <div class="flex-grow">
             <h2 class="mb-2">Available events</h2>
             <div class="">
-                <h4>Logged in as {{ user_id }} from {{ school.display_name }}</h4> 
+                <h4>Signed in as {{ user_id }} from {{ school.display_name }}</h4> 
             </div>
         </div>
         <div class="flex flex-row">
             <h4> <a href="{% url 'logout' %}">
-                <button class="border border-black bg-white rounded-md text-black py-2 px-3 text-sm">Sign out</button>
+                <button class="border border-violet-custom rounded-md text-violet-custom py-2 px-3 text-sm hover:bg-violet-custom hover:text-white">Sign out</button>
             </a> </h4>
         </div>
     </div>
