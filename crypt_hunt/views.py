@@ -51,7 +51,7 @@ class Play(BaseOnlineEventView):
             context['user_id'] = session['user_id']
             
         except Exception as e:
-            print(e)
+            print(f'{e=} {type(e)=}')
             return HttpResponseRedirect(reverse('crypt_hunt_index'))
         if school.question == None:
             return HttpResponseRedirect(reverse('crypt_hunt_congrats'))
