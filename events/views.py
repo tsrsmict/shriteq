@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.templatetags.static import static
 
 EVENT_SLUGS = [
     'hackathon',
@@ -20,4 +21,4 @@ def event(request, slug):
     return render(request, template)
 
 def schedule(request):
-    return render(request, 'schedule.html')
+    return redirect(static('ShriTeq_2022_Schedule.pdf'))
