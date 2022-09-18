@@ -9,7 +9,7 @@
     <div class="flex-grow">
     <div class="flex flex-row items-center w-full mb-5">
         <h4 class="uppercase grow font-body"> {{ event_name }} </h4>
-        <a href="/events/{{ event_link }}">
+        <a href="{% url 'event' slug=event_link %}">
             <img src="{% static 'assets/icons/circle-arrow-right-solid.png' %}" class="h-7" alt="arrow forward">
         </a>
     </div>
