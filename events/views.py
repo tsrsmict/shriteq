@@ -21,4 +21,3 @@ def event(request, slug):
 
 def schedule(request):
     return render(request, 'schedule.html')
-    # return HttpResponseRedirect('/static/ShriTeq2022_Schedule.pdf')
