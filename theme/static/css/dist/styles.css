@@ -862,10 +862,6 @@ h4 {
   margin-bottom: 0.75rem;
 }
 
-.ml-2 {
-  margin-left: 0.5rem;
-}
-
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -906,24 +902,12 @@ h4 {
   margin-bottom: 1.75rem;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .ml-8 {
   margin-left: 2rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
 }
 
 .block {
@@ -988,38 +972,6 @@ h4 {
 
 .w-9\/12 {
   width: 75%;
-}
-
-.w-8 {
-  width: 2rem;
-}
-
-.w-16 {
-  width: 4rem;
-}
-
-.w-24 {
-  width: 6rem;
-}
-
-.w-96 {
-  width: 24rem;
-}
-
-.w-60 {
-  width: 15rem;
-}
-
-.w-72 {
-  width: 18rem;
-}
-
-.w-80 {
-  width: 20rem;
-}
-
-.w-1\/2 {
-  width: 50%;
 }
 
 .flex-grow {
@@ -1120,6 +1072,10 @@ h4 {
   gap: 0px;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .gap-5 {
   gap: 1.25rem;
 }
@@ -1130,10 +1086,6 @@ h4 {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-4 {
-  gap: 1rem;
 }
 
 .space-x-7 > :not([hidden]) ~ :not([hidden]) {
@@ -1310,10 +1262,6 @@ h4 {
           background-clip: text;
 }
 
-.fill-white {
-  fill: #fff;
-}
-
 .fill-offblack {
   fill: #262626;
 }
@@ -1322,12 +1270,20 @@ h4 {
   fill: #808080;
 }
 
-.p-4 {
-  padding: 1rem;
+.fill-white {
+  fill: #fff;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .p-7 {
   padding: 1.75rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .p-5 {
@@ -1691,11 +1647,6 @@ h4 {
     width: 50%;
   }
 
-  .md\:columns-2 {
-    -moz-columns: 2;
-         columns: 2;
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1729,6 +1680,11 @@ h4 {
   .md\:px-24 {
     padding-left: 6rem;
     padding-right: 6rem;
+  }
+
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .md\:pb-8 {
@@ -1814,6 +1770,11 @@ h4 {
     padding-right: 16rem;
   }
 
+  .lg\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
   .lg\:pt-16 {
     padding-top: 4rem;
   }
@@ -1845,6 +1806,11 @@ h4 {
   .xl\:px-80 {
     padding-left: 20rem;
     padding-right: 20rem;
+  }
+
+  .xl\:px-44 {
+    padding-left: 11rem;
+    padding-right: 11rem;
   }
 
   .xl\:leading-relaxed {
