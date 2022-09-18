@@ -3,10 +3,29 @@
 <html lang="en">
 
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2045H7MDTM"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-2045H7MDTM');
+	</script>
+
 	<title>ShriTeq 2022{% block title %} {% endblock title %}</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PW49CSP');</script>
+	<!-- End Google Tag Manager -->
+
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/x-icon" sizes="32x32" id="faviconTag"
 		href="{% static 'favicon/light/favicon-32x32.png' %}">
@@ -33,187 +52,187 @@
 {% else %}
 <body class="bg-white no-scrollbar">
 {% endif %}
-		<main>
-			{% if request.get_full_path == '/' %}
-			<nav class="z-20 w-screen py-4 text-white bg-opacity-25 bg-black absolute top-0">
-			{% else %}
-			<nav class="w-screen py-4 border-b-2 shadow-lg">
-			{% endif %}
-			<div class="px-5 md:px-20 lg:px-44">
-				<div class="flex justify-between">
-					<div class="flex flex-row w-screen space-x-7">
-						<div class="grow">
-							<a href="{% url 'index' %}">
-								{% if request.get_full_path == '/' %}
-									<img class="h-12 md:h-20" src="{% static 'assets/logo-dark.png' %}" alt="">
-								</picture>
-								{% else %}
-								<img class="h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
-								{% endif %}
-							</a>
-						</div>
-						<div class="items-center hidden space-x-5 font-display md:flex bg-transparent">
+	<main>
+		{% if request.get_full_path == '/' %}
+		<nav class="z-20 w-screen py-4 text-white bg-opacity-25 bg-black absolute top-0">
+		{% else %}
+		<nav class="w-screen py-4 border-b-2 shadow-lg">
+		{% endif %}
+		<div class="px-5 md:px-20 lg:px-44">
+			<div class="flex justify-between">
+				<div class="flex flex-row w-screen space-x-7">
+					<div class="grow">
+						<a href="{% url 'index' %}">
 							{% if request.get_full_path == '/' %}
-							<a href="{% url 'index'%}#events"
-								class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Events</a>
-							<a href="{% url 'index'%}#register"
-							class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Register</a>
-							<a href="{% url 'rules' %}"
-							class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Rules</a>
-							<a href="{% url 'index' %}#discord"
-							class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Discord</a>
+								<img class="h-12 md:h-20" src="{% static 'assets/logo-dark.png' %}" alt="">
+							</picture>
 							{% else %}
-							<a href="{% url 'index'%}#events"
-								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Events</a>
-							<a href="{% url 'index'%}#register"
-								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Register</a>
-								<a href="{% url 'rules' %}"
-								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Rules</a>
-								<a href="{% url 'index' %}#discord"
-								class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Discord</a>
+							<img class="h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
 							{% endif %}
-						</div>
-						<div class="flex items-center md:hidden">
-							{% if request.get_full_path == '/' %}
-							<div id="nav-icon" class="nav-icon-light">
-								<span class=""></span>
-								<span class=""></span>
-								<span class=""></span>
-								<span class=""></span>
-							</div>
-							{% else %}
-
-							<div id="nav-icon" class="nav-icon">
-								<span class=""></span>
-								<span class=""></span>
-								<span class=""></span>
-								<span class=""></span>
-							</div>
-
-							{% endif %}
-						</div>
+						</a>
 					</div>
-				</div>
-				<div class="hidden h-screen mobile-menu">
-					<div class="flex flex-col items-center justify-center h-full">
+					<div class="items-center hidden space-x-5 font-display md:flex bg-transparent">
 						{% if request.get_full_path == '/' %}
-						<ul class="md:hidden font-display select-none">
-							<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
-								<a href="{% url 'index' %}#events">
-									Events
-								</a>
-							</li>
-							<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
-								<a href="{% url 'index' %}#register">
-									Register
-								</a>
-							</li>
-							<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
-								<a href="{% url 'rules' %}">
-									Rules
-								</a>
-							</li>
-							<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
-								<a href="{% url 'index' %}#discord">
-									Discord
-								</a>
-							</li>
-						</ul>
-						{% else %}					
-						<ul class="md:hidden font-display select-none">
-							<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
-								<a href="{% url 'index' %}#events">
-									Events
-								</a>
-							</li>
-							<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
-								<a href="{% url 'index' %}#register">
-									Register
-								</a>
-							</li>
-							<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
-								<a href="{% url 'rules' %}">
-									Rules
-								</a>
-							</li>
-							<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
-								<a href="{% url 'index' %}#discord">
-									Discord
-								</a>
-							</li>
-						</ul>
+						<a href="{% url 'index'%}#events"
+							class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Events</a>
+						<a href="{% url 'index'%}#register"
+						class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Register</a>
+						<a href="{% url 'rules' %}"
+						class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Rules</a>
+						<a href="{% url 'index' %}#discord"
+						class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Discord</a>
+						{% else %}
+						<a href="{% url 'index'%}#events"
+							class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Events</a>
+						<a href="{% url 'index'%}#register"
+							class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Register</a>
+							<a href="{% url 'rules' %}"
+							class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Rules</a>
+							<a href="{% url 'index' %}#discord"
+							class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Discord</a>
+						{% endif %}
+					</div>
+					<div class="flex items-center md:hidden">
+						{% if request.get_full_path == '/' %}
+						<div id="nav-icon" class="nav-icon-light">
+							<span class=""></span>
+							<span class=""></span>
+							<span class=""></span>
+							<span class=""></span>
+						</div>
+						{% else %}
+
+						<div id="nav-icon" class="nav-icon">
+							<span class=""></span>
+							<span class=""></span>
+							<span class=""></span>
+							<span class=""></span>
+						</div>
+
 						{% endif %}
 					</div>
 				</div>
 			</div>
-		</nav>
-		<div class="h-full">
-			{% block content %}
-			{% endblock content %}
-		</div>
-		</main>
-
-		<footer class="px-4 py-10 mx-auto md:px-20 lg:px-44 bg-offblack">
-			<div class="my-10 font-extrabold leading-normal w-100 flex items-center justify-center text-7xl">
-				<img src="{% static 'assets/logo-dark-fullres.png' %}" alt="" class="h-32 md:h-48">
-			</div>
-
-			<div class="text-md md:text-lg">
-				<div class="text-grey-tertiary md:grid md:grid-cols-2">
-					<div class="is-fullwidth flex flex-col space-y-1.5 mb-4 md:mb-0">
-						<a href="{% url 'index' %}#events">Events list</a>
-						<a href="{% url 'index' %}#register"">Registration</a>
-						<a href="{% static 'ShriTeq_2022_Schedule.pdf' %}" >Schedule</a>
-					</div>
-					<div class="is-fullwidth flex flex-col space-y-1.5 md:text-right">
-						<a>shriteq@tsrs.org</a>
-						<p>V-37, Moulsari Avenue, Phase III, DLF City, Gurugram</p>
-					</div>
+			<div class="hidden h-screen mobile-menu">
+				<div class="flex flex-col items-center justify-center h-full">
+					{% if request.get_full_path == '/' %}
+					<ul class="md:hidden font-display select-none">
+						<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
+							<a href="{% url 'index' %}#events">
+								Events
+							</a>
+						</li>
+						<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
+							<a href="{% url 'index' %}#register">
+								Register
+							</a>
+						</li>
+						<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
+							<a href="{% url 'rules' %}">
+								Rules
+							</a>
+						</li>
+						<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
+							<a href="{% url 'index' %}#discord">
+								Discord
+							</a>
+						</li>
+					</ul>
+					{% else %}					
+					<ul class="md:hidden font-display select-none">
+						<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
+							<a href="{% url 'index' %}#events">
+								Events
+							</a>
+						</li>
+						<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
+							<a href="{% url 'index' %}#register">
+								Register
+							</a>
+						</li>
+						<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
+							<a href="{% url 'rules' %}">
+								Rules
+							</a>
+						</li>
+						<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
+							<a href="{% url 'index' %}#discord">
+								Discord
+							</a>
+						</li>
+					</ul>
+					{% endif %}
 				</div>
 			</div>
-		</footer>
-		<input type="hidden" name="" id="fav-dark-tag" data-url="{% static 'favicon/dark/favicon-32x32.png' %}">
-	</body>
+		</div>
+	</nav>
+	<div class="h-full">
+		{% block content %}
+		{% endblock content %}
+	</div>
+	</main>
 
-	<script>
-		// Mobile menu
-		const menu = document.querySelector(".mobile-menu");
-		const html = document.querySelector('html');
-		const nav = document.querySelector('nav');
-		const icon = document.getElementById('nav-icon');
-		const links = document.querySelectorAll('.mobile-nav-link');
+	<footer class="px-4 py-10 mx-auto md:px-20 lg:px-44 bg-offblack">
+		<div class="my-10 font-extrabold leading-normal w-100 flex items-center justify-center text-7xl">
+			<img src="{% static 'assets/logo-dark-fullres.png' %}" alt="" class="h-32 md:h-48">
+		</div>
 
-		function toggleMenu() {
-			menu.classList.toggle("hidden");
-			html.classList.toggle("overflow-hidden");
-			nav.classList.toggle("bg-opacity-80");
-			console.log(nav.classList);
-			icon.classList.toggle('open');
+		<div class="text-md md:text-lg">
+			<div class="text-grey-tertiary md:grid md:grid-cols-2">
+				<div class="is-fullwidth flex flex-col space-y-1.5 mb-4 md:mb-0">
+					<a href="{% url 'index' %}#events">Events list</a>
+					<a href="{% url 'index' %}#register"">Registration</a>
+					<a href="{% static 'ShriTeq_2022_Schedule.pdf' %}" >Schedule</a>
+				</div>
+				<div class="is-fullwidth flex flex-col space-y-1.5 md:text-right">
+					<a>shriteq@tsrs.org</a>
+					<p>V-37, Moulsari Avenue, Phase III, DLF City, Gurugram</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<input type="hidden" name="" id="fav-dark-tag" data-url="{% static 'favicon/dark/favicon-32x32.png' %}">
+</body>
+
+<script>
+	// Mobile menu
+	const menu = document.querySelector(".mobile-menu");
+	const html = document.querySelector('html');
+	const nav = document.querySelector('nav');
+	const icon = document.getElementById('nav-icon');
+	const links = document.querySelectorAll('.mobile-nav-link');
+
+	function toggleMenu() {
+		menu.classList.toggle("hidden");
+		html.classList.toggle("overflow-hidden");
+		nav.classList.toggle("bg-opacity-80");
+		console.log(nav.classList);
+		icon.classList.toggle('open');
+	}
+
+	icon.addEventListener('click', toggleMenu);
+	links.forEach(el => el.addEventListener('click', toggleMenu));
+
+	// Close menu when the screen is resized above a medium breakpoint while the menu is open
+	window.addEventListener('resize', () => {
+		if (window.innerWidth > 768 && !menu.classList.contains('hidden')) {
+			toggleMenu();
 		}
+	});
 
-		icon.addEventListener('click', toggleMenu);
-		links.forEach(el => el.addEventListener('click', toggleMenu));
+	// Toggle favicon based on colour scheme
+	const faviconTag = document.getElementById("faviconTag");
+	const isDark = window.matchMedia("(prefers-color-scheme: dark)");
+	const lightModeFavi = "{% static 'favicon/light/favicon-32x32.png' %}";
+	const darkModeFavi = "{% static 'favicon/dark/favicon-32x32.png' %}";
+	const changeFavicon = () => {
+		if (isDark.matches) faviconTag.href = darkModeFavi;
+		else faviconTag.href = lightModeFavi;
+	};
+	changeFavicon();
+	setInterval(changeFavicon, 1000);
 
-		// Close menu when the screen is resized above a medium breakpoint while the menu is open
-		window.addEventListener('resize', () => {
-			if (window.innerWidth > 768 && !menu.classList.contains('hidden')) {
-				toggleMenu();
-			}
-		});
-
-		// Toggle favicon based on colour scheme
-		const faviconTag = document.getElementById("faviconTag");
-		const isDark = window.matchMedia("(prefers-color-scheme: dark)");
-		const lightModeFavi = "{% static 'favicon/light/favicon-32x32.png' %}";
-		const darkModeFavi = "{% static 'favicon/dark/favicon-32x32.png' %}";
-		const changeFavicon = () => {
-			if (isDark.matches) faviconTag.href = darkModeFavi;
-			else faviconTag.href = lightModeFavi;
-		};
-		changeFavicon();
-		setInterval(changeFavicon, 1000);
-
-	</script>
+</script>
 
 
 {% block script %}
