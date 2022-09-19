@@ -888,6 +888,10 @@ var PACMAN = (function () {
     }
     return true;
   }
+  
+  const highscore = document.querySelector("#highscore-value");
+  const input = document.querySelector("#game-score-input");
+  const form = document.querySelector("#game-score-form");
 
   function loseLife() {
     setState(WAITING);
@@ -898,6 +902,20 @@ var PACMAN = (function () {
     // MARK: GAME OVER CODE
     else {
         console.log("Game over");
+        const newScore = user.theScore();
+        const currentHighScore = highscore.innerHTML;
+        if (newScore > currentHighScore) {
+            highscore.innerHTML = newScore;
+        }
+        input.setAttribute("value", user.theScore());
+
+        var data = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/pac-man/play/");
+        xhr.send(data);
+        
+        console.log("Sent POST");
+        console.log(newScore);
     }
   }
 

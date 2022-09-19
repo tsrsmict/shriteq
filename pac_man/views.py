@@ -51,5 +51,29 @@ class Play(BaseOnlineEventView):
             return HttpResponseRedirect(reverse('open'))
 
         return render(request, template_name='pac_man/play.html', context=context)
-    def post(self, request):
-        pass
+    def post(self, request, *args, **kwargs):
+        if not super().check_auth(request): return redirect('open')
+        
+        data = request.POST
+        print(data)
+        game_score = int(data['game-score-input'])
+        user_id = data['user-id']
+
+        try:
+            print(request.user)
+            school = School.objects.get(account=request.user)
+            player = PacManPlayer.objects.get(user_id=user_id, school=school)
+        except Exception as e:
+            print(f'{e=} {type(e)=}')
+            return HttpResponseRedirect(reverse('open'))
+
+        print(f'Found  player {player} of school {school}')
+        if player.high_score < game_score:
+            print(f'Updating high score from {player.high_score} to {game_score}')
+            player.high_score = game_score
+            player.save()
+        else:
+            print(f'Score {game_score} less than high score {player.high_score}')
+
+        print('Received post')
+        return HttpResponse('Received')

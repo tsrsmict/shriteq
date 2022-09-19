@@ -1572,6 +1572,11 @@ h4 {
   padding-right: 5rem;
 }
 
+.px-24 {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -2161,6 +2166,21 @@ h4 {
   .\32xl\:px-60 {
     padding-left: 15rem;
     padding-right: 15rem;
+  }
+
+  .\32xl\:px-64 {
+    padding-left: 16rem;
+    padding-right: 16rem;
+  }
+
+  .\32xl\:px-72 {
+    padding-left: 18rem;
+    padding-right: 18rem;
+  }
+
+  .\32xl\:px-80 {
+    padding-left: 20rem;
+    padding-right: 20rem;
   }
 
   .\32xl\:text-8xl {
