@@ -22,6 +22,7 @@
             </tr>
         </thead>
         <tbody>
+            {% if players|length != 0 %}
             {% for player in players %}
             <tr class="bg-white border-b">
                 <th scope="row" class="py-6 px-6 font-medium text-gray-900 text-center whitespace-nowrap">
@@ -38,6 +39,13 @@
                 </td>
             </tr>
             {% endfor %}
+            {% else %}
+            <tr class="bg-white border-b">
+                <td class="py-6 px-6 text-center text-gray-600 font-semibold" colspan="4">
+                    No players
+                </td>
+            </tr>
+            {% endif %}
         </tbody>
     </table>
 </div>
