@@ -17,7 +17,9 @@ class Index(BaseOnlineEventView):
 class Leaderboard(BaseOnlineEventView):
     def get(self, request):
         # Top 10 players by highscore
-        context = {'players': PacManPlayer.objects.order_by('-high_score')[:10]}
+        players = PacManPlayer.objects.order_by('-high_score')[:10]
+        players = [player for player in players if player.high_score != 0]
+        context = {'players': players}
         return render(request,'pac_man/leaderboard.html', context=context)
 
 class Play(BaseOnlineEventView):
@@ -42,6 +44,7 @@ class Play(BaseOnlineEventView):
                 player.save()
             else:
                 player = query[0]
+            print(player.user_id)
             context['player'] = player
         except Exception as e:
             print(f'{e=} {type(e)=}')
