@@ -12,6 +12,9 @@ Make sure you have the following installed on your system:
 `python manage.py migrate --fake`
 `python manage.py migrate --run-syncdb`
 
+If you want to drop the heroku database, `heroku pg:reset DATABASE`, then SSH in and `python manage.py migrate`
+
+
 https://stackoverflow.com/questions/31323618/django-1-8-migrations-contenttype-integrity-error (error I was getting earlier)
 
 # Development
