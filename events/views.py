@@ -21,4 +21,4 @@ def event(request, slug):
     return render(request, template)
 
 def schedule(request):
-    return redirect(static('ShriTeq_2022_Schedule.pdf'))
+    return redirect('/static/ShriTeq2022_Schedule.pdf')
