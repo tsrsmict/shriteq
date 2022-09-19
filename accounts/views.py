@@ -26,6 +26,11 @@ def login(request):
         else:
             return redirect('/accounts/login')
     
+import re
+def is_valid_username(username: str) -> bool:
+    username = username.strip().lower().replace(" ", "")
+    return bool(re.fullmatch("[A-Za-z]+\.[A-Za-z]+", username))
+
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect('/accounts/login')
