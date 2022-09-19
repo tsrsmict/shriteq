@@ -204,7 +204,8 @@ STATIC_URL = "static/" # url on server, eg localhost:8000/static/
 # which directories to find static files in. collectstatic will collect them all and put them together when deployed. also needed for tailwind
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    os.path.join(BASE_DIR, "components")
+    os.path.join(BASE_DIR, "components"),
+    os.path.join(BASE_DIR, "pac_man"),
 ]
 # what to call the compiled static dir
 STATIC_ROOT = BASE_DIR / "staticfiles"

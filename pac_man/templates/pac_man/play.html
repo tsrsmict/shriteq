@@ -1,8 +1,15 @@
 {% extends 'pac_man/pac_man_base.html' %}
+{% load static %}
+
 
 {% block subtitle %} - Play {% endblock subtitle %}
 
+{% block css_imports %}
+<link rel="stylesheet" href="{% static 'pac_man/app.css' %}">
+{% endblock css_imports %}
+
 {% block subcontent %}
+
 <div class="mt-6 mb-9 font-medium">
         <div class="flex flex-row w-full">
             <div class="flex-grow">
@@ -44,4 +51,5 @@
         }
     }
 </script>
+<script src="{% static 'pac_man/app.js' %}"></script>
 {% endblock script %}
