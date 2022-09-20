@@ -12,11 +12,11 @@ User = settings.AUTH_USER_MODEL
 # Create your views here.
 class Index(BaseOnlineEventView):
     def get(self, request):
-        return render(request, 'pac_man/index.html')
+        if not super().check_auth(request): return redirect('open')
+        return redirect(reverse('pac_man_play'))
 
 class Leaderboard(BaseOnlineEventView):
     def get(self, request):
-        # Top 10 players by highscore
         players = PacManPlayer.objects.order_by('-high_score')[:10]
         players = [player for player in players if player.high_score != 0]
         context = {'players': players}
