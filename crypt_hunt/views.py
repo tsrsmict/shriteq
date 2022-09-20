@@ -15,7 +15,7 @@ User = settings.AUTH_USER_MODEL
 class Index(BaseOnlineEventView):
     def get(self, request):
         if not super().check_auth(request): return redirect('open')
-        return render(request, 'crypt_hunt/index.html')
+        return redirect(reverse('crypt_hunt_play'))
 
 class Leaderboard(BaseOnlineEventView):
     def get(self, request):
