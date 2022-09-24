@@ -1,4 +1,3 @@
-
 {
     "name": "build-django-tailwind",
     "description": "Run the tailwind build step before django's collectstatic",
