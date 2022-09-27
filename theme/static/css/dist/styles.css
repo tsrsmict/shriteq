@@ -835,10 +835,6 @@ h4 {
   z-index: 0;
 }
 
-.col-span-4 {
-  grid-column: span 4 / span 4;
-}
-
 .col-span-12 {
   grid-column: span 12 / span 12;
 }
@@ -902,16 +898,16 @@ h4 {
   margin-top: 3rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .mt-2 {
   margin-top: 0.5rem;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .mb-7 {
@@ -924,10 +920,6 @@ h4 {
 
 .ml-8 {
   margin-left: 2rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
 }
 
 .block {
@@ -1088,6 +1080,10 @@ h4 {
   gap: 2.25rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .gap-6 {
   gap: 1.5rem;
 }
@@ -1102,10 +1098,6 @@ h4 {
 
 .gap-5 {
   gap: 1.25rem;
-}
-
-.gap-3 {
-  gap: 0.75rem;
 }
 
 .gap-8 {
@@ -1363,14 +1355,19 @@ h4 {
   padding-bottom: 4rem;
 }
 
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .py-6 {
@@ -1381,11 +1378,6 @@ h4 {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
-}
-
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
 }
 
 .pt-6 {
@@ -1544,6 +1536,11 @@ h4 {
   color: transparent;
 }
 
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1562,11 +1559,6 @@ h4 {
 .text-offwhite {
   --tw-text-opacity: 1;
   color: rgb(242 242 242 / var(--tw-text-opacity));
-}
-
-.text-gray-800 {
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -1786,10 +1778,6 @@ h4 {
 }
 
 @media (min-width: 1024px) {
-  .lg\:col-span-4 {
-    grid-column: span 4 / span 4;
-  }
-
   .lg\:mb-\[18vh\] {
     margin-bottom: 18vh;
   }
@@ -1802,12 +1790,12 @@ h4 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .lg\:gap-12 {
-    gap: 3rem;
-  }
-
   .lg\:gap-5 {
     gap: 1.25rem;
+  }
+
+  .lg\:gap-12 {
+    gap: 3rem;
   }
 
   .lg\:px-44 {
