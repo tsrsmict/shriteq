@@ -15,6 +15,7 @@ sentry-sdk = "*"
 django-tailwind = "*"
 markdown = "*"
 django-components = "*"
+django-ckeditor = "*"
 
 [dev-packages]
 
