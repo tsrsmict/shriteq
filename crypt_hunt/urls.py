@@ -18,6 +18,12 @@ if settings.OPEN_EVENTS_RUNNING:
         path('congrats', views.Congrats.as_view(), name='crypt_hunt_congrats'),
     ]
 else: 
-    urlpatterns += [
-        path('', TemplateView.as_view(template_name='crypt_hunt/waiting.html'), name='crypt_hunt_waiting'),
-    ]
+    if settings.IS_IN_EVENT_WINDOW:
+        # Is in general event window but at a closed time, (not 3pm-11:59 pm on weekdays and not 9:00 am - 11:59 pm on weekends)
+        urlpatterns += [
+            path('', views.GetSomeSleep.as_view(), name='crypt_hunt_sleep'),
+        ]
+    else:
+        urlpatterns += [
+            path('', TemplateView.as_view(template_name='crypt_hunt/waiting.html'), name='crypt_hunt_waiting'),
+        ]

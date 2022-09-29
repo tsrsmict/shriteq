@@ -16,6 +16,11 @@ if settings.OPEN_EVENTS_RUNNING:
         path('play/', views.Play.as_view(), name='pac_man_play'),
     ]
 else: 
-    urlpatterns += [
+    if settings.IS_IN_EVENT_WINDOW:
+         urlpatterns += [ 
+            path('', views.GetSomeSleep.as_view(), name='pac_man_sleep'),
+         ]
+    else:
+        urlpatterns += [
         path('', TemplateView.as_view(template_name='pac_man/waiting.html'), name='pac_man_waiting'),
     ]
