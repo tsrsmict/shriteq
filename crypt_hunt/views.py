@@ -15,6 +15,7 @@ User = settings.AUTH_USER_MODEL
 class Index(BaseOnlineEventView):
     def get(self, request):
         if not super().check_auth(request): return redirect('open')
+        print('at index')
         return redirect(reverse('crypt_hunt_play'))
 
 class Leaderboard(BaseOnlineEventView):
@@ -38,10 +39,11 @@ class Congrats(BaseOnlineEventView):
 
 class Play(BaseOnlineEventView):
     def get(self, request):
-        if not super().check_auth(request): return redirect('open')
+        if not super().check_auth(request): return HttpResponseRedirect('open')
         context = {}
+        print('Checked auth')
         try:
-            print(request.user)
+            print(f'{request.user=}')
             school = School.objects.get(account=request.user)
             question = school.question
             context['question'] = question
@@ -49,10 +51,13 @@ class Play(BaseOnlineEventView):
 
             session = request.session
             context['user_id'] = session['user_id']
+            print(f'{context=}')
             
         except Exception as e:
             print(f'{e=} {type(e)=}')
-            return HttpResponseRedirect(reverse('crypt_hunt_index'))
+            return HttpResponseRedirect(reverse('open'))
+        
+        print('Got all necessary data')
         if school.question == None:
             return HttpResponseRedirect(reverse('crypt_hunt_congrats'))
         return render(request, template_name='crypt_hunt/play.html', context=context)
@@ -103,8 +108,7 @@ class Play(BaseOnlineEventView):
 
         save_log(log)
         return redirect(reverse('crypt_hunt_play'))
-    def get(self, request): 
-        if not super().check_auth(request): return redirect('open')
+
 
 class GetSomeSleep(BaseOnlineEventView):
     def get(self, request):
