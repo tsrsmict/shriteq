@@ -103,7 +103,19 @@ class Play(BaseOnlineEventView):
 
         save_log(log)
         return redirect(reverse('crypt_hunt_play'))
+    def get(self, request): 
+        if not super().check_auth(request): return redirect('open')
 
+class GetSomeSleep(BaseOnlineEventView):
+    def get(self, request):
+        if not super().check_auth(request): return redirect('open')
+        context = {}
+        if settings.IS_WEEKEND: 
+            context['resume_time'] = '9:00 AM tomorrow'
+        else:
+            context['resume_time'] = '3:00 PM'
+        return render(request, 'get-some-sleep.html', context=context)
+        
 # Utils
 def submission_correct(answer: str, question: Question) -> bool:
     return answer.lower().strip().replace(' ', '') == question.answer.lower().strip().replace(' ', '')

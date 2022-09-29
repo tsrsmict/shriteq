@@ -77,3 +77,13 @@ class Play(BaseOnlineEventView):
 
         print('Received post')
         return HttpResponse('Received')
+
+class GetSomeSleep(BaseOnlineEventView):
+    def get(self, request):
+        if not super().check_auth(request): return redirect('open')
+        context = {}
+        if settings.IS_WEEKEND: 
+            context['resume_time'] = '9:00 AM tomorrow'
+        else:
+            context['resume_time'] = '3:00 PM'
+        return render(request, 'get-some-sleep.html', context=context)
