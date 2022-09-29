@@ -197,6 +197,7 @@ IS_OVERRIDE = (DEBUG == True) or (IS_TEST_SERVER == True)
 now = datetime.now(tz=TIME_ZONE_INFO)
 OPEN_EVENT_START_TIME = datetime(2022, 10, 8, 9, 0, 0, 0, tzinfo=TIME_ZONE_INFO)
 OPEN_EVENT_CLOSE_TIME = datetime(2022, 10, 11, 11, 59, 0, 0, tzinfo=TIME_ZONE_INFO)
+
 IS_IN_EVENT_WINDOW: bool = (now >= OPEN_EVENT_START_TIME and now < OPEN_EVENT_CLOSE_TIME)
 
 DAY_OF_WEEK: int = now.weekday()
@@ -210,7 +211,6 @@ else:
     IS_IN_DAY_WINDOW = (now.hour >= 15 and now.hour < 24)
 
 OPEN_EVENTS_RUNNING = IS_OVERRIDE or (IS_IN_EVENT_WINDOW and IS_IN_DAY_WINDOW)
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
