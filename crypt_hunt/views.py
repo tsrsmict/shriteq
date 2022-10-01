@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from accounts.models import School
-from .models import Question
+from .models import Question, Submission
 from events.views import BaseOnlineEventView
 
 from django.conf import settings
@@ -74,10 +74,10 @@ class Play(BaseOnlineEventView):
             # Reload
             return self.get(request)
 
-        answer = data['answer']
+        contents = data['answer']
         log = {
-            'answer': answer,
-            'ip': get_client_ip(request),
+            'contents': contents,
+            'ip_address': get_client_ip(request),
             'time': str(datetime.now())
         }
 
@@ -92,15 +92,15 @@ class Play(BaseOnlineEventView):
         # Make sure that this isn't being submitted from someone who hasn't reloaded since the school progressed
         if question.serial_num == current_question_num:
             # Validate the submission with an advanced function
-            if submission_correct(answer, question):
+            if submission_correct(contents, question):
                 # Advance the question
                 school.question_num += 1
                 school.save()
-                log['status'] = 'correct'
+                log['status'] = 'COR'
             else:
-                log['status'] = 'incorrect'
+                log['status'] = 'INC'
         else: 
-            log['status'] = 'outdated'            
+            log['status'] = 'ODTs'            
 
         log['user_id'] = user_id
         log['school'] = str(school)
@@ -133,4 +133,4 @@ def get_client_ip(request):
     return ip
 
 def save_log(log: dict):
-    print(f'{log=}')
+    Submission.objects.create(**log)

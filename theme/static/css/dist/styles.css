@@ -1007,6 +1007,10 @@ h4 {
   width: 100%;
 }
 
+.w-9\/12 {
+  width: 75%;
+}
+
 .w-1\/12 {
   width: 8.333333%;
 }
@@ -1017,10 +1021,6 @@ h4 {
 
 .w-4\/12 {
   width: 33.333333%;
-}
-
-.w-9\/12 {
-  width: 75%;
 }
 
 .w-3\/12 {
@@ -1097,10 +1097,6 @@ h4 {
 
 .items-start {
   align-items: flex-start;
-}
-
-.items-end {
-  align-items: flex-end;
 }
 
 .items-center {
@@ -1866,6 +1862,10 @@ h4 {
 }
 
 @media (min-width: 1024px) {
+  .lg\:col-span-4 {
+    grid-column: span 4 / span 4;
+  }
+
   .lg\:mb-\[18vh\] {
     margin-bottom: 18vh;
   }

@@ -20,3 +20,20 @@ class Question(models.Model):
             return question
         except:
             return None
+
+class Submission(models.Model):
+    question_num = models.IntegerField(default=0)
+    contents = models.CharField(max_length=1000)
+
+    STATUS_CHOICES = [
+        ('ODT', 'Outdated'),
+        ('COR', 'Correct'),
+        ('INC', 'Incorrect')
+    ]
+    status = models.CharField(max_length=3, choices=STATUS_CHOICES, default='INC')
+
+    # Metadata
+    time = models.DateTimeField(auto_now_add=True)
+    school = models.CharField(max_length=100) # to prevent recursive import hell
+    user_id = models.CharField(max_length=100, default=None, null=True)
+    ip_address = models.CharField(max_length=100)
