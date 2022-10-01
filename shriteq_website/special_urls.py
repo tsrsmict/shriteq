@@ -1,9 +1,9 @@
 from django.urls import path
-from django.views.generic import TemplateView
 from http import HTTPStatus
-from django.conf import settings
-from django.shortcuts import HttpResponse, render
+from django.shortcuts import HttpResponse
 
+
+# For crypt hunt question
 def teapot(request):
     return HttpResponse("for real", status=HTTPStatus.IM_A_TEAPOT)
 
