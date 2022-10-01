@@ -37,3 +37,6 @@ class Submission(models.Model):
     school = models.CharField(max_length=100) # to prevent recursive import hell
     user_id = models.CharField(max_length=100, default=None, null=True)
     ip_address = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'{self.question_num}: {self.contents} ({self.user_id} {self.school})'
