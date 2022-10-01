@@ -31,14 +31,11 @@ urlpatterns = [
     path('pac-man/', include('pac_man.urls')),
 
     path("__reload__/", include("django_browser_reload.urls")),
+
+    path("", include('shriteq_website.special_urls')),
     # re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-# urlpatterns += [
-    
-#     static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-# ]
 
 if settings.DEBUG:
     urlpatterns += [path('404', TemplateView.as_view(template_name='404.html'))]
