@@ -6,7 +6,9 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from . import views
 
-urlpatterns = []
+urlpatterns = [
+    path('logs', views.SubmissionsLog.as_view(), name='crypt_hunt_log'),
+]
 
 
 if settings.OPEN_EVENTS_RUNNING:

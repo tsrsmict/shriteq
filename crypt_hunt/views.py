@@ -1,7 +1,8 @@
 from datetime import datetime
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, FileResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
+import django.views.generic as generic
 
 from accounts.models import School
 from .models import Question, Submission
@@ -120,6 +121,25 @@ class GetSomeSleep(BaseOnlineEventView):
             context['resume_time'] = '3:00 PM'
         return render(request, 'get-some-sleep.html', context=context)
         
+
+class SubmissionsLog(generic.View):
+    def get(self, request):
+        if request.user.is_superuser:
+            submissions = Submission.objects.all()
+            contents = ""
+            for submission in submissions:
+                log = f"{submission.time} { submission.user_id } {submission.ip_address}\n{ submission.school}\nQuestion {submission.question_num}: {submission.contents} {submission.get_status_display()}\n\n"
+                contents += log
+            response = HttpResponse(content_type='text/plain')  
+            response['Content-Disposition'] = 'attachment; filename="logs.txt"'
+
+            response.write(contents.strip())
+
+            return response
+        else:
+            # Unauthorised request
+            return HttpResponse('Unauthorized', status=401)
+
 # Utils
 def submission_correct(answer: str, question: Question) -> bool:
     return answer.lower().strip().replace(' ', '') == question.answer.lower().strip().replace(' ', '')
