@@ -5,7 +5,7 @@ from django.shortcuts import HttpResponse
 
 # For crypt hunt question
 def teapot(request):
-    return HttpResponse("for real", status=HTTPStatus.IM_A_TEAPOT)
+    return HttpResponse("For real(er)", status=HTTPStatus.IM_A_TEAPOT)
 
 urlpatterns = [
     path('whoami', teapot, name='whoami'),
