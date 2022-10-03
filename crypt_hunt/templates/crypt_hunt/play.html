@@ -4,37 +4,18 @@
 {% block subtitle %} {% endblock subtitle %}
 
 {% block subcontent %}
-<style>
-    .ch-question {
-        margin-top: 16px;
-        display: block;
-        width: 100%;
-        height: auto;
-    }
 
-    @media only screen and (min-width: 1024px) {
-        .ch-question {
-            width: 80%;
-        }
-    }
-
-    @media only screen and (min-width: 1280px) {
-        .ch-question {
-            width: 60%;
-        }
-    }
-</style>
 <div class="my-6">
     <h4> {{ school.display_name }} <h4>
     <h4> {{ user_id }}  </h4>
 </div>
 <h3 class="mb-2">Question {{ question.serial_num }}</h3>
-<div class="w-full grid grid-cols-12 gap-4 lg:gap-8">
+<div class="w-full grid grid-cols-12 gap-6 lg:gap-8">
     <div class="flex flex-col align-baseline justify-start col-span-12 md:col-span-7 xl:col-span-8">
         <p class="text-md lg:text-lg leading-loose lg:leading-loose">
             {{ question.question|safe }}
                 {% for path in question.static_image_paths %}
-                    <img src="{{ path }}" alt="" class="ch-question">
+                    <img src="{{ path }}" alt="" class="ch-question mt-4 block h-auto w-4/5 md:w-3/4 xl:w-2/3">
                 {% endfor %}
         </p>
     </div>
