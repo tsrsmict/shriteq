@@ -9,7 +9,7 @@ class Question(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     
     serial_num = models.SmallIntegerField()
-    question = RichTextField(default=None, null=True)
+    question = RichTextField(default=None, blank=True, null=True)
 
     image_paths_list = models.TextField(default=None, null=True)
     answer = models.CharField(max_length=100)
