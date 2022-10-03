@@ -222,6 +222,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "components"),
     os.path.join(BASE_DIR, "pac_man"),
+    os.path.join(BASE_DIR, "crypt_hunt"),
 ]
 # what to call the compiled static dir
 STATIC_ROOT = BASE_DIR / "staticfiles"
