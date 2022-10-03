@@ -15,13 +15,13 @@ User = settings.AUTH_USER_MODEL
 
 class Index(BaseOnlineEventView):
     def get(self, request):
-        if not super().check_auth(request): return redirect('open')
+        if not super().check_auth(request): return redirect(reverse('open'))
         print('at index')
         return redirect(reverse('crypt_hunt_play'))
 
 class Leaderboard(BaseOnlineEventView):
     def get(self, request):
-        if not super().check_auth(request): return redirect('open')
+        if not super().check_auth(request): return redirect(reverse('open'))
         schools = School.objects.all().order_by('-question_num', 'date_modified')
 
         context = {'schools': schools}
@@ -30,7 +30,7 @@ class Leaderboard(BaseOnlineEventView):
 
 class Congrats(BaseOnlineEventView):
     def get(self, request):
-        if not super().check_auth(request): return redirect('open')
+        if not super().check_auth(request): return redirect(reverse('open'))
         school = School.objects.get(account=request.user)
         print(Question.objects.last())
         if not school.question:
@@ -40,7 +40,7 @@ class Congrats(BaseOnlineEventView):
 
 class Play(BaseOnlineEventView):
     def get(self, request):
-        if not super().check_auth(request): return HttpResponseRedirect('open')
+        if not super().check_auth(request): return redirect(reverse('open'))
         context = {}
         print('Checked auth')
         try:
@@ -64,7 +64,7 @@ class Play(BaseOnlineEventView):
         return render(request, template_name='crypt_hunt/play.html', context=context)
 
     def post(self, request):
-        if not super().check_auth(request): return redirect('open')
+        if not super().check_auth(request): return redirect(reverse('open'))
         data = (request.POST)
         session = request.session
         
@@ -113,7 +113,7 @@ class Play(BaseOnlineEventView):
 
 class GetSomeSleep(BaseOnlineEventView):
     def get(self, request):
-        if not super().check_auth(request): return redirect('open')
+        if not super().check_auth(request): return redirect(reverse('open'))
         context = {}
         if settings.IS_WEEKEND: 
             context['resume_time'] = '9:00 AM tomorrow'

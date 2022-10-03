@@ -1,12 +1,12 @@
 from django.db import models
 import uuid
-from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Question(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     
     serial_num = models.SmallIntegerField()
-    question = RichTextField()
+    question = RichTextUploadingField()
     answer = models.CharField(max_length=100)
 
     def __str__(self):
