@@ -33,9 +33,9 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
 
     path("", include('shriteq_website.special_urls')),
-    # re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
-    
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('ckeditor/', include('ckeditor_uploader.urls')),    
+] 
 
 if settings.DEBUG:
     urlpatterns += [path('404', TemplateView.as_view(template_name='404.html'))]
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
