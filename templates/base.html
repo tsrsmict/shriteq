@@ -45,10 +45,10 @@
 							<div class="grow">
 								<a href="{% url 'index' %}">
 									{% if request.get_full_path == '/' %}
-										<img class="h-12 md:h-20" src="{% static 'assets/logo-dark.png' %}" alt="">
+										<img class="logo h-12 md:h-20" src="{% static 'assets/logo-dark.png' %}" alt="">
 									</picture>
 									{% else %}
-									<img class="h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
+									<img class="logo h-12 md:h-20" src="{% static 'assets/logo.png' %}" alt="">
 									{% endif %}
 								</a>
 							</div>
@@ -140,7 +140,7 @@
 
 		<footer class="px-4 py-10 mx-auto md:px-20 lg:px-44 bg-offblack">
 			<div class="my-10 font-extrabold leading-normal w-100 flex items-center justify-center text-7xl">
-				<img src="{% static 'assets/logo-dark-fullres.png' %}" alt="" class="h-32 md:h-48">
+				<img src="{% static 'assets/logo-dark-fullres.png' %}" alt="" class="logo h-32 md:h-48">
 			</div>
 
 			<div class="text-md md:text-lg">
