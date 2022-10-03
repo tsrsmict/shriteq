@@ -11,7 +11,6 @@ class Question(models.Model):
     serial_num = models.SmallIntegerField()
     question = RichTextField(default=None, blank=True, null=True)
 
-    image_paths_list = models.TextField(default=None, null=True)
     answer = models.CharField(max_length=100)
 
     def __str__(self):
@@ -26,6 +25,13 @@ class Question(models.Model):
         except:
             return None
 
+    """
+    TODO: This is a workaround to get around Heroku's ephermal file system. Ideally, we
+    should use a proper service like S3 to host our files and use django-ckeditor's 
+    RichTextUplodingField to dynamically upload files to questions without having to host 
+    them as staticfiles.
+    """
+    image_paths_list = models.TextField(default=None, null=True)
     @property
     def static_image_paths(self):
         if self.image_paths_list is None:
