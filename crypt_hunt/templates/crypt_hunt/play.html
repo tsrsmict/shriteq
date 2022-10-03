@@ -2,6 +2,25 @@
 {% block subtitle %} {% endblock subtitle %}
 
 {% block subcontent %}
+<style>
+    img {
+        margin-top: 16px;
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      @media only screen and (min-width: 1024px) {
+        img {
+            width: 80%;
+        }
+
+        @media only screen and (min-width: 1280px) {
+            img {
+                width: 60%;
+            }
+      }
+</style>
 <div class="my-6">
     <h4> {{ school.display_name }} <h4>
     <h4> {{ user_id }}  </h4>
@@ -12,7 +31,6 @@
         <p class="text-md lg:text-lg leading-loose lg:leading-loose">
             {{ question.question|safe }}
         </p>
-        <img src="" alt="">
     </div>
     <div class="col-span-12 lg:col-span-4 xl:col-span-4">
         <form method = "post" action = "/crypt-hunt/play" >
@@ -25,4 +43,5 @@
         </form>
     </div>
 </div>
+
 {% endblock subcontent %}
