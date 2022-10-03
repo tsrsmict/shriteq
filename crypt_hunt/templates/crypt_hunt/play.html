@@ -1,9 +1,11 @@
 {% extends 'crypt_hunt/crypt_hunt_base.html' %}
+{% load static %}
+
 {% block subtitle %} {% endblock subtitle %}
 
 {% block subcontent %}
 <style>
-    img:not(.logo) {
+    .ch-question {
         margin-top: 16px;
         display: block;
         width: 100%;
@@ -11,13 +13,13 @@
     }
 
     @media only screen and (min-width: 1024px) {
-        img:not(.logo) {
+        .ch-question {
             width: 80%;
         }
     }
 
     @media only screen and (min-width: 1280px) {
-        img:not(.logo) {
+        .ch-question {
             width: 60%;
         }
     }
@@ -31,6 +33,9 @@
     <div class="flex flex-col align-baseline justify-start col-span-12 md:col-span-7 xl:col-span-8">
         <p class="text-md lg:text-lg leading-loose lg:leading-loose">
             {{ question.question|safe }}
+                {% for path in question.static_image_paths %}
+                    <img src="{{ path }}" alt="" class="ch-question">
+                {% endfor %}
         </p>
     </div>
     <div class="col-span-12 lg:col-span-4 xl:col-span-4">
