@@ -1,12 +1,17 @@
-from django.db import models
 import uuid
-from ckeditor_uploader.fields import RichTextUploadingField
+
+from django.db import models
+from django.templatetags.static import static
+
+from ckeditor.fields import RichTextField
 
 class Question(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     
     serial_num = models.SmallIntegerField()
-    question = RichTextUploadingField()
+    question = RichTextField(default=None, null=True)
+
+    image_paths_list = models.TextField(default=None, null=True)
     answer = models.CharField(max_length=100)
 
     def __str__(self):
@@ -20,6 +25,13 @@ class Question(models.Model):
             return question
         except:
             return None
+
+    @property
+    def static_image_paths(self):
+        if self.image_paths_list is None:
+            return []
+        paths = [static(path) for path in self.image_paths_list.split('\n')]
+        return paths
 
 class Submission(models.Model):
     question_num = models.IntegerField(default=0)
