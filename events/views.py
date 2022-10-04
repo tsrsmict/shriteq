@@ -1,8 +1,8 @@
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
 import django.views.generic as generic
-from accounts.models import School
 
+from accounts.models import School
 EVENT_SLUGS = [
     'hackathon',
     'bot-xchange',
