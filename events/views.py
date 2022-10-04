@@ -31,16 +31,19 @@ def open_events(request):
 
     school = School.objects.get(account=request.user)
     context['school'] = school
-
     session = request.session
     context['user_id'] = session['user_id']
+
+    if school.is_ch_banned:
+        context['is_ch_banned'] = True
+    if school.is_pac_banned:
+        context['is_pac_banned'] = True
 
     return render(request, 'open-events.html', context)
 
 
 class BaseOnlineEventView(generic.View):
-    def check_auth(self, request) -> bool:
-        print('Check auth called')
+    def is_authenticated(self, request) -> bool:
         is_auth = request.user.is_authenticated
         print(f'{is_auth=}')
         return is_auth

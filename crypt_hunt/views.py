@@ -13,24 +13,28 @@ User = settings.AUTH_USER_MODEL
 
 # Create your views here.
 
-class Index(BaseOnlineEventView):
+class BaseCryptHuntView(BaseOnlineEventView):
+    def is_allowed(self, request) -> bool:
+        return super().is_authenticated(request) and not School.objects.get(account=request.user).is_ch_banned
+
+class Index(BaseCryptHuntView):
     def get(self, request):
-        if not super().check_auth(request): return redirect(reverse('open'))
+        if not super().is_allowed(request): return redirect(reverse('open'))
         print('at index')
         return redirect(reverse('crypt_hunt_play'))
 
-class Leaderboard(BaseOnlineEventView):
+class Leaderboard(BaseCryptHuntView):
     def get(self, request):
-        if not super().check_auth(request): return redirect(reverse('open'))
+        if not super().is_allowed(request): return redirect(reverse('open'))
         schools = School.objects.all().order_by('-question_num', 'date_modified')
 
         context = {'schools': schools}
         print(context)
         return render(request,'crypt_hunt/leaderboard.html', context=context)
 
-class Congrats(BaseOnlineEventView):
+class Congrats(BaseCryptHuntView):
     def get(self, request):
-        if not super().check_auth(request): return redirect(reverse('open'))
+        if not super().is_allowed(request): return redirect(reverse('open'))
         school = School.objects.get(account=request.user)
         print(Question.objects.last())
         if not school.question:
@@ -38,9 +42,9 @@ class Congrats(BaseOnlineEventView):
         else:
             return HttpResponseRedirect(reverse('crypt_hunt_play'))
 
-class Play(BaseOnlineEventView):
+class Play(BaseCryptHuntView):
     def get(self, request):
-        if not super().check_auth(request): return redirect(reverse('open'))
+        if not super().is_allowed(request): return redirect(reverse('open'))
         context = {}
         print('Checked auth')
         try:
@@ -64,7 +68,7 @@ class Play(BaseOnlineEventView):
         return render(request, template_name='crypt_hunt/play.html', context=context)
 
     def post(self, request):
-        if not super().check_auth(request): return redirect(reverse('open'))
+        if not super().is_allowed(request): return redirect(reverse('open'))
         data = (request.POST)
         session = request.session
         
@@ -111,9 +115,9 @@ class Play(BaseOnlineEventView):
         return redirect(reverse('crypt_hunt_play'))
 
 
-class GetSomeSleep(BaseOnlineEventView):
+class GetSomeSleep(BaseCryptHuntView):
     def get(self, request):
-        if not super().check_auth(request): return redirect(reverse('open'))
+        if not super().is_allowed(request): return redirect(reverse('open'))
         context = {}
         if settings.IS_WEEKEND: 
             context['resume_time'] = '9:00 AM tomorrow'

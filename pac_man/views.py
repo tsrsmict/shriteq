@@ -12,7 +12,7 @@ User = settings.AUTH_USER_MODEL
 # Create your views here.
 class Index(BaseOnlineEventView):
     def get(self, request):
-        if not super().check_auth(request): return redirect('open')
+        if not super().is_authenticated(request): return redirect('open')
         return redirect(reverse('pac_man_play'))
 
 class Leaderboard(BaseOnlineEventView):
@@ -24,7 +24,7 @@ class Leaderboard(BaseOnlineEventView):
 
 class Play(BaseOnlineEventView):
     def get(self, request):
-        if not super().check_auth(request): return redirect('open')
+        if not super().is_authenticated(request): return redirect('open')
         context = {}
         try:
             print(request.user)
@@ -52,7 +52,7 @@ class Play(BaseOnlineEventView):
 
         return render(request, template_name='pac_man/play.html', context=context)
     def post(self, request, *args, **kwargs):
-        if not super().check_auth(request): return redirect('open')
+        if not super().is_authenticated(request): return redirect('open')
         
         data = request.POST
         print(data)
@@ -80,7 +80,7 @@ class Play(BaseOnlineEventView):
 
 class GetSomeSleep(BaseOnlineEventView):
     def get(self, request):
-        if not super().check_auth(request): return redirect('open')
+        if not super().is_authenticated(request): return redirect('open')
         context = {}
         if settings.IS_WEEKEND: 
             context['resume_time'] = '9:00 AM tomorrow'

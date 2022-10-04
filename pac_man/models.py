@@ -10,6 +10,8 @@ class PacManPlayer(models.Model):
     high_score = models.IntegerField(default=0)
     last_played = models.DateTimeField(auto_now=True)
 
+    is_banned = models.BooleanField(default=False)
+
     def __str__(self):
         return f'{self.user_id} - {self.school} - {self.high_score}'
     
