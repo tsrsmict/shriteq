@@ -20,24 +20,41 @@
     </div>
 
     <div class="grid lg:grid-cols-2 gap-4 lg:gap-8">
-        <div class="border rounded-md py-5 px-8 border-violet-custom">
-            <div class="flex flex-col items-center gap-6">
-                <h4>Crypt Hunt</h4>
-                <p>Hac habitant felis nisl ligula elit eu suscipit adipiscing tristique facilisi bibendum viverra
-                    praesent nulla pellentesque facilisis nec id scelerisque quisque iaculis magna odio malesuada</p>
-                <a href="{% url 'crypt_hunt_play' %}"
-                    class="w-full p-3 bg-violet-custom text-white text-center rounded-md">Play</a>
+        <div>
+            <div class="border rounded-md py-5 px-8 border-violet-custom">
+                <div class="flex flex-col items-center gap-6">
+                    <h4>Crypt Hunt</h4>
+                    <p>Hac habitant felis nisl ligula elit eu suscipit adipiscing tristique facilisi bibendum viverra
+                        praesent nulla pellentesque facilisis nec id scelerisque quisque iaculis magna odio malesuada</p>
+                    {% if is_ch_banned %}
+                        <p class="mt-2 text-red-600">Your school has been temporarily barred from the crypt hunt. Please check the Discord server for further details</p>
+                    {% else %}
+                    <a href="{% url 'crypt_hunt_play' %}"
+                        class="w-full p-3 bg-violet-custom text-white text-center rounded-md">Play</a>
+                    {% endif %}
+                    
+                </div>
             </div>
+            
         </div>
-        <div class="border rounded-md py-5 px-8 border-violet-custom">
-            <div class="flex flex-col items-center gap-6">
-                <h4>Pac-Man</h4>
-                <p>Hac habitant felis nisl ligula elit eu suscipit adipiscing tristique facilisi bibendum viverra
-                    praesent nulla pellentesque facilisis nec id scelerisque quisque iaculis magna odio malesuada</p>
-                <a href="{% url 'pac_man_play' %}"
-                    class="w-full p-3 bg-violet-custom text-white text-center rounded-md">Play</a>
+        <div>
+            <div class="border rounded-md py-5 px-8 border-violet-custom">
+                <div class="flex flex-col items-center gap-6">
+                    <h4>Pac-Man</h4>
+                    <p>Hac habitant felis nisl ligula elit eu suscipit adipiscing tristique facilisi bibendum viverra
+                        praesent nulla pellentesque facilisis nec id scelerisque quisque iaculis magna odio malesuada</p>
+                        {% if is_pac_banned %}
+                            <p class="mt-2 text-red-600">Your school has been temporarily barred from Pac-Man. Please contact the OC for further details.</p>
+                        {% else %}
+                            <a href="{% url 'pac_man_play' %}"
+                        class="w-full p-3 bg-violet-custom text-white text-center rounded-md">Play</a>
+                        {% endif %}
+                    </div>
             </div>
+            
         </div>
+
+        
     </div>
 
 </section>
