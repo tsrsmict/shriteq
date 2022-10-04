@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.db import models
 from django.conf import settings
 from crypt_hunt.models import Question
@@ -8,7 +9,7 @@ class School(models.Model):
     
     # Setting the default question to the first question in the database.
     question_num = models.SmallIntegerField(default=1, null=True)
-    date_modified = models.DateTimeField(auto_now=True)
+    ch_levelup_time = models.DateTimeField(null=True, blank=True)
 
     is_ch_banned = models.BooleanField(default=False)
     is_pac_banned = models.BooleanField(default=False)

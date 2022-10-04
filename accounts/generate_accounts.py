@@ -1,6 +1,7 @@
 import pathlib
 import csv
 import os
+import random
 
 from accounts.models import School
 from django.contrib.auth.models import User
@@ -11,6 +12,9 @@ f = open(os.path.join(base_path, 'accounts', 'schools.csv'))
 reader = csv.DictReader(f)
 schools = list(reader)
 f.close()
+
+# Shuffle schools so people don't whine about the crypt hunt
+schools = sorted(schools, key=lambda i: i['display_name'])
 
 for school in schools:
     print(f'Creating school {school}')
