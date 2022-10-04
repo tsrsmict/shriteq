@@ -12,10 +12,18 @@ Make sure you have the following installed on your system:
 `python manage.py migrate --fake`
 `python manage.py migrate --run-syncdb`
 
-If you want to drop the heroku database, `heroku pg:reset DATABASE`, then SSH in and `python manage.py migrate`
+If you want to drop the heroku database due to errors caused by migrations:
+
+1. Delete all migrations locally and commit
+2. Rerun `python3 manage.py makemigrations and commit
+3. Rub`heroku pg:reset DATABASE`
+4. SSH in and `python manage.py migrate`
 
 
-https://stackoverflow.com/questions/31323618/django-1-8-migrations-contenttype-integrity-error (error I was getting earlier)
+To run the accounts generation script:
+1. SSH in
+2. `python manage.py shell`
+3. `exec(open('accounts/generate_accounts.py').read())`
 
 # Development
 ## Development server
