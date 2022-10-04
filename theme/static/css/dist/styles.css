@@ -1047,6 +1047,26 @@ h4 {
   width: 50%;
 }
 
+.w-16 {
+  width: 4rem;
+}
+
+.w-40 {
+  width: 10rem;
+}
+
+.w-24 {
+  width: 6rem;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-32 {
+  width: 8rem;
+}
+
 .min-w-max {
   min-width: -webkit-max-content;
   min-width: -moz-max-content;
@@ -1738,6 +1758,10 @@ h4 {
 }
 
 @media (min-width: 640px) {
+  .sm\:w-24 {
+    width: 6rem;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1798,6 +1822,10 @@ h4 {
 
   .md\:w-3\/4 {
     width: 75%;
+  }
+
+  .md\:w-32 {
+    width: 8rem;
   }
 
   .md\:columns-2 {
@@ -1993,6 +2021,10 @@ h4 {
 
   .xl\:w-2\/3 {
     width: 66.666667%;
+  }
+
+  .xl\:w-40 {
+    width: 10rem;
   }
 
   .xl\:px-80 {
