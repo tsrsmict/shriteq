@@ -10,6 +10,9 @@ class School(models.Model):
     question_num = models.SmallIntegerField(default=1, null=True)
     date_modified = models.DateTimeField(auto_now=True)
 
+    is_ch_banned = models.BooleanField(default=False)
+    is_pac_banned = models.BooleanField(default=False)
+
     def __str__(self):
         return self.account.username
 
