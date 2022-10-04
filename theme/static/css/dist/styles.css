@@ -987,6 +987,10 @@ h4 {
   height: 1.5rem;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -1021,6 +1025,10 @@ h4 {
 
 .w-4\/12 {
   width: 33.333333%;
+}
+
+.w-4\/5 {
+  width: 80%;
 }
 
 .w-3\/12 {
@@ -1378,6 +1386,10 @@ h4 {
   padding: 0.75rem;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -1509,6 +1521,11 @@ h4 {
   line-height: 1;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1519,14 +1536,19 @@ h4 {
   line-height: 1.25rem;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
+}
+
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .font-medium {
@@ -1731,10 +1753,6 @@ h4 {
     grid-column: span 7 / span 7;
   }
 
-  .md\:col-span-4 {
-    grid-column: span 4 / span 4;
-  }
-
   .md\:mb-0 {
     margin-bottom: 0px;
   }
@@ -1773,6 +1791,10 @@ h4 {
 
   .md\:w-6\/12 {
     width: 50%;
+  }
+
+  .md\:w-3\/4 {
+    width: 75%;
   }
 
   .md\:columns-2 {
@@ -1834,6 +1856,11 @@ h4 {
 
   .md\:text-7xl {
     font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
     line-height: 1;
   }
 
@@ -1934,6 +1961,11 @@ h4 {
     line-height: 1.75rem;
   }
 
+  .lg\:text-8xl {
+    font-size: 6rem;
+    line-height: 1;
+  }
+
   .lg\:leading-relaxed {
     line-height: 1.625;
   }
@@ -1956,6 +1988,10 @@ h4 {
     width: 41.666667%;
   }
 
+  .xl\:w-2\/3 {
+    width: 66.666667%;
+  }
+
   .xl\:px-80 {
     padding-left: 20rem;
     padding-right: 20rem;
@@ -1964,6 +2000,16 @@ h4 {
   .xl\:px-40 {
     padding-left: 10rem;
     padding-right: 10rem;
+  }
+
+  .xl\:text-8xl {
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  .xl\:text-9xl {
+    font-size: 8rem;
+    line-height: 1;
   }
 
   .xl\:leading-relaxed {
