@@ -935,6 +935,10 @@ h4 {
   margin-bottom: 0.25rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -1317,6 +1321,11 @@ h4 {
   background-color: rgb(124 63 255 / var(--tw-bg-opacity));
 }
 
+.bg-violet-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(91 33 182 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -1388,6 +1397,10 @@ h4 {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .py-4 {
@@ -1591,6 +1604,10 @@ h4 {
   line-height: 1.625;
 }
 
+.leading-tight {
+  line-height: 1.25;
+}
+
 .text-violet-custom {
   --tw-text-opacity: 1;
   color: rgb(124 63 255 / var(--tw-text-opacity));
@@ -1653,6 +1670,16 @@ h4 {
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.text-offwhite {
+  --tw-text-opacity: 1;
+  color: rgb(242 242 242 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -1746,11 +1773,19 @@ h4 {
   .sm\:leading-normal {
     line-height: 1.5;
   }
+
+  .sm\:leading-relaxed {
+    line-height: 1.625;
+  }
 }
 
 @media (min-width: 768px) {
   .md\:col-span-7 {
     grid-column: span 7 / span 7;
+  }
+
+  .md\:col-span-6 {
+    grid-column: span 6 / span 6;
   }
 
   .md\:mb-0 {
@@ -1837,6 +1872,11 @@ h4 {
     padding-right: 6rem;
   }
 
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
   .md\:pb-8 {
     padding-bottom: 2rem;
   }
@@ -1862,6 +1902,16 @@ h4 {
   .md\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
   .md\:font-extrabold {
@@ -1933,6 +1983,10 @@ h4 {
     gap: 3rem;
   }
 
+  .lg\:gap-5 {
+    gap: 1.25rem;
+  }
+
   .lg\:px-44 {
     padding-left: 11rem;
     padding-right: 11rem;
@@ -1941,6 +1995,11 @@ h4 {
   .lg\:px-64 {
     padding-left: 16rem;
     padding-right: 16rem;
+  }
+
+  .lg\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .lg\:pt-16 {
@@ -1964,6 +2023,11 @@ h4 {
   .lg\:text-8xl {
     font-size: 6rem;
     line-height: 1;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .lg\:leading-relaxed {
@@ -2000,6 +2064,11 @@ h4 {
   .xl\:px-40 {
     padding-left: 10rem;
     padding-right: 10rem;
+  }
+
+  .xl\:px-44 {
+    padding-left: 11rem;
+    padding-right: 11rem;
   }
 
   .xl\:text-8xl {
