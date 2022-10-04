@@ -33,7 +33,7 @@ urlpatterns = [
 
     path("__reload__/", include("django_browser_reload.urls")),
 
-    path("", include('shriteq_website.special_urls')),
+    path('', include('shriteq_website.special_urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),    
 ] 
 
