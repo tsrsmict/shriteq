@@ -1,4 +1,6 @@
 from datetime import datetime
+import random
+
 from django.http import HttpResponse, HttpResponseRedirect, FileResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -11,7 +13,7 @@ from events.views import BaseOnlineEventView
 from django.conf import settings
 User = settings.AUTH_USER_MODEL
 
-# Create your views here.
+NUM_QUESTIONS = Question.objects.count()
 
 class BaseCryptHuntView(BaseOnlineEventView):
     def is_allowed(self, request) -> bool:
@@ -26,7 +28,7 @@ class Index(BaseCryptHuntView):
 class Leaderboard(BaseCryptHuntView):
     def get(self, request):
         if not super().is_allowed(request): return redirect(reverse('open'))
-        schools = School.objects.all().order_by('-question_num', 'date_modified')
+        schools = School.objects.all().order_by('-question_num', 'ch_levelup_time')
 
         context = {'schools': schools}
         print(context)
@@ -95,11 +97,12 @@ class Play(BaseCryptHuntView):
             return self.get(request)
 
         # Make sure that this isn't being submitted from someone who hasn't reloaded since the school progressed
-        if question.serial_num == current_question_num:
+        if question is not None and question.serial_num == current_question_num:
             # Validate the submission with an advanced function
             if submission_correct(contents, question):
                 # Advance the question
                 school.question_num += 1
+                school.ch_levelup_time = datetime.now()
                 school.save()
                 log['status'] = 'COR'
             else:
@@ -109,8 +112,8 @@ class Play(BaseCryptHuntView):
 
         log['user_id'] = user_id
         log['school'] = str(school)
-        log['question_num'] = question.serial_num
-
+        log['question_num'] = current_question_num
+        
         save_log(log)
         return redirect(reverse('crypt_hunt_play'))
 
