@@ -8,8 +8,7 @@ from . import views
 
 urlpatterns = []
 
-now = datetime.datetime.now(tz=settings.TIME_ZONE_INFO)
-if settings.DEBUG == True or now >= settings.OPEN_EVENT_START_TIME:
+if settings.OPEN_EVENTS_RUNNING:
     urlpatterns += [
         path('', views.Index.as_view(), name='pac_man_index'),
         path('rules', TemplateView.as_view(template_name='pac_man/rules.html'), name='pac_man_rules'),
@@ -18,10 +17,11 @@ if settings.DEBUG == True or now >= settings.OPEN_EVENT_START_TIME:
     ]
 else: 
     if settings.IS_IN_EVENT_WINDOW:
-         urlpatterns += [ 
-            path('', views.GetSomeSleep.as_view(), name='pac_man_sleep'),
-         ]
+        # Is in general event window but at a closed time, (not 3pm-11:59 pm on weekdays and not 9:00 am - 11:59 pm on weekends)
+        urlpatterns += [
+            path('', views.GetSomeSleep.as_view(), name='crypt_hunt_sleep'),
+        ]
     else:
         urlpatterns += [
-        path('', TemplateView.as_view(template_name='pac_man/waiting.html'), name='pac_man_waiting'),
-    ]
+            path('', TemplateView.as_view(template_name='crypt_hunt/waiting.html'), name='crypt_hunt_waiting'),
+        ]
