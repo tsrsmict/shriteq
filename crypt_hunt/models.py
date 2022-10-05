@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import uuid
 
 from django.db import models
@@ -57,3 +58,8 @@ class Submission(models.Model):
 
     def __str__(self):
         return f'{self.question_num}: {self.contents} ({self.user_id} {self.school})'
+=======
+from django.db import models
+
+# Create your models here.
+>>>>>>> main

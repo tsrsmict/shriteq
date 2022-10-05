@@ -5,6 +5,7 @@ from django.urls import reverse
 from accounts.models import School
 from .models import PacManPlayer
 from events.views import BaseOnlineEventView
+from django.shortcuts import render
 
 from django.conf import settings
 User = settings.AUTH_USER_MODEL

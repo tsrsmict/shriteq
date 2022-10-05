@@ -25,12 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', TemplateView.as_view(template_name='maintenance.html'), name='mainteance'),
     path('', include('events.urls')),
-    
-
-    path('accounts/', include('accounts.urls')),
     path('crypt-hunt/', include('crypt_hunt.urls')),
     path('pac-man/', include('pac_man.urls')),
-
     path("__reload__/", include("django_browser_reload.urls")),
 
     path('', include('shriteq_website.special_urls')),

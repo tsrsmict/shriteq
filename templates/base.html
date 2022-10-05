@@ -3,10 +3,29 @@
 <html lang="en">
 
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2045H7MDTM"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-2045H7MDTM');
+	</script>
+
 	<title>ShriTeq 2022{% block title %} {% endblock title %}</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PW49CSP');</script>
+	<!-- End Google Tag Manager -->
+
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/x-icon" sizes="32x32" id="faviconTag"
 		href="{% static 'favicon/light/favicon-32x32.png' %}">
@@ -155,49 +174,74 @@
 					</div>
 				</div>
 			</div>
-		</footer>
-		<input type="hidden" name="" id="fav-dark-tag" data-url="{% static 'favicon/dark/favicon-32x32.png' %}">
-	</body>
+		</footer></nav>
+	<div class="h-full">
+		{% block content %}
+		{% endblock content %}
+	</div>
+	</main>
 
-	<script>
-		// Mobile menu
-		const menu = document.querySelector(".mobile-menu");
-		const html = document.querySelector('html');
-		const nav = document.querySelector('nav');
-		const icon = document.getElementById('nav-icon');
-		const links = document.querySelectorAll('.mobile-nav-link');
+	<footer class="px-4 py-10 mx-auto md:px-20 lg:px-44 bg-offblack">
+		<div class="my-10 font-extrabold leading-normal w-100 flex items-center justify-center text-7xl">
+			<img src="{% static 'assets/logo-dark-fullres.png' %}" alt="" class="h-32 md:h-48">
+		</div>
 
-		function toggleMenu() {
-			menu.classList.toggle("hidden");
-			html.classList.toggle("overflow-hidden");
-			nav.classList.toggle("bg-opacity-80");
-			console.log(nav.classList);
-			icon.classList.toggle('open');
+		<div class="text-md md:text-lg">
+			<div class="text-grey-tertiary md:grid md:grid-cols-2">
+				<div class="is-fullwidth flex flex-col space-y-1.5 mb-4 md:mb-0">
+					<a href="{% url 'index' %}#events">Events list</a>
+					<a href="{% url 'index' %}#register"">Registration</a>
+					<a href="{% static 'ShriTeq2022_Schedule.pdf' %}" >Schedule</a>
+				</div>
+				<div class="is-fullwidth flex flex-col space-y-1.5 md:text-right">
+					<a>shriteq@tsrs.org</a>
+					<p>V-37, Moulsari Avenue, Phase III, DLF City, Gurugram</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<input type="hidden" name="" id="fav-dark-tag" data-url="{% static 'favicon/dark/favicon-32x32.png' %}">
+</body>
+
+<script>
+	// Mobile menu
+	const menu = document.querySelector(".mobile-menu");
+	const html = document.querySelector('html');
+	const nav = document.querySelector('nav');
+	const icon = document.getElementById('nav-icon');
+	const links = document.querySelectorAll('.mobile-nav-link');
+
+	function toggleMenu() {
+		menu.classList.toggle("hidden");
+		html.classList.toggle("overflow-hidden");
+		nav.classList.toggle("bg-opacity-80");
+		console.log(nav.classList);
+		icon.classList.toggle('open');
+	}
+
+	icon.addEventListener('click', toggleMenu);
+	links.forEach(el => el.addEventListener('click', toggleMenu));
+
+	// Close menu when the screen is resized above a medium breakpoint while the menu is open
+	window.addEventListener('resize', () => {
+		if (window.innerWidth > 768 && !menu.classList.contains('hidden')) {
+			toggleMenu();
 		}
+	});
 
-		icon.addEventListener('click', toggleMenu);
-		links.forEach(el => el.addEventListener('click', toggleMenu));
+	// Toggle favicon based on colour scheme
+	const faviconTag = document.getElementById("faviconTag");
+	const isDark = window.matchMedia("(prefers-color-scheme: dark)");
+	const lightModeFavi = "{% static 'favicon/light/favicon-32x32.png' %}";
+	const darkModeFavi = "{% static 'favicon/dark/favicon-32x32.png' %}";
+	const changeFavicon = () => {
+		if (isDark.matches) faviconTag.href = darkModeFavi;
+		else faviconTag.href = lightModeFavi;
+	};
+	changeFavicon();
+	setInterval(changeFavicon, 1000);
 
-		// Close menu when the screen is resized above a medium breakpoint while the menu is open
-		window.addEventListener('resize', () => {
-			if (window.innerWidth > 768 && !menu.classList.contains('hidden')) {
-				toggleMenu();
-			}
-		});
-
-		// Toggle favicon based on colour scheme
-		const faviconTag = document.getElementById("faviconTag");
-		const isDark = window.matchMedia("(prefers-color-scheme: dark)");
-		const lightModeFavi = "{% static 'favicon/light/favicon-32x32.png' %}";
-		const darkModeFavi = "{% static 'favicon/dark/favicon-32x32.png' %}";
-		const changeFavicon = () => {
-			if (isDark.matches) faviconTag.href = darkModeFavi;
-			else faviconTag.href = lightModeFavi;
-		};
-		changeFavicon();
-		setInterval(changeFavicon, 1000);
-
-	</script>
+</script>
 
 
 {% block script %}

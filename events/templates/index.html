@@ -30,7 +30,7 @@
 </section>
 
 <section id="declaration"
-    class="relative flex flex-col justify-center h-full min-h-screen px-5 leading-normal gap-9 md:px-20 lg:px-44 bg-offblack font-display md:gap-12">
+    class="relative flex flex-col justify-center h-full min-h-screen px-5 leading-normal gap-9 md:px-20 xl:px-44 bg-offblack font-display md:gap-12">
     <p data-inviewport="fade-in-bottom"
         class="cssanimation animation-duration-1-half text-5xl font-bold  leading-normal sm:leading-normal text-grey-tertiary md:leading-relaxed lg:leading-relaxed xl:leading-relaxed 2xl:leading-normal md:font-extrabold md:text-7xl lg:text-7xl 2xl:text-8xl"">
         North India's <span class="text-violet-custom">premier</span> tech event is back.
@@ -41,7 +41,52 @@
     </p>
 </section>
 
-<section id="events" class="relative px-5 py-16 mx-auto bg-grey md:px-20 lg:px-44">
+
+<section id="updates" class="relative px-5 py-16 mx-auto bg-white md:px-20">
+    <h1 class="mb-8">Updates</h1>
+    <div class="grid grid-cols-12 gap-3  lg:gap-5 ">
+        <div class="col-span-12 md:col-span-6 xl:col-span-4 flex flex-col rounded-md bg-offwhite py-5 px-6">
+            <div class="grow">
+                <h4 class="font-bold mb-2">Scheduled Site Maintenance</h4>
+                <p class="text-lg">The ShriTeq website will be down from 12:00 PM - 1:00 PM on Wednesday, 5th October. </p> </div>
+            <p class="mt-2 text-lg uppercase text-gray-800 font-bold">Posted 4th October</p>
+        </div>
+        <div class="col-span-12 md:col-span-6 xl:col-span-4 flex flex-col rounded-md bg-offwhite py-5 px-6">
+            <div class="grow">
+                <h4 class="font-bold mb-2">Bot Xchange Deadline Delayed</h4>
+                <p class="text-lg">The deadline for Bot Xchange has been moved to 11:59 PM on Thursday, 6th October. Teams can continue to submit their programs for trial evaluations on Tuesday, 4th October. <br>Note: the deadline for Ad-Making remaisn 11:59 PM on Tuesday, 4th October.</div>
+            <p class="mt-2 text-lg uppercase text-gray-800 font-bold">Posted 4th October</p>
+        </div>
+        <div class="col-span-12 md:col-span-6 xl:col-span-4 flex flex-col rounded-md bg-offwhite py-5 px-6">
+            <div class="grow">
+                <h4 class="font-bold mb-2">Event prompts released</h4>
+                <p class="text-lg">Prompts for the <a class="text-violet-custom font-bold" href="{% url 'event' slug='hackathon' %}">Hackathon</a>, <a class="text-violet-custom font-bold" href="{% url 'event' slug='bot-xchange' %}">Bot Xchange</a>, and <a  href="{% url 'event' slug='ad-making' %}" class="text-violet-custom font-bold">Ad-Making</a> are live on their pages; and have also been emailed to teacher-in-charges and student-in-charges.</p>
+            </div>
+            <p class="mt-2 text-lg uppercase text-gray-800 font-bold">Posted 27th September</p>
+        </div>
+
+        <div class="col-span-12 md:col-span-6 xl:col-span-4 flex flex-col rounded-md bg-offwhite py-5 px-6">
+            <div class="grow">
+                <h4 class="font-bold mb-2">Registration deadline has been extended</h4>
+                <p class="text-lg">The deadline for registering for ShriTeq 2022 has been extended to 11:59 PM on Monday, September 26th.</p>
+            </div>
+            <p class="mt-2 text-lg uppercase text-gray-800 font-bold">Posted 24th September</p>
+        </div>
+
+        <div class="col-span-12 md:col-span-6 xl:col-span-4 flex flex-col rounded-md bg-offwhite py-5 px-6">
+            <div class="grow">
+                <h4 class="font-bold mb-2">Change in online event dates</h4>
+                <p class="text-lg">Hackathon, Bot Xchange, and Ad-Making will begin on 27th instead of 26th September. Deadlines for these events have been shifted from 3rd to 4th October. </p>    
+            </div>
+             <p class="mt-2 text-lg uppercase text-gray-800 font-bold">Posted 24th September</p>
+        </div>
+
+    
+        
+    </div>
+</section>
+
+<section id="events" class="relative px-5 py-16 mx-auto bg-grey md:px-20 xl:px-44">
     <h1 data-inviewport="fade-in-bottom" class="cssanimation mb-6 md:mb-9 text-center text-black">Our Events</h1>
     <div data-inviewport="fade-in-bottom" class="cssanimation animation-delay-half grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-9">
 
@@ -64,35 +109,35 @@
     </div>
 </section>
 
-<section class="relative px-5 py-16 mx-auto bg-white md:px-20 lg:px-44 ">
+<section class="relative px-5 py-16 mx-auto bg-white md:px-20 xl:px-44 ">
     <div class="md:flex flex-rows items-center mb-6">
         <h2 class=" text-black uppercase flex-grow mb-2">Tier 1 Events</h2>
         <h4>Up to 100 points per event</h4>
     </div>
     <div class="grid lg:grid-cols-2 2xl:grid-cols-3 gap-9">
-        {% component "event" style="light" event_name="Tech Quiz" event_elig="junior middle senior" event_link="quiz" event_participation_reqs="1 team of 3" event_short_desc="Ideation, creation, and execution are the essence of the ShriTeq Hackathon. Create an original product based on a theme and present it in front of a panel of judges after demonstrating your prototype in a preliminary round.        " %}
+        {% component "event" style="light" event_name="Tech Quiz" event_elig="junior middle senior" event_link="quiz" event_participation_reqs="1 team of 3" event_short_desc="ShriTeq's classic flagship event, the quiz, returns! Junior, middle and senior teams will each contest to answer tech-based questions in a variety of formats. Teams will be shortlisted for onstage semi-finals after an offline preliminary round." %}
         {% component "event" style="light" event_name="Hackathon" event_elig="senior" event_link="hackathon" event_participation_reqs="1 team of 5" event_short_desc="Ideation, creation, and execution are the essence of the ShriTeq Hackathon. Create an original product based on a theme and present it in front of a panel of judges after qualifying for the finals through online preliminaries." %}
         {% component "event" style="light" event_name="Bot Xchange" event_elig="senior" event_link="bot-xchange" event_participation_reqs="1 team of 3" event_short_desc="Make it rain! Submit an ML-powered algorithm to make stock market from real data. Risking it all or playing it safe: it's up to your model to decide. The team whose algorithm generates the highest profit when tested against real-world data will be declared the winner." %}
         {% component "event" style="light" event_name="Code Combat" event_elig="senior" event_link="code-combat" event_participation_reqs="2 teams of 1" event_short_desc="Push your coding abilities to the limits as your team attempts to solve as many programming questions as possible in a one-hour marathon. A preliminary round will be conducted online and the top teams will be invited for offline finals."%}
     </div>
 </section>
 
-<section class="px-5 py-16 mx-auto bg-offblack md:px-20 lg:px-44">
+<section class="px-5 py-16 mx-auto bg-offblack md:px-20 xl:px-44">
     <div class="md:flex flex-row items-center mb-6">
         <h2 class=" text-white uppercase flex-grow mb-2">Tier 2 Events</h2>
         <h4 class="text-white">Up to 70 points per event</h4>
     </div>
     <div class="grid lg:grid-cols-2 2xl:grid-cols-3 gap-9">
         {% component "event" style="dark" event_name="Crypt Hunt" event_elig="open" event_link="crypt-hunt" event_participation_reqs="Unlimited" event_short_desc="Solve cryptic riddles and chase rabbit holes as you work to solve a series of questions. Schools will work as one over the official event Discord server to solve questions together. Questions will be hosted on the online platform for the crypt hunt." %}
-        {% component "event" style="dark" event_name="Competitive Gaming" event_elig="senior" event_link="gaming" event_participation_reqs="1 team of 3" event_short_desc="FPS pro or a casual gamer? This event has something for everyone to enjoy! Qualify for the finals after semi-finals and a preliminary round. The game(s) for the finals and preliminaries will be revealed two days before the date of the event."%}
-        {% component "event" style="dark" event_name="Image-ination" event_elig="middle senior" event_link="image-ination" event_participation_reqs="1 team of 2" event_short_desc="Unleash your creativity on eccentric images! Transform a starter image based on an open-ended textual prompt using your photo editing skills. Participants will be judged based on creativity, technical accomplishment, and adherence to the prompt in their online submission."%}
+        {% component "event" style="dark" event_name="Competitive Gaming" event_elig="senior" event_link="gaming" event_participation_reqs="1 team of 3" event_short_desc="FPS pro or a casual gamer? This event has something for everyone to enjoy! Qualify for the finals after semi-finals and a preliminary round. The game(s) for each round will be revealed two days before each round."%}
+        {% component "event" style="dark" event_name="Image-ination" event_elig="middle senior" event_link="image-ination" event_participation_reqs="1 team of 2" event_short_desc="Unleash your creativity on eccentric images! Transform a starter image based on an open-ended textual prompt using your photo editing skills."%}
         {% component "event" style="dark" event_name="Ad-Making" event_elig="middle" event_link="ad-making" event_participation_reqs="1 team of 4" event_short_desc="Turn the dull into the sublime! Create a short showcase digital advertisement for a mundane object using your video editing and animation skills. Videos will be submitted and evaluated online."%}
-        {% component "event" style="dark" event_name="Web Design" event_elig="middle senior" event_link="web-design" event_participation_reqs="1 team of 2" event_short_desc="Put your web dev skills to good! Make a static website for a specified organisation in a using online website building tools. Participants will be invited offline, where the requirements will be revealed and where they will create the website."%}
+        {% component "event" style="dark" event_name="Web Design" event_elig="middle senior" event_link="web-design" event_participation_reqs="1 team of 2" event_short_desc="Put your web dev skills to good! Make a static website for a specified organisation. Participants will be invited offline, where the requirements will be revealed and where they will create the website."%}
         {% component "event" style="dark" event_name="Pac-Man" event_elig="open" event_link="pac-man" event_participation_reqs="Unlimited" event_short_desc="Gobble your way up the ranks in this free-for-all online retro gaming event! Points will be awarded based on the school of the participants at the top of the leaderboard at the end of the event." %}
     </div>
 </section>
 
-<section id="points" class="px-5 py-10 bg-offwhite md:px-20 lg:px-44 w-screen">
+<section id="points" class="px-5 py-10 bg-offwhite md:px-20 xl:px-44 w-screen">
     <h1 class="mb-4">Points</h1>
     <!-- <p class="text-2xl mb-7">The last date for registration for all events is the XX of September</p> -->
 
@@ -161,12 +206,13 @@
 
 </section>
 
+
 <section id="register" class="w-screen">
     <div class="md:grid grid-cols-2 gap-0 w-100">
-        <div class="bg-neutral-200 px-5 py-10 md:px-20 lg:px-44 flex flex-col items-start border-r-1">
+        <div class="bg-neutral-200 py-10 px-5 md:px-12 lg:px-20 xl:px-44 flex flex-col items-start border-r-1">
             <div class="flex-grow">
                 <h1 class="mb-4">Register</h1>
-                <p class="text-2xl mb-7">The last date for registration is 24th September 2022</p>
+                <p class="text-2xl mb-7">The last date for registration is 26th September 2022</p>
             </div>
             <a href="https://bit.ly/ShriTeq2022RegForm">
                 <button href="" class="p-4 bg-black rounded-lg">
@@ -189,16 +235,29 @@
                 </button>
             </a>
         </div>
-        <div class="bg-neutral-300 text-black px-5 py-10 md:px-20 lg:px-44 flex flex-col  items-start">
+        <div class="bg-neutral-300 text-black py-10 px-5 md:px-12 lg:px-20 xl:px-44 flex flex-col  items-start">
             <div class="flex-grow">
                 <h1 class="mb-4">Schedule</h1>
-                <p class="text-2xl mb-7">Download a daywise schedule (PDF)</p>
+                <p class="text-2xl mb-7">Download a daywise schedule (PDF) for offline events on 10th-12th October</p>
             </div>
-            <a href="{% url 'schedule' %}" class="p-4 bg-black rounded-lg">
-                <div class="flex flex-row items-center justify-center">
+            <a href="{% static 'ShriTeq2022_Schedule.pdf' %}" class="p-4 bg-black rounded-lg">
+                <div class="flex flex-row items-center justify-center gap-4">
                     <p class="ml-2 text-xl font-semibold text-white grow">Download</p>
-                    <svg class="h-7 fill-white" width="53" height="54" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.0.0-beta3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2021 Fonticons, Inc. --><path d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM382.6 302.6l-103.1 103.1C270.7 414.6 260.9 416 256 416c-4.881 0-14.65-1.391-22.65-9.398L129.4 302.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 306.8V128c0-17.69 14.33-32 32-32s32 14.31 32 32v178.8l49.38-49.38c12.5-12.5 32.75-12.5 45.25 0S395.1 290.1 382.6 302.6z"/></svg>
+                    <svg class="h-7 fill-white" viewBox="0 0 53 54" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_12_310)">
+                                <path
+                                    d="M53 26.8794C53 12.2423 41.1371 0.379395 26.5 0.379395C11.8629 0.379395 0 12.2423 0 26.8794C0 41.5165 11.8629 53.3794 26.5 53.3794C41.1371 53.3794 53 41.5165 53 26.8794ZM27.5248 40.0052C26.9037 39.7464 26.5 39.146 26.5 38.4731V31.8481H16.5625C14.7334 31.8481 13.25 30.3648 13.25 28.5356V25.2231C13.25 23.394 14.7334 21.9106 16.5625 21.9106H26.5V15.2856C26.5 14.616 26.9028 14.0114 27.5222 13.7557C28.1417 13.4986 28.8534 13.6409 29.3275 14.1148L40.9213 25.7085C41.568 26.3553 41.568 27.4041 40.9213 28.0501L29.3275 39.6438C28.8498 40.119 28.1459 40.264 27.5248 40.0052Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_12_310">
+                                    <rect width="53" height="53" fill="white" transform="translate(0 0.379395)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
                 </div>
+                
             </a>
         </div>
 
@@ -207,6 +266,17 @@
 
 </section>
 
+
+<section id="discord" class="w-screen px-5 py-16 mx-auto bg-violet-800 md:px-20 xl:px-44">
+    <h2 class="text-offwhite leading-tight mb-2">Join the ShriTeq Discord server</h2>
+    <p class="text-offwhite leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed text-xl md:text-2xl font-medium mb-6">School representatives, as well as students competing in Bot Xchange, Code Combat, Crypt Hunt, and Gaming should join the server.</p>
+    <a href="https://discord.gg/Gt3ZGvssgH">
+        <button class="bg-offblack text-white p-5 rounded-lg text-lg flex flex-row justify-center items-center gap-5">
+            <svg class="h-7 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0-beta3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2021 Fonticons, Inc. --><path d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/></svg>
+            <p class="text-lg md:text-xl lg:text-2xl font-medium">Join the server</p>
+        </button>
+    </a>
+</section>
 
 {% endblock content%}
 

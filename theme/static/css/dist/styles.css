@@ -939,10 +939,13 @@ h4 {
   margin-top: 0.5rem;
 }
 
+<<<<<<< HEAD
 .mt-3 {
   margin-top: 0.75rem;
 }
 
+=======
+>>>>>>> main
 .block {
   display: block;
 }
@@ -1047,6 +1050,7 @@ h4 {
   width: 50%;
 }
 
+<<<<<<< HEAD
 .w-16 {
   width: 4rem;
 }
@@ -1067,6 +1071,8 @@ h4 {
   width: 8rem;
 }
 
+=======
+>>>>>>> main
 .min-w-max {
   min-width: -webkit-max-content;
   min-width: -moz-max-content;
@@ -1185,6 +1191,17 @@ h4 {
 
 .gap-8 {
   gap: 2rem;
+<<<<<<< HEAD
+=======
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+>>>>>>> main
 }
 
 .gap-5 {
@@ -1345,6 +1362,11 @@ h4 {
   background-color: rgb(124 63 255 / var(--tw-bg-opacity));
 }
 
+.bg-violet-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(91 33 182 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -1398,10 +1420,13 @@ h4 {
   fill: #7C3FFF;
 }
 
+<<<<<<< HEAD
 .p-8 {
   padding: 2rem;
 }
 
+=======
+>>>>>>> main
 .p-5 {
   padding: 1.25rem;
 }
@@ -1418,6 +1443,17 @@ h4 {
   padding: 0.75rem;
 }
 
+<<<<<<< HEAD
+=======
+.p-8 {
+  padding: 2rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+>>>>>>> main
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -1549,8 +1585,13 @@ h4 {
   line-height: 1;
 }
 
+<<<<<<< HEAD
 .text-5xl {
   font-size: 3rem;
+=======
+.text-6xl {
+  font-size: 3.75rem;
+>>>>>>> main
   line-height: 1;
 }
 
@@ -1564,11 +1605,29 @@ h4 {
   line-height: 1.25rem;
 }
 
+<<<<<<< HEAD
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
 }
 
+=======
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+>>>>>>> main
 .font-medium {
   font-weight: 500;
 }
@@ -1607,6 +1666,10 @@ h4 {
 
 .leading-relaxed {
   line-height: 1.625;
+}
+
+.leading-tight {
+  line-height: 1.25;
 }
 
 .text-violet-custom {
@@ -1673,9 +1736,20 @@ h4 {
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
+=======
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.text-offwhite {
+  --tw-text-opacity: 1;
+  color: rgb(242 242 242 / var(--tw-text-opacity));
+>>>>>>> main
 }
 
 .underline {
@@ -1773,6 +1847,10 @@ h4 {
   .sm\:leading-normal {
     line-height: 1.5;
   }
+
+  .sm\:leading-relaxed {
+    line-height: 1.625;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1780,6 +1858,13 @@ h4 {
     grid-column: span 7 / span 7;
   }
 
+<<<<<<< HEAD
+=======
+  .md\:col-span-6 {
+    grid-column: span 6 / span 6;
+  }
+
+>>>>>>> main
   .md\:mb-0 {
     margin-bottom: 0px;
   }
@@ -1824,10 +1909,13 @@ h4 {
     width: 75%;
   }
 
+<<<<<<< HEAD
   .md\:w-32 {
     width: 8rem;
   }
 
+=======
+>>>>>>> main
   .md\:columns-2 {
     -moz-columns: 2;
          columns: 2;
@@ -1868,6 +1956,11 @@ h4 {
     padding-right: 6rem;
   }
 
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
   .md\:pb-8 {
     padding-bottom: 2rem;
   }
@@ -1888,6 +1981,21 @@ h4 {
   .md\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
   .md\:font-extrabold {
@@ -1959,6 +2067,10 @@ h4 {
     gap: 3rem;
   }
 
+  .lg\:gap-5 {
+    gap: 1.25rem;
+  }
+
   .lg\:px-44 {
     padding-left: 11rem;
     padding-right: 11rem;
@@ -1967,6 +2079,11 @@ h4 {
   .lg\:px-64 {
     padding-left: 16rem;
     padding-right: 16rem;
+  }
+
+  .lg\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .lg\:pt-16 {
@@ -1992,9 +2109,20 @@ h4 {
     line-height: 1.75rem;
   }
 
+<<<<<<< HEAD
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+=======
+  .lg\:text-8xl {
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+>>>>>>> main
   }
 
   .lg\:leading-relaxed {
@@ -2021,10 +2149,13 @@ h4 {
 
   .xl\:w-2\/3 {
     width: 66.666667%;
+<<<<<<< HEAD
   }
 
   .xl\:w-40 {
     width: 10rem;
+=======
+>>>>>>> main
   }
 
   .xl\:px-80 {
@@ -2037,6 +2168,19 @@ h4 {
     padding-right: 10rem;
   }
 
+<<<<<<< HEAD
+=======
+  .xl\:px-44 {
+    padding-left: 11rem;
+    padding-right: 11rem;
+  }
+
+  .xl\:text-8xl {
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+>>>>>>> main
   .xl\:text-9xl {
     font-size: 8rem;
     line-height: 1;
