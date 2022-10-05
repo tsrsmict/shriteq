@@ -3,6 +3,35 @@
 
 {% block subcontent %}
 <div class="w-full">
-    
+    <table class="w-full text-md text-left border rounded-md">
+        <thead class="text-md text-gray-700 uppercase bg-gray-50">
+            <tr>
+                <th scope="col" class="py-3 px-6 w-1/12 text-center">
+                    Rank
+                </th>
+                <th scope="col" class="py-3 px-6 w-7/12">
+                    School
+                </th>
+                <th scope="col" class="py-3 px-6 w-4/12">
+                    Current Question
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for school in schools %}
+            <tr class="bg-white border-b">
+                <th scope="row" class="py-6 px-6 font-medium text-gray-900 text-center whitespace-nowrap">
+                    {{ forloop.counter }}
+                </th>
+                <td class="py-6 px-6 text-gra">
+                    {{ school.display_name }}
+                </td>
+                <td class="py-6 px-6">
+                    {{ school.question_num }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock subcontent %}

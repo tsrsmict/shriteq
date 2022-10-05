@@ -30,6 +30,10 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = os.environ['DEBUG'] == 'True'
 
+test = os.environ.get('TEST', None)
+IS_TEST_SERVER = False
+if test is not None and test == 'True':
+    IS_TEST_SERVER = True
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
@@ -82,8 +86,11 @@ INSTALLED_APPS = [
 
     'django_browser_reload',
     'django_components',
+    'ckeditor',
+    'ckeditor_uploader',
 
     'events',
+    'accounts',
     'crypt_hunt',
     'pac_man',
 ]
@@ -177,13 +184,32 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
 TIME_ZONE_INFO = ZoneInfo(TIME_ZONE)
 # datetime(year, month, day, hour, minute, second, microsecond)
-OPEN_EVENT_START_TIME = datetime(2022, 10, 8, 9, 0, 0, 0, tzinfo=TIME_ZONE_INFO)
+IS_OVERRIDE = (DEBUG == True) or (IS_TEST_SERVER == True)
 
+now = datetime.now(tz=TIME_ZONE_INFO)
+OPEN_EVENT_START_TIME = datetime(2022, 10, 8, 9, 0, 0, 0, tzinfo=TIME_ZONE_INFO)
+OPEN_EVENT_CLOSE_TIME = datetime(2022, 10, 11, 11, 59, 0, 0, tzinfo=TIME_ZONE_INFO)
+
+IS_IN_EVENT_WINDOW: bool = (now >= OPEN_EVENT_START_TIME and now < OPEN_EVENT_CLOSE_TIME)
+
+
+DAY_OF_WEEK: int = now.weekday()
+IS_WEEKEND: bool = (DAY_OF_WEEK == 5 or DAY_OF_WEEK == 6)
+
+IS_IN_DAY_WINDOW: bool = False
+
+if IS_WEEKEND:
+    IS_IN_DAY_WINDOW = (now.hour >= 9 and now.hour < 24)
+else:
+    IS_IN_DAY_WINDOW = (now.hour >= 15 and now.hour < 24)
+
+OPEN_EVENTS_RUNNING = IS_OVERRIDE or (IS_IN_EVENT_WINDOW and IS_IN_DAY_WINDOW)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -193,13 +219,26 @@ STATIC_URL = "static/" # url on server, eg localhost:8000/static/
 # which directories to find static files in. collectstatic will collect them all and put them together when deployed. also needed for tailwind
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    os.path.join(BASE_DIR, "components")
+    os.path.join(BASE_DIR, "components"),
+    os.path.join(BASE_DIR, "pac_man"),
+    os.path.join(BASE_DIR, "crypt_hunt"),
 ]
 # what to call the compiled static dir
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 WHITENOISE_MANIFEST_STRICT = False
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

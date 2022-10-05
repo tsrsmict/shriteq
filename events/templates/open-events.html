@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %} | Available Events {% endblock title %}
+
+{% block content %}
+<section id="events" class="px-5 py-16 mx-auto md:px-20 lg:px-44">
+    <div class="flex flex-row justify-center items-center gap-3 mb-12">
+        <div class="lg:flex-grow">
+            <h2 class="mb-2">Available events</h2>
+            <div class="">
+                <h4>Signed in as {{ user_id }} from {{ school.display_name }}</h4> 
+            </div>
+        </div>
+        <a href="{% url 'logout' %}" class="min-w-max">
+            <button class="border w-full border-violet-custom rounded-md text-violet-custom p-3 text-sm hover:bg-violet-custom hover:text-white transition-duration-1">
+                <p class="lg:text-lg text-center">Sign out</p>
+            </button>
+        </a> 
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 lg:gap-8">
+        <div>
+            <div class="border rounded-md py-5 px-8 border-violet-custom">
+                <div class="flex flex-col items-center gap-6">
+                    <h4>Crypt Hunt</h4>
+                    <p>Solve cryptic questions with the rest of your school which send you on hunts all over the internet.</p>
+                    {% if is_ch_banned %}
+                        <p class="mt-2 text-red-600">Your school has been temporarily barred from the crypt hunt. Please check the Discord server for further details</p>
+                    {% else %}
+                    <a href="{% url 'crypt_hunt_index' %}" class="w-full p-3 bg-violet-custom text-white text-center rounded-md">Play</a>
+                    {% endif %}
+                    
+                </div>
+            </div>
+            
+        </div>
+        <div>
+            <div class="border rounded-md py-5 px-8 border-violet-custom">
+                <div class="flex flex-col items-center gap-6">
+                    <h4>Pac-Man</h4>
+                    <p>Compete to climb the leaderboard of high scores for an online version of the classic arcade game.</p>
+                        {% if is_pac_banned %}
+                            <p class="mt-2 text-red-600">Your school has been temporarily barred from Pac-Man. Please contact the OC for further details.</p>
+                        {% else %}
+                            <a href="{% url 'pac_man_index' %}"
+                        class="w-full p-3 bg-violet-custom text-white text-center rounded-md">Play</a>
+                        {% endif %}
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock content %}

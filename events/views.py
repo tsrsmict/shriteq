@@ -1,7 +1,8 @@
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.templatetags.static import static
+import django.views.generic as generic
 
+from accounts.models import School
 EVENT_SLUGS = [
     'hackathon',
     'bot-xchange',
@@ -22,3 +23,26 @@ def event(request, slug):
 
 def schedule(request):
     return redirect('/static/ShriTeq2022_Schedule.pdf')
+
+def open_events(request):
+    if not request.user.is_authenticated: return HttpResponseRedirect('/accounts/login')
+    context = {}
+
+    school = School.objects.get(account=request.user)
+    context['school'] = school
+    session = request.session
+    context['user_id'] = session['user_id']
+
+    if school.is_ch_banned:
+        context['is_ch_banned'] = True
+    if school.is_pac_banned:
+        context['is_pac_banned'] = True
+
+    return render(request, 'open-events.html', context)
+
+
+class BaseOnlineEventView(generic.View):
+    def is_authenticated(self, request) -> bool:
+        is_auth = request.user.is_authenticated
+        print(f'{is_auth=}')
+        return is_auth

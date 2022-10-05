@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.views.generic import TemplateView
 from django.conf import settings
 
@@ -23,11 +23,18 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('', TemplateView.as_view(template_name='maintenance.html'), name='mainteance'),
     path('', include('events.urls')),
+    path('accounts/', include('accounts.urls')),
     path('crypt-hunt/', include('crypt_hunt.urls')),
     path('pac-man/', include('pac_man.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+    path('', include('shriteq_website.special_urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),    
+] 
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     urlpatterns += [path('404', TemplateView.as_view(template_name='404.html'))]
