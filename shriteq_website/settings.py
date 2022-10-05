@@ -35,8 +35,6 @@ IS_TEST_SERVER = False
 if test is not None and test == 'True':
     IS_TEST_SERVER = True
 
-print(f"{DEBUG=} {IS_TEST_SERVER=}")
-
 if DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
