@@ -19,9 +19,9 @@ else:
     if settings.IS_IN_EVENT_WINDOW:
         # Is in general event window but at a closed time, (not 3pm-11:59 pm on weekdays and not 9:00 am - 11:59 pm on weekends)
         urlpatterns += [
-            path('', views.GetSomeSleep.as_view(), name='crypt_hunt_sleep'),
+            path('', views.GetSomeSleep.as_view(), name='pac_man_sleep'),
         ]
     else:
         urlpatterns += [
-            path('', TemplateView.as_view(template_name='crypt_hunt/waiting.html'), name='crypt_hunt_waiting'),
+            path('', TemplateView.as_view(template_name='pac_man/waiting.html'), name='pac_man_waiting'),
         ]
