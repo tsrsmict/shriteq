@@ -19,4 +19,6 @@ class School(models.Model):
 
     @property
     def question(self):
+        # Returning the question object that has the same serial number as the school's question
+        # number.
         return Question.objects.filter(serial_num=self.question_num).first()
