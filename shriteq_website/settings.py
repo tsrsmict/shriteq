@@ -200,6 +200,7 @@ OPEN_EVENT_CLOSE_TIME = datetime(2022, 10, 11, 11, 59, 0, 0, tzinfo=TIME_ZONE_IN
 
 IS_IN_EVENT_WINDOW: bool = (now >= OPEN_EVENT_START_TIME and now < OPEN_EVENT_CLOSE_TIME)
 
+
 DAY_OF_WEEK: int = now.weekday()
 IS_WEEKEND: bool = (DAY_OF_WEEK == 5 or DAY_OF_WEEK == 6)
 

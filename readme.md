@@ -83,19 +83,3 @@ Notice the `admin/` url comes by default - that's for the Django admin dashboard
 The meat of `urls.py` is how it defines entry points for other apps - see `events.urls`. 
 ```path('', include('events.urls')),```
 Here, we route any URL with that particular path (in this case, a blank beginning) onto the URLs defined in the `urls` file of the `events` app.
-
-### Apps
-An app is created by you (you can create one with `python manage.py startapp appname`, but don't run this command unless necessary). 
-The way to figure out what an app does is to look at these files in it, in this order:
-`models.py` -> `urls.py` -> `views.py` -> `forms.py` (`models.py` may be blank and `forms.py` may not exist for simple apps)
-
-Let's start simple and just start with `urls.py` for the `events` app. Here, we define what sub-urls we have for when this URL file gets called. Paths here are relative to the root caller of this app (for example, if the route in the base urls.py file for the project was `abc.com/myappname`, then in `myappname` you would write `/home` for the route `abc.com/myappname.home` instead of `/myappname/home`.).
-
-URLs in apps typically map onto views in views.py. If you're coming from Flask or Express, think of this as like `app.route()` being decorated above a view function split across two files.
-If you're just loading a static HTML file at a URL, you can directly use a TemplateView and load the HTML file (Django templates are a refinement on top of HTML). Otherwise, a view typically plugs in a `context` dictionary into a template.
-
-### Templates
-For this project, our templates are fairly simple. 
-
-* We define a top-level `base.html` file in the root `templates` directory of the project. This is what other templates inherit from. `block`s in a template indicate placeholders which are 'filled in' by children of that template
-* Within each app, we define templates with a `templates/` folder (this is an annoyance which is a best practice for Django namespacing). We put app-specific templates here, however, we can still inherit from templates in the root directory.

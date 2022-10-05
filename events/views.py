@@ -1,5 +1,5 @@
 from django.http import HttpResponseNotFound, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import django.views.generic as generic
 
 from accounts.models import School
@@ -22,7 +22,7 @@ def event(request, slug):
     return render(request, template)
 
 def schedule(request):
-    return render(request, 'schedule.html')
+    return redirect('/static/ShriTeq2022_Schedule.pdf')
     # return HttpResponseRedirect('/static/ShriTeq2022_Schedule.pdf')
 
 def open_events(request):
