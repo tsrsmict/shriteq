@@ -13,7 +13,7 @@ from events.views import BaseOnlineEventView
 from django.conf import settings
 User = settings.AUTH_USER_MODEL
 
-NUM_QUESTIONS = Question.objects.count()
+# NUM_QUESTIONS = Question.objects.count()
 
 class BaseCryptHuntView(BaseOnlineEventView):
     def is_allowed(self, request) -> bool:
