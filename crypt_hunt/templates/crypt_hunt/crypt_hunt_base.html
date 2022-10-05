@@ -18,6 +18,8 @@
             {% url 'crypt_hunt_leaderboard' as leaderboard %}
             {% url 'crypt_hunt_rules' as rules %}
 
+            <a href="{% url 'open' %}" class="uppercase font-light hover:text-violet-custom">Home</a>
+
             {% if request.path == play %}
                 <p class="uppercase text-violet-custom">Play</p>
             {% else %}
