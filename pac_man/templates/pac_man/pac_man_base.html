@@ -5,11 +5,11 @@
 {% block content %}
 
 <div class="w-screen pt-6 pb-8 px-8 md:px-20 lg:px-44">
-    <div class="flex flex-col md:flex-row md:items-center mb-3">
+    <div class="flex flex-col md:flex-row md:items-center mb-6">
         <div class="flex-grow">
             <h4 class="uppercase text-violet-custom">
                 <a href="{% url 'pac_man_index' %}">
-                    Pac Man
+                    Pac-Man
                 </a>
             </h4>
         </div>
@@ -17,6 +17,8 @@
             {% url 'pac_man_play' as play %}
             {% url 'pac_man_leaderboard' as leaderboard %}
             {% url 'pac_man_rules' as rules %}
+
+            <a href="{% url 'open' %}" class="uppercase font-light hover:text-violet-custom">Home</a>
 
             {% if request.path == play %}
                 <p class="uppercase text-violet-custom">Play</p>

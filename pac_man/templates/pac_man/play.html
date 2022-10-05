@@ -1,1 +1,88 @@
 {% extends 'pac_man/pac_man_base.html' %}
+{% load static %}
+
+
+{% block subtitle %} - Play {% endblock subtitle %}
+
+{% block css_imports %}
+{% endblock css_imports %}
+
+{% block subcontent %}
+
+<div class="mt-6 mb-9 font-medium">
+        <div class="flex flex-row w-full">
+            <div class="flex-grow">
+                <p> {{ school.display_name }} <p>
+                <p class="flex-grow"> {{ player.user_id }}  </p>
+            </div>
+            <p class=""> Highscore: <span id="highscore-value"> {{ player.high_score }}  </span> </p>
+        </div>
+</div>
+
+<div class="lg:hidden">
+    <h3>Please play Pac-Man on a non-mobile device</h3>
+</div>
+
+<div class="hidden lg:flex w-full px-4 py-2 flex-col gap-5 justify-center items-center">
+    <div id="pacman" class="w-1/2 flex justify-center max-h-screen"></div>
+    <div class="flex flex-col items-center gap-2">
+        <p class="px-24 xl:px-40 2xl:px-80">Use the arrow keys to move your sprite. Each game lasts three rounds. Scores are recorded at the end of the game.</p>
+        <div class="flex flex-row justify-center items-center gap-3 w-full">
+            <button id = "full-screen-btn" class="duration-200 group flex flex-row gap-2 border border-violet-custom rounded-md text-violet-custom py-2 px-3 text-sm hover:bg-violet-custom hover:text-white">
+                <span>Go full screen</span>
+                <svg class="fill-violet-custom h-5 group-hover:fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0-beta3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2021 Fonticons, Inc. --><path d="M447.1 319.1v135.1c0 13.26-10.75 23.1-23.1 23.1h-135.1c-12.94 0-24.61-7.781-29.56-19.75c-4.906-11.1-2.203-25.72 6.937-34.87l30.06-30.06L224 323.9l-71.43 71.44l30.06 30.06c9.156 9.156 11.91 22.91 6.937 34.87C184.6 472.2 172.9 479.1 160 479.1H24c-13.25 0-23.1-10.74-23.1-23.1v-135.1c0-12.94 7.781-24.61 19.75-29.56C23.72 288.8 27.88 288 32 288c8.312 0 16.5 3.242 22.63 9.367l30.06 30.06l71.44-71.44L84.69 184.6L54.63 214.6c-9.156 9.156-22.91 11.91-34.87 6.937C7.798 216.6 .0013 204.9 .0013 191.1v-135.1c0-13.26 10.75-23.1 23.1-23.1h135.1c12.94 0 24.61 7.781 29.56 19.75C191.2 55.72 191.1 59.87 191.1 63.1c0 8.312-3.237 16.5-9.362 22.63L152.6 116.7l71.44 71.44l71.43-71.44l-30.06-30.06c-9.156-9.156-11.91-22.91-6.937-34.87c4.937-11.95 16.62-19.75 29.56-19.75h135.1c13.26 0 23.1 10.75 23.1 23.1v135.1c0 12.94-7.781 24.61-19.75 29.56c-11.1 4.906-25.72 2.203-34.87-6.937l-30.06-30.06l-71.43 71.43l71.44 71.44l30.06-30.06c9.156-9.156 22.91-11.91 34.87-6.937C440.2 295.4 447.1 307.1 447.1 319.1z"/></svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<form action="{% url 'pac_man_play' %}" method="POST" id="game-score-form">
+    {% csrf_token %}
+    <input type="hidden" id = "game-score-input" name="game-score-input" value="">
+    <input type="hidden" id = "user-id" name="user-id" value="{{ player.user_id }}">
+</form>
+
+{% endblock subcontent %}
+
+{% block script %}
+<script src="{% static 'pac_man/js/pacman.js' %}"></script>
+
+<script src="{% static 'pac_man/js/modernizr-1.5.min.js' %} "></script>
+<script>
+
+    // Full screen mode
+    const btn = document.querySelector('#full-screen-btn');
+    const player = document.querySelector("#pacman");
+
+    btn.addEventListener("click", function (e) {
+        toggleFullScreen(player);
+    }, false);
+    player.addEventListener("click", function (e) {
+        toggleFullScreen(player);
+    }, false);
+
+    function toggleFullScreen(toFullScreen) {
+        if (!document.fullscreenElement) {
+            toFullScreen.requestFullscreen().catch(err => {
+                alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    }
+
+    // Make sure that resources are available
+    var el = document.getElementById("pacman");
+    if (Modernizr.canvas && Modernizr.localstorage && 
+        Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
+      window.setTimeout(function () { PACMAN.init(el, "/static/pac_man/"); }, 0);
+    } else { 
+      el.innerHTML = "Sorry, needs a modern browser<br /><small>" + 
+        "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
+    }
+
+    // Submit 
+
+</script>
+
+{% endblock script %}

@@ -1,13 +1,163 @@
-from django.shortcuts import render
+from datetime import datetime
+import random
 
-# Create your views here.
-def index(request):
-    return render(request, 'crypt_hunt/index.html')
+from django.http import HttpResponse, HttpResponseRedirect, FileResponse
+from django.shortcuts import render, redirect
+from django.urls import reverse
+import django.views.generic as generic
 
-def leaderboard(request):
-    context = {}
-    return render(request,'crypt_hunt/leaderboard.html', context=context)
+from accounts.models import School
+from .models import Question, Submission
+from events.views import BaseOnlineEventView
 
-def play(request):
-    context = {}
-    return render(request, 'crypt_hunt/play.html', context=context)
+from django.conf import settings
+User = settings.AUTH_USER_MODEL
+
+# NUM_QUESTIONS = Question.objects.count()
+
+class BaseCryptHuntView(BaseOnlineEventView):
+    def is_allowed(self, request) -> bool:
+        return super().is_authenticated(request) and not School.objects.get(account=request.user).is_ch_banned
+
+class Index(BaseCryptHuntView):
+    def get(self, request):
+        if not super().is_allowed(request): return redirect(reverse('open'))
+        print('at index')
+        return redirect(reverse('crypt_hunt_play'))
+
+class Leaderboard(BaseCryptHuntView):
+    def get(self, request):
+        if not super().is_allowed(request): return redirect(reverse('open'))
+        schools = School.objects.all().order_by('-question_num', 'ch_levelup_time')
+
+        context = {'schools': schools}
+        print(context)
+        return render(request,'crypt_hunt/leaderboard.html', context=context)
+
+class Congrats(BaseCryptHuntView):
+    def get(self, request):
+        if not super().is_allowed(request): return redirect(reverse('open'))
+        school = School.objects.get(account=request.user)
+        print(Question.objects.last())
+        if not school.question:
+            return render(request, 'crypt_hunt/congrats.html')
+        else:
+            return HttpResponseRedirect(reverse('crypt_hunt_play'))
+
+class Play(BaseCryptHuntView):
+    def get(self, request):
+        if not super().is_allowed(request): return redirect(reverse('open'))
+        context = {}
+        print('Checked auth')
+        try:
+            print(f'{request.user=}')
+            school = School.objects.get(account=request.user)
+            question = school.question
+            context['question'] = question
+            context['school'] = school
+
+            session = request.session
+            context['user_id'] = session['user_id']
+            print(f'{context=}')
+            
+        except Exception as e:
+            print(f'{e=} {type(e)=}')
+            return HttpResponseRedirect(reverse('open'))
+        
+        print('Got all necessary data')
+        if school.question == None:
+            return HttpResponseRedirect(reverse('crypt_hunt_congrats'))
+        return render(request, template_name='crypt_hunt/play.html', context=context)
+
+    def post(self, request):
+        if not super().is_allowed(request): return redirect(reverse('open'))
+        data = (request.POST)
+        session = request.session
+        
+        try:
+            # Check if the hidden input was deleted / something's been corrupted / attempt to hack
+            current_question_num = int(data['question-num'])
+        except:
+            # Reload
+            return self.get(request)
+
+        contents = data['answer']
+        log = {
+            'contents': contents,
+            'ip_address': get_client_ip(request),
+            'time': str(datetime.now())
+        }
+
+        try:
+            user_id = session['user_id']
+            school = School.objects.get(account=request.user)
+            question = school.question
+        except:
+            print('Missing credentials in session')
+            return self.get(request)
+
+        # Make sure that this isn't being submitted from someone who hasn't reloaded since the school progressed
+        if question is not None and question.serial_num == current_question_num:
+            # Validate the submission with an advanced function
+            if submission_correct(contents, question):
+                # Advance the question
+                school.question_num += 1
+                school.ch_levelup_time = datetime.now()
+                school.save()
+                log['status'] = 'COR'
+            else:
+                log['status'] = 'INC'
+        else: 
+            log['status'] = 'ODTs'            
+
+        log['user_id'] = user_id
+        log['school'] = str(school)
+        log['question_num'] = current_question_num
+        
+        save_log(log)
+        return redirect(reverse('crypt_hunt_play'))
+
+
+class GetSomeSleep(BaseCryptHuntView):
+    def get(self, request):
+        if not super().is_allowed(request): return redirect(reverse('open'))
+        context = {}
+        if settings.IS_WEEKEND: 
+            context['resume_time'] = '9:00 AM tomorrow'
+        else:
+            context['resume_time'] = '3:00 PM'
+        return render(request, 'get-some-sleep.html', context=context)
+        
+
+class SubmissionsLog(generic.View):
+    def get(self, request):
+        if request.user.is_superuser:
+            submissions = Submission.objects.all()
+            contents = ""
+            for submission in submissions:
+                log = f"{submission.time} { submission.user_id } {submission.ip_address}\n{ submission.school}\nQuestion {submission.question_num}: {submission.contents} {submission.get_status_display()}\n\n"
+                contents += log
+            response = HttpResponse(content_type='text/plain')  
+            response['Content-Disposition'] = 'attachment; filename="logs.txt"'
+
+            response.write(contents.strip())
+
+            return response
+        else:
+            # Unauthorised request
+            return HttpResponse('Unauthorized', status=401)
+
+# Utils
+def submission_correct(answer: str, question: Question) -> bool:
+    return answer.lower().strip().replace(' ', '') == question.answer.lower().strip().replace(' ', '')
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[-1].strip()
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
+def save_log(log: dict):
+    Submission.objects.create(**log)
