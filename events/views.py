@@ -23,7 +23,6 @@ def event(request, slug):
 
 def schedule(request):
     return redirect('/static/ShriTeq2022_Schedule.pdf')
-    # return HttpResponseRedirect('/static/ShriTeq2022_Schedule.pdf')
 
 def open_events(request):
     if not request.user.is_authenticated: return HttpResponseRedirect('/accounts/login')
