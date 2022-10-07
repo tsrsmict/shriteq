@@ -1,4 +1,4 @@
-from django.http import HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect
 import django.views.generic as generic
 
@@ -25,7 +25,7 @@ def schedule(request):
     return redirect('/static/ShriTeq2022_Schedule.pdf')
 
 def open_events(request):
-    if not request.user.is_authenticated: return HttpResponseRedirect('/accounts/login')
+    if not request.user.is_authenticated: return redirect('login')
     context = {}
 
     school = School.objects.get(account=request.user)

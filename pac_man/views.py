@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
@@ -33,7 +33,7 @@ class Play(BaseOnlineEventView):
             context['school'] = school
         except Exception as e:
             print(f'{e=} {type(e)=}')
-            return HttpResponseRedirect(reverse('open'))
+            return redirect('open')
         
         try:
             session = request.session
@@ -49,7 +49,7 @@ class Play(BaseOnlineEventView):
             context['player'] = player
         except Exception as e:
             print(f'{e=} {type(e)=}')
-            return HttpResponseRedirect(reverse('open'))
+            return redirect('open')
 
         return render(request, template_name='pac_man/play.html', context=context)
     def post(self, request, *args, **kwargs):
@@ -66,7 +66,7 @@ class Play(BaseOnlineEventView):
             player = PacManPlayer.objects.get(user_id=user_id, school=school)
         except Exception as e:
             print(f'{e=} {type(e)=}')
-            return HttpResponseRedirect(reverse('open'))
+            return redirect('open')
 
         print(f'Found  player {player} of school {school}')
         if player.high_score < game_score:
