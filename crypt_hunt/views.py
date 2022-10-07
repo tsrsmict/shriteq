@@ -91,7 +91,7 @@ class Play(BaseCryptHuntView):
 
         contents = data['answer']
 
-        # Shdowban IPs
+        # Shdowban
         ip = get_client_ip(request)
         if ip in banned_ips:
             return redirect(reverse('crypt_hunt_play'))
