@@ -28,7 +28,6 @@ class Play(BaseOnlineEventView):
         if not super().is_authenticated(request): return redirect('open')
         context = {}
         try:
-            print(request.user)
             school = School.objects.get(account=request.user)
             context['school'] = school
         except Exception as e:
@@ -38,14 +37,12 @@ class Play(BaseOnlineEventView):
         try:
             session = request.session
             user_id = session['user_id']
-            print(user_id)
             query = PacManPlayer.objects.filter(user_id=user_id)
             if len(query) == 0:
                 player = PacManPlayer(user_id=user_id, school=school)
                 player.save()
             else:
                 player = query[0]
-            print(player.user_id)
             context['player'] = player
         except Exception as e:
             print(f'{e=} {type(e)=}')
@@ -56,27 +53,21 @@ class Play(BaseOnlineEventView):
         if not super().is_authenticated(request): return redirect('open')
         
         data = request.POST
-        print(data)
         game_score = int(data['game-score-input'])
         user_id = data['user-id']
 
         try:
-            print(request.user)
             school = School.objects.get(account=request.user)
             player = PacManPlayer.objects.get(user_id=user_id, school=school)
         except Exception as e:
             print(f'{e=} {type(e)=}')
             return redirect('open')
 
-        print(f'Found  player {player} of school {school}')
         if player.high_score < game_score:
-            print(f'Updating high score from {player.high_score} to {game_score}')
             player.high_score = game_score
             player.save()
         else:
-            print(f'Score {game_score} less than high score {player.high_score}')
-
-        print('Received post')
+            pass
         return HttpResponse('Received')
 
 class GetSomeSleep(BaseOnlineEventView):

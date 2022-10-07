@@ -30,7 +30,6 @@ class BaseCryptHuntView(BaseOnlineEventView):
 class Index(BaseCryptHuntView):
     def get(self, request):
         if not super().is_allowed(request): return redirect('open')
-        print('at index')
         return redirect(reverse('crypt_hunt_play'))
 
 class Leaderboard(BaseCryptHuntView):
@@ -39,14 +38,12 @@ class Leaderboard(BaseCryptHuntView):
         schools = School.objects.all().order_by('-question_num', 'ch_levelup_time')
 
         context = {'schools': schools}
-        print(context)
         return render(request,'crypt_hunt/leaderboard.html', context=context)
 
 class Congrats(BaseCryptHuntView):
     def get(self, request):
         if not super().is_allowed(request): return redirect(reverse('open'))
         school = School.objects.get(account=request.user)
-        print(Question.objects.last())
         if not school.question:
             return render(request, 'crypt_hunt/congrats.html')
         else:
@@ -56,9 +53,7 @@ class Play(BaseCryptHuntView):
     def get(self, request):
         if not super().is_allowed(request): return redirect(reverse('open'))
         context = {}
-        print('Checked auth')
         try:
-            print(f'{request.user=}')
             school = School.objects.get(account=request.user)
             question = school.question
             context['question'] = question
@@ -66,13 +61,11 @@ class Play(BaseCryptHuntView):
 
             session = request.session
             context['user_id'] = session['user_id']
-            print(f'{context=}')
             
         except Exception as e:
             print(f'{e=} {type(e)=}')
             return redirect('open')
         
-        print('Got all necessary data')
         if school.question == None:
             return redirect('crypt_hunt_congrats')
         return render(request, template_name='crypt_hunt/play.html', context=context)
@@ -107,7 +100,6 @@ class Play(BaseCryptHuntView):
             school = School.objects.get(account=request.user)
             question = school.question
         except:
-            print('Missing credentials in session')
             return self.get(request)
 
         # Make sure that this isn't being submitted from someone who hasn't reloaded since the school progressed
