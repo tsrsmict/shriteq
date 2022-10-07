@@ -1,5 +1,6 @@
 from datetime import datetime
-import random
+import os
+import pathlib
 
 from django.http import HttpResponse, HttpResponseRedirect, FileResponse
 from django.shortcuts import render, redirect
@@ -14,6 +15,13 @@ from django.conf import settings
 User = settings.AUTH_USER_MODEL
 
 # NUM_QUESTIONS = Question.objects.count()
+# Load as newline-separated from BANNED_IPS.TXT
+
+base_path = pathlib.Path().resolve()
+
+f = open(os.path.join(base_path, 'crypt_hunt', 'banned_ips.txt'), 'r')
+banned_ips = f.read().splitlines()
+
 
 class BaseCryptHuntView(BaseOnlineEventView):
     def is_allowed(self, request) -> bool:
@@ -82,6 +90,12 @@ class Play(BaseCryptHuntView):
             return self.get(request)
 
         contents = data['answer']
+
+        # Shdowban IPs
+        ip = get_client_ip(request)
+        if ip in banned_ips:
+            return redirect(reverse('crypt_hunt_play'))
+        
         log = {
             'contents': contents,
             'ip_address': get_client_ip(request),
