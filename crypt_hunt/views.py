@@ -29,7 +29,7 @@ class BaseCryptHuntView(BaseOnlineEventView):
 
 class Index(BaseCryptHuntView):
     def get(self, request):
-        if not super().is_allowed(request): return redirect(reverse('open'))
+        if not super().is_allowed(request): return redirect('open')
         print('at index')
         return redirect(reverse('crypt_hunt_play'))
 
