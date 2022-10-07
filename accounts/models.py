@@ -22,3 +22,7 @@ class School(models.Model):
         # Returning the question object that has the same serial number as the school's question
         # number.
         return Question.objects.filter(serial_num=self.question_num).first()
+
+    @property
+    def is_ch_complete(self):
+        return self.question_num == Question.objects.count() + 1
