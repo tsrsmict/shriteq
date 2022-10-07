@@ -19,7 +19,6 @@ class Question(models.Model):
     def next_question(self):
         try:
             question = Question.objects.get(serial_num=self.serial_num + 1)
-            print(question)
             return question
         except:
             return None
