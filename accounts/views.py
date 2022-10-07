@@ -22,7 +22,7 @@ def login(request):
             auth.login(request, user)
             user_id = request.POST['user-id']
             request.session['user_id'] = user_id
-            return redirect(reverse('open'))
+            return redirect('/open')
         else:
             return redirect('/accounts/login')
     
