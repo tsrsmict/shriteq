@@ -27,7 +27,11 @@
                     {{ school.display_name }}
                 </td>
                 <td class="py-6 px-6">
+                    {% if school.is_ch_complete %}
+                    <p class="font-medium text-violet-500 uppercase">Complete</p>
+                    {% else %}
                     {{ school.question_num }}
+                    {% endif %}
                 </td>
             </tr>
             {% endfor %}
