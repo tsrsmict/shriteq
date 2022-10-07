@@ -2,7 +2,7 @@ from datetime import datetime
 import os
 import pathlib
 
-from django.http import HttpResponse, HttpResponseRedirect, FileResponse
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 import django.views.generic as generic
@@ -50,7 +50,7 @@ class Congrats(BaseCryptHuntView):
         if not school.question:
             return render(request, 'crypt_hunt/congrats.html')
         else:
-            return HttpResponseRedirect(reverse('crypt_hunt_play'))
+            return redirect('crypt_hunt_play')
 
 class Play(BaseCryptHuntView):
     def get(self, request):
@@ -70,11 +70,11 @@ class Play(BaseCryptHuntView):
             
         except Exception as e:
             print(f'{e=} {type(e)=}')
-            return HttpResponseRedirect(reverse('open'))
+            return redirect('open')
         
         print('Got all necessary data')
         if school.question == None:
-            return HttpResponseRedirect(reverse('crypt_hunt_congrats'))
+            return redirect('crypt_hunt_congrats')
         return render(request, template_name='crypt_hunt/play.html', context=context)
 
     def post(self, request):

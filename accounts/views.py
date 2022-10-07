@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse
 
 from django.contrib import auth
 from .models import School
@@ -24,7 +22,7 @@ def login(request):
             request.session['user_id'] = user_id
             return redirect('open')
         else:
-            return redirect('/accounts/login')
+            return redirect('login')
     
 import re
 def is_valid_username(username: str) -> bool:
@@ -33,4 +31,4 @@ def is_valid_username(username: str) -> bool:
 
 def logout(request):
     auth.logout(request)
-    return HttpResponseRedirect('/accounts/login')
+    return redirect('index')
