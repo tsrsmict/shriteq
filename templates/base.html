@@ -80,10 +80,8 @@
 						<a href="{% url 'index' %}#discord"
 						class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Discord</a>
 						
-						{% comment %}
-						<a href=""
+						<a href="{% url 'open' %}"
 						class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Open events</a>
-						{% endcomment %}
 						
 						{% else %}
 						<a href="{% url 'index'%}#events"
@@ -93,10 +91,8 @@
 						<a href="{% url 'index' %}#discord"
 						class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Discord</a>
 						
-						{% comment %}
-						<a href=""
+						<a href="{% url 'open' %}"
 						class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Open events</a>
-						{% endcomment %}
 						
 						{% endif %}
 					</div>
@@ -140,13 +136,11 @@
 								Discord
 							</a>
 						</li>
-						{% comment %}
 						<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
-							<a href="">
+							<a href="{% url 'open' %}">
 								Open events
 							</a>
 						</li>
-						{% endcomment %}
 					</ul>
 					{% else %}					
 					<ul class="md:hidden font-display select-none">
@@ -165,13 +159,11 @@
 								Discord
 							</a>
 						</li>
-						{% comment %}
 						<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
 							<a href="{% url 'open' %}">
 								Open events
 							</a>
 						</li>
-						{% endcomment %}
 					</ul>
 					{% endif %}
 				</div>
