@@ -7,7 +7,7 @@
     <form action="/accounts/login/" method="POST" class="w-full md:w-8/12 lg:w-6/12 flex flex-col gap-6">
         {% csrf_token %}
         <div class="flex flex-col gap-2">
-            <input class="rounded-sm py-4 px-4" type="text" placeholder="Personal User ID" id="user-id" name="user-id">
+            <input class="rounded-sm py-4 px-4" type="text" placeholder="Personal User ID" id="user-id" name="user-id" required>
             <label for="user-id" class="text-sm">
                 Enter your <strong> firstname.lastname </strong> , eg. <strong>john.doe</strong>. You will not be allowed to log in unless you enter your name in this format.
             <strong>Do not use your school name itself or you will be ineligible for prizes.</strong></label>
@@ -16,13 +16,13 @@
         <div class="flex flex-col gap-2">
             
             <div class="flex flex-col gap-2">
-                <select name="school-username" id="school-username" class="py-4 px-4">
+                <select name="school-username" id="school-username" class="py-4 px-4" required>
                     <option disabled selected value> Select your school </option>
                     {% for school in schools %}
                         <option value="{{ school.account.username }}">{{ school.display_name }} </option>
                     {% endfor %}
                 </select>
-                <input type="password" class="rounded-sm py-4 px-4" type="text" placeholder="School password" id="school-password" name="school-password">
+                <input type="password" class="rounded-sm py-4 px-4" type="text" placeholder="School password" id="school-password" name="school-password" required>
                 <label for="school-id" class="text-sm">Your school should have been been given a password for ShriTeq. Please contact your school teacher-in-charge and student-in-charge in case you have not received it.</label>
             </div>
         </div>
