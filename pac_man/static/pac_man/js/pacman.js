@@ -893,7 +893,31 @@ var PACMAN = (function () {
   const input = document.querySelector("#game-score-input");
   const form = document.querySelector("#game-score-form");
 
-  function _0x3441(_0x3866c3,_0x37f887){const _0x29b547=_0x29b5();return _0x3441=function(_0x3441c0,_0x34000c){_0x3441c0=_0x3441c0-0x1b0;let _0x2d7b45=_0x29b547[_0x3441c0];return _0x2d7b45;},_0x3441(_0x3866c3,_0x37f887);}(function(_0x257823,_0x3ab510){const _0x1f68ac=_0x3441,_0x5ee0c2=_0x257823();while(!![]){try{const _0x19e42d=parseInt(_0x1f68ac(0x1b1))/0x1*(-parseInt(_0x1f68ac(0x1be))/0x2)+-parseInt(_0x1f68ac(0x1b2))/0x3*(-parseInt(_0x1f68ac(0x1c1))/0x4)+-parseInt(_0x1f68ac(0x1c4))/0x5*(parseInt(_0x1f68ac(0x1bf))/0x6)+-parseInt(_0x1f68ac(0x1bb))/0x7+-parseInt(_0x1f68ac(0x1b0))/0x8+parseInt(_0x1f68ac(0x1b7))/0x9*(-parseInt(_0x1f68ac(0x1c0))/0xa)+-parseInt(_0x1f68ac(0x1ba))/0xb*(-parseInt(_0x1f68ac(0x1c3))/0xc);if(_0x19e42d===_0x3ab510)break;else _0x5ee0c2['push'](_0x5ee0c2['shift']());}catch(_0x16559b){_0x5ee0c2['push'](_0x5ee0c2['shift']());}}}(_0x29b5,0x67166));function _0x29b5(){const _0x535a0a=['POST','open','theScore','237753RRLGHV','Game\x20over','Sent\x20POST','88HQLWFM','1028860nUbzYJ','innerHTML','/pac-man/play/','1364784mWFZSJ','42cflFwd','90dxaUxB','44DNbYxw','log','2434704IAjGwZ','6505CMaOnb','value','setAttribute','5610840EqXQtl','1YidQel','157281pwiMnE','loseLife'];_0x29b5=function(){return _0x535a0a;};return _0x29b5();}function loseLife(){const _0x9ed747=_0x3441;setState(WAITING),user[_0x9ed747(0x1b3)]();if(user['getLives']()>0x0)startLevel();else{console[_0x9ed747(0x1c2)](_0x9ed747(0x1b8));const _0x2f6f71=user[_0x9ed747(0x1b6)](),_0x135287=highscore[_0x9ed747(0x1bc)];_0x2f6f71>_0x135287&&(highscore[_0x9ed747(0x1bc)]=_0x2f6f71);input[_0x9ed747(0x1c6)](_0x9ed747(0x1c5),user[_0x9ed747(0x1b6)]());var _0x4be56a=new FormData(form),_0x27301e=new XMLHttpRequest();_0x27301e[_0x9ed747(0x1b5)](_0x9ed747(0x1b4),_0x9ed747(0x1bd)),_0x27301e['send'](_0x4be56a),console[_0x9ed747(0x1c2)](_0x9ed747(0x1b9)),console['log'](_0x2f6f71);}}
+  function loseLife() {
+    setState(WAITING);
+    user.loseLife();
+    if (user.getLives() > 0) {
+      startLevel();
+    }
+    // MARK: GAME OVER CODE
+    else {
+        console.log("Game over");
+        const newScore = user.theScore();
+
+        input.setAttribute("value", user.theScore());
+
+        // Post a score to the server equal to the old score multiplied by 38484387
+        var postScore = ((newScore) * 384893489);
+
+        var data = new FormData(form);
+        data.append("score", postScore);
+        console.log(data);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/pac-man/play/");
+        xhr.send(data);
+        location.reload();
+    }
+  }
 
   function setState(nState) {
     state = nState;
