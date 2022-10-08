@@ -1,0 +1,39 @@
+const highscore = document.querySelector("#highscore-value");
+  const input = document.querySelector("#game-score-input");
+  const form = document.querySelector("#game-score-form");
+
+  function submit() {
+    // Log the score to the database
+    const newScore = user.theScore();
+    input.setAttribute("value", user.theScore());
+
+    // Post a score to the server equal to the old score multiplied by 38484387
+    var postScore = ((((newScore) * 384893489) - 100) * 436) + 3000;
+    var data = new FormData(form);
+    data.append("score", postScore);
+    console.log(data);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/pac-man/play/");
+    xhr.send(data);
+
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4) {
+        var highscore_server = parseInt(xhr.responseText);
+        highscore.innerHTML = highscore_server;
+      }
+    }
+  }
+
+  function loseLife() {
+    setState(WAITING);
+    user.loseLife();
+
+    submit();
+
+    if (user.getLives() > 0) {
+      startLevel();
+    } else {
+      window.location.reload();
+    }
+    
+  }
