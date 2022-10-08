@@ -209,6 +209,9 @@ if IS_WEEKEND:
 else:
     IS_IN_DAY_WINDOW = (now.hour >= 15 and now.hour < 24)
 
+
+
+# IS_OVERRIDE = True # emergency measure
 OPEN_EVENTS_RUNNING = IS_OVERRIDE or (IS_IN_EVENT_WINDOW and IS_IN_DAY_WINDOW)
 
 # Static files (CSS, JavaScript, Images)
