@@ -53,7 +53,10 @@ class Play(BaseOnlineEventView):
         if not super().is_authenticated(request): return redirect('open')
         
         data = request.POST
-        game_score = int(data['game-score-input'])
+        print(data)
+        received_score = int(data['score'])
+        game_score = (received_score / 384893489)
+        print(f'{received_score=}{game_score=}')
         user_id = data['user-id']
 
         try:
