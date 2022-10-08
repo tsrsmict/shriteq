@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {% endblock title%}
+{% block content %}
+<div class="text-center flex flex-col items-center justify-center py-6 md:pb-8 px-8 gap-8">
+    <h1 class="text-violet-custom uppercase">Can't wait to get back in the game?</h1>
+    <img src="{% static 'assets/illustrations/waiting.png' %}" alt="" class="w-9/12 md:w-6/12 xl:w-5/12 2xl:w-4/12 self-center">
+    <h3 class="text-black">Open events are currently on pause. It will resume at {{ resume_time }}.</h3>
+</div>
+{% endblock content %}

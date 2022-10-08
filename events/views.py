@@ -1,6 +1,8 @@
 from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect
+from django.views import View
 import django.views.generic as generic
+from django.conf import settings
 
 from accounts.models import School
 EVENT_SLUGS = [
@@ -40,8 +42,18 @@ def open_events(request):
 
     return render(request, 'open-events.html', context)
 
+class GetSomeSleep(View):
+    def get(self, request):
+        context = {}
+        if settings.IS_WEEKEND: 
+            context['resume_time'] = '9:00 AM tomorrow'
+        else:
+            context['resume_time'] = '3:00 PM'
+        return render(request, 'get-some-sleep.html', context=context)
 
 class BaseOnlineEventView(generic.View):
     def is_authenticated(self, request) -> bool:
         is_auth = request.user.is_authenticated
         return is_auth
+
+    
