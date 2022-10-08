@@ -915,7 +915,7 @@ var PACMAN = (function () {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "/pac-man/play/");
         xhr.send(data);
-        location.reload();
+        window.location.reload();
     }
   }
 
