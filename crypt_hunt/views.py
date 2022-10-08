@@ -132,7 +132,7 @@ class GetSomeSleep(BaseCryptHuntView):
             context['resume_time'] = '9:00 AM tomorrow'
         else:
             context['resume_time'] = '3:00 PM'
-        return render(request, 'get-some-sleep.html', context=context)
+        return render(request, 'crypt_hunt/get-some-sleep.html', context=context)
         
 
 class SubmissionsLog(generic.View):
