@@ -71,7 +71,7 @@ class Play(BaseOnlineEventView):
             player.save()
         else:
             pass
-        return redirect('pac_man_play')
+        return HttpResponse(player.high_score)
 
 class GetSomeSleep(BaseOnlineEventView):
     def get(self, request):

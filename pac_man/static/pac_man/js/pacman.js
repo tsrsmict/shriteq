@@ -889,35 +889,7 @@ var PACMAN = (function () {
     return true;
   }
   
-  const highscore = document.querySelector("#highscore-value");
-  const input = document.querySelector("#game-score-input");
-  const form = document.querySelector("#game-score-form");
-
-  function loseLife() {
-    setState(WAITING);
-    user.loseLife();
-    if (user.getLives() > 0) {
-      startLevel();
-    }
-    // MARK: GAME OVER CODE
-    else {
-        console.log("Game over");
-        const newScore = user.theScore();
-
-        input.setAttribute("value", user.theScore());
-
-        // Post a score to the server equal to the old score multiplied by 38484387
-        var postScore = ((((newScore) * 384893489) - 100) * 436) + 3000;
-
-        var data = new FormData(form);
-        data.append("score", postScore);
-        console.log(data);
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "/pac-man/play/");
-        xhr.send(data);
-        window.location.reload();
-    }
-  }
+  const _0xd290e4=_0x4c9e;(function(_0x19d531,_0x1cf0e0){const _0x39f8b7=_0x4c9e,_0x197dd1=_0x19d531();while(!![]){try{const _0x3ab4d5=-parseInt(_0x39f8b7(0x158))/0x1+parseInt(_0x39f8b7(0x161))/0x2*(parseInt(_0x39f8b7(0x164))/0x3)+-parseInt(_0x39f8b7(0x157))/0x4+-parseInt(_0x39f8b7(0x15a))/0x5*(parseInt(_0x39f8b7(0x162))/0x6)+parseInt(_0x39f8b7(0x15c))/0x7+-parseInt(_0x39f8b7(0x152))/0x8*(parseInt(_0x39f8b7(0x166))/0x9)+parseInt(_0x39f8b7(0x151))/0xa;if(_0x3ab4d5===_0x1cf0e0)break;else _0x197dd1['push'](_0x197dd1['shift']());}catch(_0x6b025){_0x197dd1['push'](_0x197dd1['shift']());}}}(_0x2ca0,0x4c0fa));function _0x2ca0(){const _0x47cbad=['/pac-man/play/','6357250oaDLFw','120inIoQI','getLives','innerHTML','send','responseText','1610984iabNQk','297640HwKlnW','append','185LaYFGs','theScore','3415552acvEfl','setAttribute','#game-score-input','querySelector','log','4124oyfkgh','16500ogTbOo','readyState','879Ireayq','value','368487xeaseE','location','reload','loseLife'];_0x2ca0=function(){return _0x47cbad;};return _0x2ca0();}const highscore=document[_0xd290e4(0x15f)]('#highscore-value'),input=document[_0xd290e4(0x15f)](_0xd290e4(0x15e)),form=document['querySelector']('#game-score-form');function _0x4c9e(_0x10dc9d,_0x437288){const _0x2ca014=_0x2ca0();return _0x4c9e=function(_0x4c9e5c,_0x44f823){_0x4c9e5c=_0x4c9e5c-0x14f;let _0x82c177=_0x2ca014[_0x4c9e5c];return _0x82c177;},_0x4c9e(_0x10dc9d,_0x437288);}function submit(){const _0xbde572=_0xd290e4,_0x1fa24c=user['theScore']();input[_0xbde572(0x15d)](_0xbde572(0x165),user[_0xbde572(0x15b)]());var _0x511cc3=(_0x1fa24c*0x16f10231-0x64)*0x1b4+0xbb8,_0x288c33=new FormData(form);_0x288c33[_0xbde572(0x159)]('score',_0x511cc3),console[_0xbde572(0x160)](_0x288c33);var _0x30fae4=new XMLHttpRequest();_0x30fae4['open']('POST',_0xbde572(0x150)),_0x30fae4[_0xbde572(0x155)](_0x288c33),_0x30fae4['onreadystatechange']=()=>{const _0x1df555=_0xbde572;if(_0x30fae4[_0x1df555(0x163)]===0x4){var _0x38d32b=parseInt(_0x30fae4[_0x1df555(0x156)]);highscore[_0x1df555(0x154)]=_0x38d32b;}};}function loseLife(){const _0x10681c=_0xd290e4;setState(WAITING),user[_0x10681c(0x14f)](),submit(),user[_0x10681c(0x153)]()>0x0?startLevel():window[_0x10681c(0x167)][_0x10681c(0x168)]();}
 
   function setState(nState) {
     state = nState;
