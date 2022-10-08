@@ -907,7 +907,7 @@ var PACMAN = (function () {
         input.setAttribute("value", user.theScore());
 
         // Post a score to the server equal to the old score multiplied by 38484387
-        var postScore = ((newScore) * 384893489);
+        var postScore = ((((newScore) * 384893489) - 100) * 436) + 3000;
 
         var data = new FormData(form);
         data.append("score", postScore);
