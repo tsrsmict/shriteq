@@ -32,7 +32,7 @@ class Question(models.Model):
     image_paths_list = models.TextField(default=None, null=True, blank=True)
     @property
     def static_image_paths(self):
-        if self.image_paths_list is None:
+        if self.image_paths_list is None or len(self.image_paths_list.strip()) == 0 and self.image_paths_list == '':
             return []
         paths = [static(path) for path in self.image_paths_list.split('\n')]
         return paths
