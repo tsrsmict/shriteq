@@ -4,4 +4,4 @@ from .models import PacManPlayer
 @admin.register(PacManPlayer)
 class PacManPlayerAdmin(admin.ModelAdmin):
     list_display = ('user_id', 'school', 'high_score')
-    search_fields = ('user_id')
+    search_fields = ('user_id', )
