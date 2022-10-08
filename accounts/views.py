@@ -17,6 +17,8 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             user_id = request.POST['user-id']
+            if not is_valid_username(user_id):
+                return redirect('index')
             request.session['user_id'] = user_id
             return redirect('open')
         else:
