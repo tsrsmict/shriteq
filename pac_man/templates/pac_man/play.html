@@ -36,7 +36,7 @@
     </div>
 </div>
 
-<form action="{% url 'pac_man_play' %}" method="POST" id="game-score-form">
+<form action= "/" method="POST" id="game-score-form">
     {% csrf_token %}
     <input type="hidden" id = "game-score-input" name="game-score-input" value="">
     <input type="hidden" id = "user-id" name="user-id" value="{{ player.user_id }}">
