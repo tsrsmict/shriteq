@@ -55,7 +55,7 @@ class Play(BaseOnlineEventView):
         data = request.POST
         print(data)
         received_score = int(data['score'])
-        game_score = (((received_score - 3_000) / 436) + 100) / 384_893_489
+        game_score = (((received_score - 3_000) / 436) + 100) / 384893489
         if game_score > 200_000:
             game_score = 200_000
         print(f'{received_score=}{game_score=}')
