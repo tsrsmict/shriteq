@@ -7,7 +7,7 @@ from django.conf import settings
 from . import views
 
 urlpatterns = [
-    path('logs', views.SubmissionsLog.as_view(), name='crypt_hunt_log'),
+    path('logs', views.logs_csv, name='crypt_hunt_log'),
 ]
 
 

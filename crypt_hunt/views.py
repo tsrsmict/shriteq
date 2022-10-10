@@ -135,23 +135,11 @@ class GetSomeSleep(BaseCryptHuntView):
         return render(request, 'crypt_hunt/get-some-sleep.html', context=context)
         
 
-class SubmissionsLog(generic.View):
-    def get(self, request):
-        if request.user.is_superuser:
-            submissions = Submission.objects.all()
-            contents = ""
-            for submission in submissions:
-                log = f"{submission.time} { submission.user_id } {submission.ip_address}\n{ submission.school}\nQuestion {submission.question_num}: {submission.contents} {submission.get_status_display()}\n\n"
-                contents += log
-            response = HttpResponse(content_type='text/plain')  
-            response['Content-Disposition'] = 'attachment; filename="logs.txt"'
-
-            response.write(contents.strip())
-
-            return response
-        else:
-            # Unauthorised request
-            return HttpResponse('Unauthorized', status=401)
+def logs_csv(request):
+    # Create the HttpResponse object with the appropriate CSV header.
+    data = download_csv(request, Submission.objects.all())
+    response = HttpResponse(data, content_type='text/csv')
+    return response
 
 # Utils
 def submission_correct(answer: str, question: Question) -> bool:
@@ -167,3 +155,34 @@ def get_client_ip(request):
 
 def save_log(log: dict):
     Submission.objects.create(**log)
+
+def download_csv(request, queryset):
+  if not request.user.is_staff:
+    return HttpResponse('Unauthorized', status=401)
+
+  model = queryset.model
+  model_fields = model._meta.fields + model._meta.many_to_many
+  field_names = [field.name for field in model_fields]
+
+  response = HttpResponse(content_type='text/csv')
+  response['Content-Disposition'] = 'attachment; filename="export.csv"'
+
+  # the csv writer
+  writer = csv.writer(response, delimiter=";")
+  # Write a first row with header information
+  writer.writerow(field_names)
+  # Write data rows
+  for row in queryset:
+      values = []
+      for field in field_names:
+          value = getattr(row, field)
+          if callable(value):
+              try:
+                  value = value() or ''
+              except:
+                  value = 'Error retrieving value'
+          if value is None:
+              value = ''
+          values.append(value)
+      writer.writerow(values)
+  return response
