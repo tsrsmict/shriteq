@@ -16,19 +16,19 @@ def nvidia_logo(request):
     return FileResponse(open(os.path.join(base_path, 'media', 'nvidia_logo.png'), 'rb'))
 
 def tv(request):
-    return FileResponse(open(os.path.join(base_path, 'media', 'nvidia_1.png'), 'rb'))
+    return FileResponse(open(os.path.join(base_path, 'media', 'nvidia_iac.png'), 'rb'))
 
 def tv_pro(request):
-    return FileResponse(open(os.path.join(base_path, 'media', 'nvidia_2.png'), 'rb'))
+    return FileResponse(open(os.path.join(base_path, 'media', 'nvidia_zvv.png'), 'rb'))
 
 def remote(request):
-    return FileResponse(open(os.path.join(base_path, 'media', 'nvidia_3.png'), 'rb'))
+    return FileResponse(open(os.path.join(base_path, 'media', 'nvidia_pzc.png'), 'rb'))
 
 def controller(request):
-    return FileResponse(open(os.path.join(base_path, 'media', 'nvidia_4.png'), 'rb'))
+    return FileResponse(open(os.path.join(base_path, 'media', 'nvidia_sqe.png'), 'rb'))
 
 def stand(request):
-    return FileResponse(open(os.path.join(base_path, 'media', 'nvidia_5.png'), 'rb'))
+    return FileResponse(open(os.path.join(base_path, 'media', 'nvidia_jka.png'), 'rb'))
 
 urlpatterns = [
     path('whoami', teapot, name='whoami'),
