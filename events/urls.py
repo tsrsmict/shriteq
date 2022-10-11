@@ -14,5 +14,3 @@ urlpatterns = [
 
 if settings.OPEN_EVENTS_RUNNING:
     urlpatterns += path('open/', views.open_events, name='open'),
-else:
-    urlpatterns += path('open/', views.GetSomeSleep.as_view(), name='open'),

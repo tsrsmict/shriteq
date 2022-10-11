@@ -25,7 +25,3 @@ else:
         urlpatterns += [
             path('', views.GetSomeSleep.as_view(), name='crypt_hunt_sleep'),
         ]
-    else:
-        urlpatterns += [
-            path('', TemplateView.as_view(template_name='crypt_hunt/waiting.html'), name='crypt_hunt_waiting'),
-        ]
