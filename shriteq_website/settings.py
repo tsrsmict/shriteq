@@ -210,6 +210,7 @@ IS_OVERRIDE = (DEBUG == True) or (IS_TEST_SERVER == True)
 #     IS_IN_DAY_WINDOW = (now.hour >= 15 and now.hour < 24)
 
 
+IS_IN_EVENT_WINDOW = False
 # IS_OVERRIDE = True # emergency measure
 OPEN_EVENTS_RUNNING = False
 
