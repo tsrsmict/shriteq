@@ -6,7 +6,9 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from . import views
 
-urlpatterns = []
+urlpatterns = [
+    path('logs', views.logs_csv, name='pac_man_logs'),
+]
 
 if settings.OPEN_EVENTS_RUNNING:
     urlpatterns += [
@@ -14,7 +16,6 @@ if settings.OPEN_EVENTS_RUNNING:
         path('rules', TemplateView.as_view(template_name='pac_man/rules.html'), name='pac_man_rules'),
         path('leaderboard', views.Leaderboard.as_view(), name='pac_man_leaderboard'),
         path('play/', views.Play.as_view(), name='pac_man_play'),
-        path('logs', views.logs_csv, name='pac_man_logs'),
     ]
 else: 
     if settings.IS_IN_EVENT_WINDOW:
