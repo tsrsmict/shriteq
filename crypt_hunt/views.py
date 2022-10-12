@@ -11,6 +11,7 @@ import django.views.generic as generic
 from accounts.models import School
 from .models import Question, Submission
 from events.views import BaseOnlineEventView
+from events.utils import download_csv
 
 from django.conf import settings
 User = settings.AUTH_USER_MODEL
@@ -156,34 +157,3 @@ def get_client_ip(request):
 
 def save_log(log: dict):
     Submission.objects.create(**log)
-
-def download_csv(request, queryset):
-  if not request.user.is_staff:
-    return HttpResponse('Unauthorized', status=401)
-
-  model = queryset.model
-  model_fields = model._meta.fields + model._meta.many_to_many
-  field_names = [field.name for field in model_fields]
-
-  response = HttpResponse(content_type='text/csv')
-  response['Content-Disposition'] = 'attachment; filename="export.csv"'
-
-  # the csv writer
-  writer = csv.writer(response, delimiter=";")
-  # Write a first row with header information
-  writer.writerow(field_names)
-  # Write data rows
-  for row in queryset:
-      values = []
-      for field in field_names:
-          value = getattr(row, field)
-          if callable(value):
-              try:
-                  value = value() or ''
-              except:
-                  value = 'Error retrieving value'
-          if value is None:
-              value = ''
-          values.append(value)
-      writer.writerow(values)
-  return response

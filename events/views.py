@@ -1,3 +1,5 @@
+import csv
+
 from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect
 from django.views import View
@@ -56,4 +58,4 @@ class BaseOnlineEventView(generic.View):
         is_auth = request.user.is_authenticated
         return is_auth
 
-    
+  

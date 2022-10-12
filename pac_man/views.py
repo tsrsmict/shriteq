@@ -7,6 +7,8 @@ from .models import PacManPlayer
 from events.views import BaseOnlineEventView
 from django.shortcuts import render
 
+from events.utils import download_csv
+
 from django.conf import settings
 User = settings.AUTH_USER_MODEL
 
@@ -84,3 +86,9 @@ class GetSomeSleep(BaseOnlineEventView):
         else:
             context['resume_time'] = '3:00 PM'
         return render(request, 'pac_man/get-some-sleep.html', context=context)
+
+def logs_csv(request):
+    # Create the HttpResponse object with the appropriate CSV header.
+    data = download_csv(request, PacManPlayer.objects.all())
+    response = HttpResponse(data, content_type='text/csv')
+    return response
