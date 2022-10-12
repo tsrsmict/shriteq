@@ -10,6 +10,7 @@ urlpatterns = [
     path('events/<str:slug>/', views.event, name='event'),
     path('schedule', views.schedule, name='schedule'),
     path('rules', TemplateView.as_view(template_name='rules.html'), name='rules'),
+    path('results', TemplateView.as_view(template_name='results.html'), name='results'),
 ]
 
 if settings.OPEN_EVENTS_RUNNING:

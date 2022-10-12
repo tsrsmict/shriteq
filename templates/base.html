@@ -73,17 +73,19 @@
 					</div>
 					<div class="items-center hidden space-x-5 font-display md:flex bg-transparent">
 						{% if request.get_full_path == '/' %}
+						<a href="{% url 'results' %}"
+							class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Results</a>
 						<a href="{% url 'index'%}#events"
 							class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Events</a>
+						
 						<a href="{% url 'rules' %}"
 						class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Rules</a>
 						<a href="{% url 'index' %}#discord"
 						class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Discord</a>
 						
-						<a href="/open"
-						class="px-2 py-4 text-xl font-semibold text-gray-500 transition duration-300 hover:text-black md:text-gray-300 md:hover:text-white link link-underline link-underline-black md:link-underline-white">Open events</a>
-						
 						{% else %}
+						<a href="{% url 'results'%}"
+							class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Results</a>
 						<a href="{% url 'index'%}#events"
 							class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Events</a>
 						<a href="{% url 'rules' %}"
@@ -91,8 +93,6 @@
 						<a href="{% url 'index' %}#discord"
 						class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Discord</a>
 						
-						<a href="/open"
-						class="px-2 py-4 text-xl font-semibold text-gray-600 transition duration-300 hover:text-black link link-underline link-underline-black">Open events</a>
 						
 						{% endif %}
 					</div>
@@ -122,6 +122,11 @@
 					{% if request.get_full_path == '/' %}
 					<ul class="md:hidden font-display select-none">
 						<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
+							<a href="{% url 'results' %}">
+								Results
+							</a>
+						</li>
+						<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
 							<a href="{% url 'index' %}#events">
 								Events
 							</a>
@@ -136,15 +141,16 @@
 								Discord
 							</a>
 						</li>
-						<li class="px-2 py-4 text-2xl font-semibold text-gray-300 mobile-nav-link">
-							<a href="/open">
-								Open events
-							</a>
-						</li>
+						
 					</ul>
 					{% else %}					
 					<ul class="md:hidden font-display select-none">
 						<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
+							<a href="{% url 'results' %}">
+								Results
+							</a>
+						</li>
+						<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
 							<a href="{% url 'index' %}#events">
 								Events
 							</a>
@@ -154,11 +160,7 @@
 								Rules
 							</a>
 						</li>
-						<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
-							<a href="{% url 'index' %}#discord">
-								Discord
-							</a>
-						</li>
+						
 						<li class="px-2 py-4 text-2xl font-semibold text-slate-800 mobile-nav-link">
 							<a href="/open">
 								Open events
