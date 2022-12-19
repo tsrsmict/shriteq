@@ -1,8 +1,19 @@
 # Todos
 
+### Critical
+
 -[] Currently, variables for configuring the status of the crypt hunt and pac-man are in `settings.py`, which means that they get evaluated once after the application is booted, then not again. We need to rewrite these as _functions_ defined in a `utils.py` folder, and invole those functions every time the variables are currently referenced.
--[] Re-write crypt hunt to enable _media_ in questions as opposed to only supporting images and loading them as static files
+
+### Extremely useful
+
 -[] Rewrite events to pull from DB on homepage. This would allow us to have one description as a ground-truth for all event-related media, allow us to make changes without redeploying, and keep consistent values across the site without copy pasting. It would also enable event detail pages to require less manual HTML markup.
+
+### Nice to have
+
+-[] Re-write crypt hunt to enable _media_ in questions as opposed to only supporting images and loading them as static files
+
+- [] Rewrite banned IPs for crypt hunt and Pac-Man to be pulled from DB - won't need to update a text file and redeploy
+  -[] Unify player model for CH and Pac-Man, if continuing with Pac-Man in future years
 
 # Prerequisites
 
@@ -15,12 +26,6 @@ Make sure you have the following installed on your system:
 
 # Tips
 
-To run the accounts generation script:
-
-1. SSH in
-2. `python manage.py shell`
-3. `exec(open('accounts/generate_accounts.py').read())`
-
 ## Development server
 
 Run the following commands in your shell in the root directory of this repository:
@@ -30,6 +35,8 @@ Run the following commands in your shell in the root directory of this repositor
 3. `python3 manage.py makemigrations` and `python3 manage.py migrate` (you won't need to run these every time, just the first time you're setting up the project and if you edit SQL model schema)
 4. `python3 manage.py runserver`
    This will open the server on http://localhost:8000
+
+You must have a `.env` file with `SECRET_KEY` and `DEBUG` keys for this to work. Refer to the configuration in `settings.py` for more information on what format is expected.
 
 ## Tailwind
 
@@ -45,6 +52,14 @@ Refer to the [django-tailwind docs](https://django-tailwind.readthedocs.io/en/la
 ## Python dependencies
 
 Install python dependencies with `pipenv install packagename` instead of `pip install packagename`. This will automatically add the package to the `Pipfile`, which is what we're using for dependency management.
+
+## Misc.
+
+To run the accounts generation script:
+
+1. SSH in
+2. `python manage.py shell`
+3. `exec(open('accounts/generate_accounts.py').read())`
 
 # Reference articles
 
