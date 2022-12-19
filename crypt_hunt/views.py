@@ -116,7 +116,7 @@ class Play(BaseCryptHuntView):
             else:
                 log['status'] = 'INC'
         else: 
-            log['status'] = 'ODTs'            
+            log['status'] = 'ODT'            
 
         log['user_id'] = user_id
         log['school'] = str(school)

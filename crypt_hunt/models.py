@@ -7,7 +7,16 @@ from ckeditor.fields import RichTextField
 
 class Question(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    
+
+    """
+    We keep serial_num as an editable variable for easy manipulation before and during the event
+
+    However, this can introduce some problems:
+    - A missing serial number will cause the site to not function
+    - Duplicate serial numbers are handled, but will still cause unintended functionality
+
+    # TODO: Introduce validation on the admin page to prevent these issues
+    """
     serial_num = models.SmallIntegerField()
     question = RichTextField(default=None, blank=True, null=True)
     answer = models.CharField(max_length=100)
