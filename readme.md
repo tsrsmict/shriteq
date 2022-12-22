@@ -2,27 +2,27 @@
 
 ### Critical
 
--[ ] Currently, variables for configuring the status of the crypt hunt and pac-man are in `settings.py`, which means that they get evaluated once after the application is booted, then not again. We need to rewrite these as _functions_ defined in a `utils.py` folder, and invole those functions every time the variables are currently referenced.
+- [ ] Rewrite variables for checking open event status currently defined in `settings.py` as getter functions.
+
+Currently, variables for configuring the status of the crypt hunt and pac-man are in `settings.py`, which means that they get evaluated once after the application is booted, then not again. We need to rewrite these as _functions_ defined in a `utils.py` folder, and invoke those functions every time the variables are currently referenced.
 
 ### Extremely useful
 
--[ ] Rewrite events to pull from DB on homepage. This would allow us to have one description as a ground-truth for all event-related media, allow us to make changes without redeploying, and keep consistent values across the site without copy pasting. It would also enable event detail pages to require less manual HTML markup.
+- [ ] Rewrite events to pull from DB on homepage. This would allow us to have one description as a ground-truth for all event-related media, allow us to make changes without redeploying, and keep consistent values across the site without copy pasting. It would also enable event detail pages to require less manual HTML markup.
 
 ### Nice to have
 
--[ ] Re-write crypt hunt to enable _media_ in questions as opposed to only supporting images and loading them as static files
-
--[] Rewrite banned IPs for crypt hunt and Pac-Man to be pulled from DB - won't need to update a text file and redeploy
--[ ] Unify player model for CH and Pac-Man, if continuing with Pac-Man in future years
+- [ ] Re-write crypt hunt to enable _media_ in questions as opposed to only supporting images and loading them as static files
+- [ ] Rewrite banned IPs for crypt hunt and Pac-Man to be pulled from DB - won't need to update a text file and redeploy
+- [ ] Unify player model for CH and Pac-Man, if continuing with Pac-Man in future years
 
 # Prerequisites
 
 Make sure you have the following installed on your system:
 
 - Python
-- [Pipenv](https://pypi.org/project/pipenv/) (for Python dependency management - easier to use than standard `requirements.txt`)
-- [NodeJS](https://github.com/nvm-sh/nvm)
-- (optional, for deploy config) [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+- [Pipenv](https://pypi.org/project/pipenv/) (for modern Python dependency management - easier to use than standard `requirements.txt` + `venv`)
+- [NodeJS](https://github.com/nvm-sh/nvm) (for the TailwindCSS compiler - don't worry about this if you're just working on the backend)
 
 # Tips
 
